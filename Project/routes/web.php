@@ -54,3 +54,7 @@ Route::resource('Plan', 'ProductionPlanningController');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/testregister', 'Auth\RegisterController@test');
+
+Route::get('/out', [App\Http\Controllers\Auth\LoginController::class, 'logout']);

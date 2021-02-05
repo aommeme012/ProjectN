@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Employee;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -35,12 +36,29 @@ class RegisterController extends Controller
      * Create a new controller instance.
      *
      * @return void
+     *
+     *
      */
+
     public function __construct()
     {
         $this->middleware('guest');
     }
-
+    public function test()
+    {
+            return Employee::create([
+                'Fname' => "QQ",
+                'Lname' => "ABc",
+                'Address' => "123/456",
+                'Tel'=> "0123456789",
+                'Sex'=> "ชาย",
+                'Username'=> "wooq",
+                'Password' => bcrypt("123456"),
+                'Emp_Status' => "Enable",
+                'Type'=> "0",
+                'Dep_Id'=> "1",
+        ]);
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -49,11 +67,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+
+            return Validator::make($data, [
+                'Fname' => ['required', 'string', 'max:255'],
+                'Lname' => ['required', 'string', 'max:255'],
+                'Tel' => ['required', 'string', 'max:10'],
+                'Username' => ['required', 'string', 'max:255', 'unique:Employee'],
+                'Password' => ['required', 'string', 'min:6', 'confirmed'],
+    ]);
     }
 
     /**
@@ -64,10 +85,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        return Employee::create([
+            'Fname' => "ddd",
+            'Lname' => "ABc",
+            'Address' => "123/456",
+            'Tel'=> "0123456789",
+            'Sex'=> "ชาย",
+            'Username'=> "wooq",
+            'Password' => bcrypt("123456"),
+            'Emp_Status' => "Enable",
+            'Type'=> "0",
+            'Dep_Id'=> "1",
+
         ]);
     }
 }

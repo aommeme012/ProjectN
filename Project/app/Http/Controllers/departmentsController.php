@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\DB;
 
 class departmentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
+
     public function index()
     {
         $deps = Departments::all();

@@ -31,9 +31,14 @@
 padding: 15px 50px 5px 50px;
 float: right;
 font-size: 16px;">
-<a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+    <button class="btn btn-danger square-btn-adjust" type="submit">Logout</button>
+    @auth
+    <p>เข้าระบบแล้ว{{ Auth::user()->Fname }}</p>
+    @endauth
+    <form action="/logout" method="POST">
+        @csrf
+    </form>
         </nav>
-           <!-- /. NAV TOP  -->
            <nav class="navbar-default navbar-side" role="navigation">
             <br>
             <div class="sidebar-collapse">
@@ -72,6 +77,7 @@ font-size: 16px;">
                             </li>
                         </ul>
                     </div>
+
                     <div class="sidebar-collapse">
                         <ul class="nav" id="main-menu">
                         <div class="sidebar-collapse">
@@ -99,7 +105,6 @@ font-size: 16px;">
                                 <table class="table table-striped table-bordered table-hover">
                                     <h3>Departments</h3>
                                     <a href="{{ route('dep.create')}}" class="btn btn-primary btn-sm">Add Departments</a>
-
                                     <thead>
                                         <tr>
                                             <th>Dep_Id</th>

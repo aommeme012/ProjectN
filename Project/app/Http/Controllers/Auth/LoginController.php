@@ -2,25 +2,34 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Employee;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
-//use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request;
+use App\Employee;
 
 class LoginController extends Controller
 {
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
 
-   use AuthenticatesUsers;
+    use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = "/dep";
+    protected $redirectTo = '/dep';
 
     /**
      * Create a new controller instance.
@@ -31,20 +40,34 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    public function redirecTo()
+
+    public function login(Request $request)
     {
-        return "/dep";
-    }
-    public function showLoginForm(){
-        return view('auth.login');
-    }
-    public function login(Request $request){
-       //return $request;
-        if(Auth::attempt(['Username' => $request->username, 'Password' => $request->password,true])){
+        //dd($request);
+        //return $request;
+
+        //$emp = Employee::find(1);
+        //dd($emp->Username);
+
+        //dd(Auth::attempt(['username' => 'wooq', 'password' => '123456']));
+
+        if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
+            // Authentication passed...
             return redirect('/dep');
         }
+
+        return redirect('/login');
     }
-    protected function guard(){
+
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
+    }
+
+    protected function guard()
+    {
         return Auth::guard('employee');
     }
 }

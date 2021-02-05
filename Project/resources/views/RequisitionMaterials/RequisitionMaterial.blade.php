@@ -110,7 +110,7 @@ font-size: 16px;">
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($Recs as $Rec)
+                                        @foreach ($RequiM as $Rec)
                                         <tr>
                                             <td>{{$Rec->Receive_Id}}</td>
                                             <td>{{$Rec->Receive_Date}}</td>

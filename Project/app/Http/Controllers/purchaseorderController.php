@@ -29,9 +29,22 @@ class purchaseorderController extends Controller
     }
     public function store(Request $request)
     {
-        $post=$request->all();
-        PurchaseOrder::create($post);
-        return redirect('/Purback');
+        $Purc = new PurchaseOrder();
+        $Purc->fill($request->only($Purc->getFillable()));
+        $Purc->save();
+
+        $Purchas = $request->Material_Id;
+        for($i = 0; $i < count($Purchas); $i++){
+            PurchaseOrderDetail::create([
+                'Pdetail_Amount' => $request->Pdetail_Amount[$i],
+                'Material_Id' => $request->Material_Id[$i],
+                'Purchase_Id' =>  $Purc->Purchase_Id,
+            ]);
+        }
+        return back();
+        // $post=$request->all();
+        // PurchaseOrder::create($post);
+        // return redirect('/Purback');
     }
     public function show(PurchaseOrder $PurchaseOrder)
     {

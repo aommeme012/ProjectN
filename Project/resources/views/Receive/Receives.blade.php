@@ -111,7 +111,7 @@ font-size: 16px;">
                                             <label>Purchase</label>
                                             <input class="form-control"  type="text" name="Purchase_Id" value="{{$Purc}}">
                                             <label>Receive_Amount</label>
-                                            <input class="form-control" type="Number" name="Receive_Amount">
+                                            <input class="form-control" type="Number" name="Receive_Amount"value="{{$Pdets}}">
                                         </div>
                                     </div>
                                 </div>

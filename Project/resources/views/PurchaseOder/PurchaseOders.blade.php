@@ -127,12 +127,9 @@ font-size: 16px;">
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-sm" >PurchaseOrder</button>
-                                            </div>
 
                                             <button  class="btn btn-primary btn-sm" id="add-more" type="button">AddDetail</button>
-
+                                    
                                             <div class="form-group" id="form-line">
                                              <label>Material</label>
                                                     <select class="form-control" name="Material_Id[0]">
@@ -145,7 +142,10 @@ font-size: 16px;">
                                             <label>Pdetail_Amount</label>
                                             <input class="form-control" type="Number" name="Pdetail_Amount[0]">
                                             </div>
-                                    </form>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-sm" >PurchaseOrder</button>
+                                    </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -154,23 +154,17 @@ font-size: 16px;">
     <script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.metisMenu.js')}}"></script>
-     <script src="{{asset('assets/js/morris/raphael-2.1.0.min.js')}}"></script>
+    <script src="{{asset('assets/js/morris/raphael-2.1.0.min.js')}}"></script>
     <script src="{{asset('assets/js/morris/morris.js')}}"></script>
     <script src="{{asset('assets/js/custom.js')}}"></script>
     <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-  <script src="assets/js/bootstrap.min.js"></script>
-  <!-- METISMENU SCRIPTS -->
-  <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- CUSTOM SCRIPTS -->
-  <script src="assets/js/custom.js"></script>
 
     <script>
         $(document).ready(function(){
             var i = 1;
             $('#add-more').click(function(){
                 $('#form-line').append(" <label>Material</label>"+
-                "<select class=\"form-control\" name=\"Material_Id[0]\">"+
+                "<select class=\"form-control\" name=\"Material_Id["+i+"]\">"+
                 "@foreach ($mats as $mat)"+
                 "<option value=\"{{$mat->Material_Id}}\">"+
                 "{{$mat->Material_Name}}"+
@@ -178,7 +172,7 @@ font-size: 16px;">
                 "@endforeach"+
                 "</select>"+
                 "<label>Pdetail_Amount</label>"+
-                "<input class=\"form-control\" type=\"Number\" name=\"Pdetail_Amount[0]\">");
+                "<input class=\"form-control\" type=\"Number\" name=\"Pdetail_Amount["+i+"]\">");
                 i++;
             });
         });

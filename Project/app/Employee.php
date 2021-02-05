@@ -14,7 +14,7 @@ class Employee extends Authentication
     protected $primaryKey= 'Emp_Id';
 
     protected $hidden =[
-        'password'
+        'Password'
     ];
 
     protected $fillable = [
@@ -31,7 +31,7 @@ class Employee extends Authentication
     ];
 
     public function getAuthPassword(){
-        return $this->password;
+        return $this->Password;
     }
 
     const ADMIN_TYPE = 1 ;

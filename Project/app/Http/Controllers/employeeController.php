@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class employeeController extends Controller
 {
-    public function __construct()
-    {
-        $this->middlewear('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middlewear('auth');
+    // }
     public function index()
     {
         $emps = Employee::all();

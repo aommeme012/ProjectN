@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -26,8 +25,4 @@ class HomeController extends Controller
     {
         return redirect('/dep');
     }
-    public function getLoggedinAdmin(){
-        return Auth::user();
-    }
-
 }

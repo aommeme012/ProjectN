@@ -31,7 +31,12 @@
 padding: 15px 50px 5px 50px;
 float: right;
 font-size: 16px;">
-<a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+<a href="#" class="btn btn-danger square-btn-adjust">Logout</a> @auth
+<p>เข้าระบบแล้ว{{ Auth::user()->Fname }}</p>
+@endauth
+<form action="/logout" method="POST">
+    @csrf
+</form>
         </nav>
            <!-- /. NAV TOP  -->
            <nav class="navbar-default navbar-side" role="navigation">
@@ -108,7 +113,7 @@ font-size: 16px;">
                                             <th>Tel</th>
                                             <th>Sex</th>
                                             <th>Username</th>
-                                            <th>Password</th>
+                                            {{-- <th>Password</th> --}}
                                             <th>Emp_Status</th>
                                             <th>Dep_Id</th>
                                             <th></th>
@@ -126,7 +131,7 @@ font-size: 16px;">
                                             <td>{{$emp->Tel}}</td>
                                             <td>{{$emp->Sex}}</td>
                                             <td>{{$emp->Username}}</td>
-                                            <td>{{$emp->Password}}</td>
+                                            {{-- <td>{{$emp->Password}}</td> --}}
                                             <td>{{$emp->Emp_Status}}</td>
                                             <td>{{$emp->Dep_Id}}</td>
                                             <td>

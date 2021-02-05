@@ -6,6 +6,7 @@ use App\Employee;
 
 use App\Partner;
 use App\PurchaseOrder;
+use App\PurchaseOrderDetail;
 use App\Receive;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,7 @@ class ReceiveController extends Controller
     {
         $Recs = PurchaseOrder::all();
         $Purc = PurchaseOrder::all();
+        $Pdets = PurchaseOrderDetail::all();
         $emps = Employee::all();
         return view('Receive.ShowPurchase', compact('Recs','emps','Purc'));
     }
@@ -34,9 +36,11 @@ class ReceiveController extends Controller
     public function show($id)
     {
         $Purc = PurchaseOrder::find($id);
+        $Pdets = PurchaseOrderDetail::find($id);
         $emps = $Purc -> Emp_Id;
         $Purc = $Purc -> Purchase_Id;
-        return view('Receive.Receives', compact('emps','Purc'));
+        $Pdets = $Pdets -> Pdetail_Amount;
+        return view('Receive.Receives', compact('emps','Purc','Pdets'));
     }
     public function edit($id)
     {
