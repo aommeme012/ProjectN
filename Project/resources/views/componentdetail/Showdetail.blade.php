@@ -100,11 +100,11 @@ font-size: 16px;">
                                         <a href="/comde" class="btn btn-danger square-btn-adjust">back</a>
                                         </div>
                                     <div class="col-md-6">
-
-
+                                        <h1>DetailComponent</h1>
+                                        <hr>
                                         @foreach ($comde as $item)
-                                        <h3>componentdetail of {{$item->component_Name}}</h3>
-                                        <h2>{{$item->Material_Name}} {{$item->Material_Amount}}</h2>
+                                        <label>componentdetail of {{$item->component_Name}}</label>
+                                        <label>{{$item->Material_Name}} {{$item->Material_Amount}}</label>
                                     @endforeach
                                 </div>
                             </div>

@@ -47,9 +47,6 @@ font-size: 16px;">
                                 <a href="/dep">Departments</a>
                             </li>
                             <li>
-                                <a href="/admin">Admin</a>
-                            </li>
-                            <li>
                                 <a href="/emp">Employees</a>
                             </li>
                             <li>
@@ -99,10 +96,12 @@ font-size: 16px;">
                                     <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
                                         <a href="/comp" class="btn btn-danger square-btn-adjust">back</a>
                                         </div>
+                                        ::before
                                     <div class="col-md-6">
                                         <h3>Add component</h3>
                                         <form role="form"  method="post" action="{{route('comp.store')}}" >
                                             {{ csrf_field() }}
+
                                             <div class="form-group">
                                                 <label>component_Name</label>
                                                 <input class="form-control" type="text" name="component_Name">
@@ -111,27 +110,15 @@ font-size: 16px;">
                                                 <button type="submit" class="btn btn-primary btn-sm">create</button>
                                             </div>
                                         </form>
+                            </div>
                         </div>
                     </div>
-                     <!-- End  Kitchen Sink -->
-                </div>
                 </div>
             </div>
-
-                    </div>
-                </div>
-            </div>     <!-- /. ROW  -->
-    </div>
-    </div>
-
-</body>
-             <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
         </div>
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
+    </div>
+</div>     
+</body>
     <script src="../assets/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->
     <script src="../assets/js/bootstrap.min.js"></script>

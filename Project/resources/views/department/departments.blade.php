@@ -33,7 +33,7 @@ float: right;
 font-size: 16px;">
     <button class="btn btn-danger square-btn-adjust" type="submit">Logout</button>
     @auth
-    <p>เข้าระบบแล้ว{{ Auth::user()->Fname }}</p>
+    <label>เข้าระบบแล้ว{{ Auth::user()->Fname }}</label>
     @endauth
     <form action="/logout" method="POST">
         @csrf
@@ -50,9 +50,6 @@ font-size: 16px;">
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{ route('dep.index')}}">Departments</a>
-                            </li>
-                            <li>
-                                <a href="/admin">Admin</a>
                             </li>
                             <li>
                                 <a href="/emp">Employees</a>

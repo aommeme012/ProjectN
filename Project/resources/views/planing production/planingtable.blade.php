@@ -46,9 +46,7 @@ font-size: 16px;">
                             <li>
                                 <a href="{{ route('dep.index')}}">Departments</a>
                             </li>
-                            <li>
-                                <a href="/admin">Admin</a>
-                            </li>
+                            
                             <li>
                                 <a href="/emp">Employees</a>
                             </li>

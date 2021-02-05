@@ -48,9 +48,6 @@ font-size: 16px;">
                                 <a href="{{ route('dep.index')}}">Departments</a>
                             </li>
                             <li>
-                                <a href="/admin">Admin</a>
-                            </li>
-                            <li>
                                 <a href="/emp">Employees</a>
                             </li>
                             <li>
@@ -102,11 +99,13 @@ font-size: 16px;">
                             <a href="/Purback" class="btn btn-danger square-btn-adjust">TablePurchaseOder</a>
                         </div>
                         <div class="panel-body">
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <h3>Purchase</h3>
                                         <form role="form"  method="post" action="{{route('Pur.store')}}">
                                             {{ csrf_field() }}
+                                            <hr>
                                             <div class="form-group">
                                                 <label>Purchase_Date</label>
                                                 <input class="form-control" type="Date" name="Purchase_Date">
@@ -128,8 +127,9 @@ font-size: 16px;">
                                                 </select>
                                             </div>
 
-                                            <button  class="btn btn-primary btn-sm" id="add-more" type="button">AddDetail</button>
-                                    
+                                            <button  class="btn btn-warning" id="add-more" type="button">AddDetail</button>
+                                            <h3>DetailPurchase</h3>
+                                            <hr>
                                             <div class="form-group" id="form-line">
                                              <label>Material</label>
                                                     <select class="form-control" name="Material_Id[0]">
