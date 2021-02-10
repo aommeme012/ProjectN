@@ -101,9 +101,6 @@ font-size: 16px;">
                                             <th>Purchase_Date</th>
                                             <th>Emp_Id</th>
                                             <th>Partner_Id</th>
-                                            <th></th>
-                                            <th></th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -113,16 +110,6 @@ font-size: 16px;">
                                             <td>{{$Pur->Purchase_Date}}</td>
                                             <td>{{$Pur->Emp_Id}}</td>
                                             <td>{{$Pur->Partner_Id}}</td>
-                                            <td>
-                                                <a href="{{ route('Pur.edit',[$Pur->Purchase_Id])}}" class="btn btn-warning btn-sm">Edit</a>
-                                            </td>
-                                            <td>
-                                                <form class="form-inline" method="post" action="{{route('Pur.destroy',[$Pur->Purchase_Id])}}" enctype="multipart/form-data">
-                                                    {{ csrf_field() }}
-                                                    @method('delete')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                                </form>
-                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

@@ -98,7 +98,7 @@ font-size: 16px;">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <h3>component detail</h3>
-                                    <a href="{{ route('comde.create')}}" class="btn btn-primary btn-sm">Add component detail</a>
+                                    <a href="{{ route('comp.create')}}" class="btn btn-primary btn-sm">Add component detail</a>
 
                                     <thead>
                                         <tr>

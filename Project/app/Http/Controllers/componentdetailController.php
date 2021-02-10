@@ -39,17 +39,21 @@ class componentdetailController extends Controller
     }
     public function edit($id)
     {
-        $comde = componentdetail::find($id);
-        $mats = Materials::all();
-        $comps = component::all();
-        return view('componentdetail.edit_componentdetail',compact('comde','mats','comps'));
+        // $component = component::findorFail($id);
+        // $comde = componentdetail::
+        //     join('materials','componentdetails.Material_Id','=','materials.Material_Id')
+        //     ->join('components','componentdetails.component_Id','=','components.component_Id')
+        //     ->where('componentdetails.component_Id',$id)->get();
+        // $mats = Materials::all();
+        // //return $comde;
+        // return view('component.edit_component',compact('component','comde','mats'));
     }
     public function update(Request $request, $id)
     {
-        $update=componentdetail::findorFail($id);
-        $update->update($request->all());
+        // $update=componentdetail::findorFail($id);
+        // $update->update($request->all());
 
-        return redirect('/comde');
+        // return redirect('/comde');
     }
     public function destroy($id)
     {
