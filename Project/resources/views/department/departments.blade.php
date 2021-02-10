@@ -31,6 +31,7 @@
 padding: 15px 50px 5px 50px;
 float: right;
 font-size: 16px;">
+<<<<<<< Updated upstream
     <button class="btn btn-danger square-btn-adjust" type="submit">Logout</button>
     @auth
     <label>เข้าระบบแล้ว{{ Auth::user()->Fname }}</label>
@@ -38,6 +39,15 @@ font-size: 16px;">
     <form action="/logout" method="POST">
         @csrf
     </form>
+=======
+@auth
+<p>เข้าระบบแล้ว{{ Auth::user()->Fname }}</p>
+@endauth
+<form action="/logout" method="POST">
+    @csrf
+    <button class="btn btn-danger square-btn-adjust" type="submit">Logout</button>
+</form>
+>>>>>>> Stashed changes
         </nav>
            <nav class="navbar-default navbar-side" role="navigation">
             <br>

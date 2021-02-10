@@ -25,8 +25,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Synthetic Stone</a>
+                <a class="navbar-brand" >Synthetic Stone</a>
             </div>
+
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
@@ -41,10 +42,10 @@ font-size: 16px;">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
                     <li>
-                        <a class="active-menu" href="#"><i class="fa fa-sitemap fa-3x"></i> Manage data<span class="fa arrow"></span></a>
+                        <a class="active-menu"> <i class="fa fa-sitemap fa-3x"></i> Manage data<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/dep">Departments</a>
+                                <a href="{{ route('dep.index')}}">Departments</a>
                             </li>
                             <li>
                                 <a href="/emp">Employees</a>
@@ -91,45 +92,70 @@ font-size: 16px;">
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
+                        <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
+                            <a href="/Pdet" class="btn btn-danger square-btn-adjust">Detail</a>
+                        </div>
                         <div class="panel-body">
-                                <div class="row">
-                                    <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                        <a href="/comp" class="btn btn-danger square-btn-adjust">back</a>
-                                        </div>
-                                        ::before
-                                    <div class="col-md-6">
-                                        <h3>Add component</h3>
-                                        <form role="form"  method="post" action="{{route('comp.store')}}" >
-                                            {{ csrf_field() }}
 
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3>component</h3>
+                                        <form role="form"  method="post" action="{{route('comp.store')}}">
+                                            {{ csrf_field() }}
+                                            <hr>
                                             <div class="form-group">
                                                 <label>component_Name</label>
                                                 <input class="form-control" type="text" name="component_Name">
                                             </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-sm">create</button>
+                                            <button  class="btn btn-warning" id="add-more" type="button">AddDetail</button>
+                                            <h3>DetailComponent</h3>
+                                            <hr>
+                                            <div class="form-group" id="form-line">
+                                             <label>Material</label>
+                                                    <select class="form-control" name="Material_Id[0]">
+                                                        @foreach ($mats as $mat)
+                                                            <option value="{{$mat->Material_Id}}">
+                                                            {{$mat->Material_Name}}
+                                                            </option>
+                                                            @endforeach
+                                                    </select>
+                                            <label>Comde_Amount</label>
+                                            <input class="form-control" type="Number" name="Comde_Amount[0]">
                                             </div>
-                                        </form>
-                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-sm" >create</button>
+                                    </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>     
-</body>
-    <script src="../assets/js/jquery-1.10.2.js"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="../assets/js/jquery.metisMenu.js"></script>
-     <!-- MORRIS CHART SCRIPTS -->
-     <script src="../assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="../assets/js/morris/morris.js"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="../assets/js/custom.js"></script>
 
-
+        <script src="{{asset('/assets/js/jquery-1.10.2.js')}}"></script>
+        <script src="{{asset('/assets/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('/assets/js/jquery.metisMenu.js')}}"></script>
+        <script src="{{asset('/assets/js/morris/raphael-2.1.0.min.js')}}"></script>
+        <script src="{{asset('/assets/js/morris/morris.js')}}"></script>
+        <script src="{{asset('/assets/js/custom.js')}}"></script>
+        <script src="/assets/js/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function(){
+            var i = 1;
+            $('#add-more').click(function(){
+                $('#form-line').append(" <label>Material</label>"+
+                "<select class=\"form-control\" name=\"Material_Id["+i+"]\">"+
+                "@foreach ($mats as $mat)"+
+                "<option value=\"{{$mat->Material_Id}}\">"+
+                "{{$mat->Material_Name}}"+
+                "</option>"+
+                "@endforeach"+
+                "</select>"+
+                "<label>Comde_Amount</label>"+
+                "<input class=\"form-control\" type=\"Number\" name=\"Comde_Amount["+i+"]\">");
+                i++;
+            });
+        });
+    </script>
 </body>
 </html>
