@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\component;
 use App\componentdetail;
 use App\Materials;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\View\Component as ViewComponent;
 
@@ -61,15 +62,32 @@ class componentController extends Controller
             ->join('components','componentdetails.component_Id','=','components.component_Id')
             ->where('componentdetails.component_Id',$id)->get();
         $mats = Materials::all();
+        // return $comde;
         //return $comde;
         return view('component.edit_component',compact('component','comde','mats'));
     }
 
     public function update(Request $request, $id)
     {
+        //return $request;
         $update=component::findorFail($id);
         $update->update($request->all());
 
+        for($i = 0; $i < count($request->Material_Id);$i++){
+            if(isset($request->Comde_Id[$i])){
+               // return "hi";
+                DB::table('componentdetails')->where('Comde_Id',$request->Comde_Id[$i])->update([
+                    'Material_Id' => $request->Material_Id[$i],
+                    'Comde_Amount' => $request->Comde_Amount[$i],
+                ]);
+            } else{
+                componentdetail::create([
+                    'Material_Id' => $request->Material_Id[$i],
+                    'Comde_Amount' => $request->Comde_Amount[$i],
+                    'component_Id' => $id,
+                ]);
+            }
+        }
         return redirect('/comp');
     }
 

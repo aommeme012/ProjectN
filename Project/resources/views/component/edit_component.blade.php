@@ -100,8 +100,9 @@ font-size: 16px;">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <h3>component</h3>
-                                        <form role="form"  method="post" action="{{route('comp.store')}}">
+                                        <form role="form"  method="post" action="{{route('comp.update',[$component->component_Id])}}">
                                             {{ csrf_field() }}
+                                            @method("put")
                                             <hr>
                                             <div class="form-group">
                                                 <label>component_Name</label>
@@ -133,28 +134,24 @@ font-size: 16px;">
                                             <button  class="btn btn-warning" id="add-more" type="button">AddDetail</button>
                                             <h3>DetailComponent</h3>
                                             <hr>
+                                            @foreach ($comde as $comdetail)
                                             <div class="form-group" id="form-line">
+                                            <input type="hidden" name='Comde_Id[]' value="{{$comdetail->Comde_Id}}">
                                              <label>Material</label>
-                                                    <select class="form-control" name="Material_Id[0]" >
-                                                        @foreach ($comde as $com)
-                                                        <option value="{{$com->Material_Id}}">
-                                                            {{$com->Material_Name}}
-                                                            </option>
-                                                        @endforeach
+                                                    <select class="form-control" name="Material_Id[]" >
                                                         @foreach ($mats as $mat)
-                                                            <option value="{{$mat->Material_Id}}">
+                                                        <option value="{{$mat->Material_Id}}"{{($comdetail->Material_Id == $mat->Material_Id?'selected':'')}}>
                                                             {{$mat->Material_Name}}
                                                             </option>
                                                         @endforeach
                                                     </select>
-                                            @foreach ($comde as $com)
                                             <label>Comde_Amount</label>
-                                            <input class="form-control" type="Number" name="Comde_Amount[0]" value = "{{$com->Comde_Amount}}">
+                                            <input class="form-control" type="Number" name="Comde_Amount[]" value = "{{$comdetail->Comde_Amount}}">
                                             </div>
+                                            @endforeach
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-warning btn-sm">edit</button>
                                             </div>
-                                            @endforeach
                                         </form>
                                 </div>
                         </div>
