@@ -114,16 +114,6 @@ font-size: 16px;">
                                             <td>{{$Rec->Emp_Id}}</td>
                                             <td>{{$Rec->Purchase_Id}}</td>
                                             <td>{{$Rec->Receive_Amount}}</td>
-                                            <td>
-                                                <a href="{{ route('Rec.edit',[$Rec->Receive_Id])}}" class="btn btn-warning btn-sm">Edit</a>
-                                            </td>
-                                            <td>
-                                                <form class="form-inline" method="post" action="{{route('Rec.destroy',[$Rec->Receive_Id])}}">
-                                                    {{ csrf_field() }}
-                                                    @method('delete')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                                </form>
-                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

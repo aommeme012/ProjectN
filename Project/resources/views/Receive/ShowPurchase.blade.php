@@ -101,39 +101,40 @@ font-size: 16px;">
                                             <th>Purchase_Date</th>
                                             <th>Emp_Id</th>
                                             <th>Partner_Id</th>
+                                            <th>Purchase_Status</th>
                                             <th></th>
                                         </tr>
                                     </thead>
+                                    @foreach ($receive as $Rec)
+                                    <form role="form"  method="post" action="{{route('Rec.update',[$Rec->Purchase_Id])}}" >
+                                        {{ csrf_field() }}
+                                        @method('put')
                                     <tbody>
-                                        @foreach ($Recs as $Rec)
+
                                         <tr>
                                             <td>{{$Rec->Purchase_Id}}</td>
                                             <td>{{$Rec->Purchase_Date}}</td>
                                             <td>{{$Rec->Emp_Id}}</td>
                                             <td>{{$Rec->Partner_Id}}</td>
-                                        </form>
-                                        <td>
-                                            <a href="{{ route('Rec.show',[$Rec->Purchase_Id])}}" class="btn btn-warning btn-sm">Receives</a>
-                                        </td>
-                                    </td>
-                                </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                            <td>{{$Rec->Purchase_Status}}</td>
 
-                            </div>
+                                        <td>
+                                            <button type="submit" class="btn btn-warning btn-sm">receive</button>
+                                        </td>
+                                    </form>
+
+
+                                        @endforeach
+                                </tbody>
+                            </table>
                         </div>
+
                     </div>
-                     <!-- End  Kitchen Sink -->
-                </div>
                 </div>
             </div>
-                    </div>
-                </div>
-            </div>     <!-- /. ROW  -->
+        </div>
     </div>
-    </div>
-
+</div>
 </body>
              <!-- /. PAGE INNER  -->
             </div>

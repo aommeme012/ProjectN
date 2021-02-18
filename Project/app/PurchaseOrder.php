@@ -12,6 +12,7 @@ class PurchaseOrder extends Model
     protected $fillable = [
         'Purchase_Date',
         'Emp_Id',
+        'Purchase_Status',
         'Partner_Id',
     ];
 }

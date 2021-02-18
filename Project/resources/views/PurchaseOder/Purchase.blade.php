@@ -101,6 +101,7 @@ font-size: 16px;">
                                             <th>Purchase_Date</th>
                                             <th>Emp_Id</th>
                                             <th>Partner_Id</th>
+                                            <th>Purchase_Status<th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -110,6 +111,7 @@ font-size: 16px;">
                                             <td>{{$Pur->Purchase_Date}}</td>
                                             <td>{{$Pur->Emp_Id}}</td>
                                             <td>{{$Pur->Partner_Id}}</td>
+                                            <td>{{$Pur->Purchase_Status}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

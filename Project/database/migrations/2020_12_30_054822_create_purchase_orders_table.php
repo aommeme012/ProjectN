@@ -16,6 +16,7 @@ class CreatePurchaseOrdersTable extends Migration
         Schema::create('purchase_orders', function (Blueprint $table) {
             $table->bigincrements('Purchase_Id', 5);
             $table->date('Purchase_Date');
+            $table->String('Purchase_Status', 10)->default('Enable');
             $table->unsignedBigInteger('Emp_Id');
             $table->foreign('Emp_Id')->references('Emp_Id')->on('employees')->ondelete('cascade');
             $table->unsignedBigInteger('Partner_Id');
