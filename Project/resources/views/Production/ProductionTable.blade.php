@@ -4,15 +4,10 @@
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Synthetic Stone</title>
-	<!-- BOOTSTRAP STYLES-->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
-     <!-- FONTAWESOME STYLES-->
-    <link href="/assets/css/font-awesome.css" rel="stylesheet" />
-     <!-- MORRIS CHART STYLES-->
-    <link href="/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
-        <!-- CUSTOM STYLES-->
-    <link href="/assets/css/custom.css" rel="stylesheet" />
-     <!-- GOOGLE FONTS-->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="../assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="../assets/css/custom.css" rel="stylesheet" />
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
@@ -33,7 +28,6 @@ float: right;
 font-size: 16px;">
 <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>
-           <!-- /. NAV TOP  -->
            <nav class="navbar-default navbar-side" role="navigation">
             <br>
             <div class="sidebar-collapse">
@@ -44,7 +38,7 @@ font-size: 16px;">
                         <a  href="#"><i class="fa fa-sitemap fa-3x"></i> Manage data<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/dep">Departments</a>
+                                <a href="{{ route('dep.index')}}">Departments</a>
                             </li>
                             <li>
                                 <a href="/emp">Employees</a>
@@ -73,7 +67,6 @@ font-size: 16px;">
                         <ul class="nav" id="main-menu">
                         <div class="sidebar-collapse">
                             <ul class="nav" id="main-menu">
-                            <ul class="nav" id="main-menu">
                                 <li>
                                     <a  href="/Pur"><i class="fa fa-square-o fa-3x"></i> PurchaseOder</a>
                                 </li>
@@ -86,68 +79,51 @@ font-size: 16px;">
                 </ul>
             </div>
         </nav>
-        <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel-body">
-                                <div class="row">
-                                    <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                        <a href="/Rec" class="btn btn-danger square-btn-adjust">back</a>
-                                        </div>
-                                    <div class="col-md-6">
-                                        <h3>Receive</h3>
-                                        <form role="form"  method="post" action="{{route('Rec.store')}}">
-                                            {{ csrf_field() }}
-                                            <div class="form-group">
-                                            <label>Receive_Date</label>
-                                            <input class="form-control" type="Date" name="Receive_Date" >
-                                            <label>Employees</label>
-                                            <input class="form-control"  type="text" name="Emp_Id" value="{{$emps}}">
-                                            <label>Purchase</label>
-                                            <input class="form-control"  type="text" name="Purchase_Id" value="{{$Purc}}">
-                                            <label>Receive_Amount</label>
-                                            <input class="form-control" type="Number" name="Receive_Amount"value="{{$Pdets}}">
-                                        </div>
-                                    </div>
-                                </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-sm" >Receive</button>
-                                            </div>
-                                        </form>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <h3>Production</h3>
+                                    <a href="{{ route('P.index')}}" class="btn btn-primary btn-sm">Production</a>
+                                    <thead>
+                                        <tr>
+                                            <th>Production_Id</th>
+                                            <th>Production_Date</th>
+                                            <th>Production_Status</th>
+                                            <th>Requismat_Id</th>
+                                            <th>Emp_Id</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($Production as $P)
+                                        <tr>
+                                            <td>{{$P->Production_Id}}</td>
+                                            <td>{{$P->Production_Date}}</td>
+                                            <td>{{$P->Production_Status}}</td>
+                                            <td>{{$P->Requismat_Id}}</td>
+                                            <td>{{$P->Emp_Id}}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                         </div>
                     </div>
-                     <!-- End  Kitchen Sink -->
-                </div>
                 </div>
             </div>
-
-                    </div>
-                </div>
-            </div>     <!-- /. ROW  -->
-    </div>
-    </div>
-
-</body>
-             <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
         </div>
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="/assets/js/jquery-1.10.2.js"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="/assets/js/jquery.metisMenu.js"></script>
-     <!-- MORRIS CHART SCRIPTS -->
-     <script src="/assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="/assets/js/morris/morris.js"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="/assets/js/custom.js"></script>
-
-
+    </div>
+</div>
+</body>
+    <script src="../assets/js/jquery-1.10.2.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.metisMenu.js"></script>
+     <script src="../assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="../assets/js/morris/morris.js"></script>
+    <script src="../assets/js/custom.js"></script>
 </body>
 </html>

@@ -17,6 +17,7 @@ class CreateProductionPlanningsTable extends Migration
             $table->bigincrements('Plan_Id');
             $table->date('Plan_Date');
             $table->integer('Amount');
+            $table->String('Planning_Status', 10)->default('Enable');
             $table->unsignedBigInteger('component_Id');
             $table->foreign('component_Id')->references('component_Id')->on('components')->ondelete('cascase');
             $table->unsignedBigInteger('Product_Id');

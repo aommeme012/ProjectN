@@ -14,5 +14,6 @@ class ProductionPlanning extends Model
         'Amount',
         'component_Id',
         'Product_Id',
+        'Planning_Status',
     ];
 }

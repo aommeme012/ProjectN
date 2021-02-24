@@ -118,28 +118,14 @@ font-size: 16px;">
                                         @endforeach
                                     </tbody>
                                 </table>
-                            </div>
                         </div>
                     </div>
-                     <!-- End  Kitchen Sink -->
-                </div>
                 </div>
             </div>
-
-                    </div>
-                </div>
-            </div>     <!-- /. ROW  -->
-    </div>
-    </div>
-
-</body>
-             <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
         </div>
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
+    </div>
+</div>
+</body>
     <script src="../assets/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->
     <script src="../assets/js/bootstrap.min.js"></script>

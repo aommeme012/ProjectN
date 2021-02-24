@@ -35,19 +35,14 @@ class ProductionPlanningController extends Controller
     }
     public function edit($id)
     {
-        $emp = ProductionPlanning::find($id);
-        return view('employee.edit_employees',compact('emp','deps'));
+        //
     }
     public function update(Request $request, $id)
     {
-        $update=ProductionPlanning::findorFail($id);
-        $update->update($request->all());
-
-        return redirect('/emp');
+        //
     }
     public function destroy($id)
     {
-        ProductionPlanning::find($id)->delete();
-        return redirect('/emp');
+        //
     }
 }

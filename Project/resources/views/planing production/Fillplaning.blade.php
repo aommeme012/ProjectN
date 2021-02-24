@@ -83,6 +83,9 @@ font-size: 16px;">
                                 <li>
                                     <a class="active-menu" href="/Planing"><i class="fa fa-square-o fa-3x"></i> ProductionPlaning</a>
                                 </li>
+                                <li>
+                                    <a  href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> RequisitionMaterial</a>
+                                </li>
                 </ul>
             </div>
         </nav>
@@ -130,25 +133,11 @@ font-size: 16px;">
                                         </form>
                         </div>
                     </div>
-                     <!-- End  Kitchen Sink -->
-                </div>
                 </div>
             </div>
-
-                    </div>
-                </div>
-            </div>     <!-- /. ROW  -->
-    </div>
-    </div>
-
-</body>
-             <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
         </div>
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
+    </div>
+</body>
     <script src="../assets/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->
     <script src="../assets/js/bootstrap.min.js"></script>

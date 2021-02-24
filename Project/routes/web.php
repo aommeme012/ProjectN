@@ -14,6 +14,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\RequisitionMaterial;
 use Illuminate\Support\Facades\Auth;
 
 //Route::get('/','departmentsController@index');
@@ -50,6 +51,8 @@ Route::resource('Rec', 'ReceiveController');
 Route::resource('Pdet', 'purchaseorderdetailController');
 
 Route::resource('Plan', 'ProductionPlanningController');
+
+Route::resource('RequiMM','RequisitionMaterialController');
 
 Auth::routes();
 

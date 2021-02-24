@@ -41,12 +41,11 @@ font-size: 16px;">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
                     <li>
-                        <a><i class="fa fa-sitemap fa-3x"></i> Manage data<span class="fa arrow"></span></a>
+                        <a  href="#"><i class="fa fa-sitemap fa-3x"></i> Manage data<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{ route('dep.index')}}">Departments</a>
                             </li>
-
                             <li>
                                 <a href="/emp">Employees</a>
                             </li>
@@ -74,7 +73,6 @@ font-size: 16px;">
                         <ul class="nav" id="main-menu">
                         <div class="sidebar-collapse">
                             <ul class="nav" id="main-menu">
-                            <ul class="nav" id="main-menu">
                                 <li>
                                     <a  href="/Pur"><i class="fa fa-square-o fa-3x"></i> PurchaseOder</a>
                                 </li>
@@ -82,10 +80,10 @@ font-size: 16px;">
                                     <a  href="/Rec"><i class="fa fa-square-o fa-3x"></i> Receives</a>
                                 </li>
                                 <li>
-                                    <a class="active-menu" href="/Planing"><i class="fa fa-square-o fa-3x"></i> ProductionPlaning</a>
+                                    <a  href="/Planing"><i class="fa fa-square-o fa-3x"></i> ProductionPlaning</a>
                                 </li>
                                 <li>
-                                    <a  href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> RequisitionMaterial</a>
+                                    <a class="active-menu" href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> RequisitionMaterial</a>
                                 </li>
                 </ul>
             </div>
@@ -98,8 +96,7 @@ font-size: 16px;">
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
-                                    <h3>Plan</h3>
-                                    <a href="{{ route('Plan.create')}}" class="btn btn-primary btn-sm">......</a>
+                                    <h3>ProductionPlanning  </h3>
                                     <thead>
                                         <tr>
                                             <th>Plan_Id</th>
@@ -109,40 +106,39 @@ font-size: 16px;">
                                             <th>component_Id</th>
                                             <th>Product_Id</th>
                                             <th></th>
-                                            <th></th>
-
                                         </tr>
                                     </thead>
+                                    @foreach ($RequiM as $RequiMM)
+                                    <form role="form"  method="post" action="{{route('RequiMM.update',[$RequiMM->Plan_Id])}}" >
+                                        {{ csrf_field() }}
+                                        @method('put')
                                     <tbody>
-                                        @foreach ($Plans as $Plan)
+
                                         <tr>
-                                            <td>{{$Plan->Plan_Id}}</td>
-                                            <td>{{$Plan->Plan_Date}}</td>
-                                            <td>{{$Plan->Amount}}</td>
-                                            <td>{{$Plan->Planning_Status}}</td>
-                                            <td>{{$Plan->component_Id}}</td>
-                                            <td>{{$Plan->Product_Id}}</td>
-                                            <td>
-                                                <a href="{{ route('Plan.edit',[$Plan->Plan_Id])}}" class="btn btn-warning btn-sm">Edit</a>
-                                            </td>
-                                            <td>
-                                                <form class="form-inline" method="post" action="{{route('Plan.destroy',[$Plan->Plan_Id])}}">
-                                                    {{ csrf_field() }}
-                                                    @method('delete')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
+                                            <td>{{$RequiMM->Plan_Id}}</td>
+                                            <td>{{$RequiMM->Plan_Date}}</td>
+                                            <td>{{$RequiMM->Amount}}</td>
+                                            <td>{{$RequiMM->Planning_Status}}</td>
+                                            <td>{{$RequiMM->component_Id}}</td>
+                                            <td>{{$RequiMM->Product_Id}}</td>
+
+                                        <td>
+                                            <button type="submit" class="btn btn-warning btn-sm">Requisition</button>
+                                        </td>
+                                    </form>
+
+
                                         @endforeach
-                                    </tbody>
-                                </table>
+                                </tbody>
+                            </table>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
- </div>
+</div>
 </body>
     <script src="../assets/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->

@@ -97,7 +97,7 @@ font-size: 16px;">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <h3>Receive</h3>
-                                    <a href="{{ route('Rec.index')}}" class="btn btn-primary btn-sm">Receive</a>
+                                    <a href="{{ route('RequiMM.index')}}" class="btn btn-primary btn-sm">Requisition</a>
                                     <thead>
                                         <tr>
                                             <th>Requismat_Id</th>
@@ -105,28 +105,16 @@ font-size: 16px;">
                                             <th>Requismat_Amount</th>
                                             <th>Material_Id</th>
                                             <th>Plan_Id</th>
-                                            <th></th>
-                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($RequiM as $Rec)
+                                        @foreach ($RequiM as $RequiMM)
                                         <tr>
-                                            <td>{{$Rec->Receive_Id}}</td>
-                                            <td>{{$Rec->Receive_Date}}</td>
-                                            <td>{{$Rec->Emp_Id}}</td>
-                                            <td>{{$Rec->Purchase_Id}}</td>
-                                            <td>{{$Rec->Receive_Amount}}</td>
-                                            <td>
-                                                <a href="{{ route('Rec.edit',[$Rec->Receive_Id])}}" class="btn btn-warning btn-sm">Edit</a>
-                                            </td>
-                                            <td>
-                                                <form class="form-inline" method="post" action="{{route('Rec.destroy',[$Rec->Receive_Id])}}">
-                                                    {{ csrf_field() }}
-                                                    @method('delete')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                                </form>
-                                            </td>
+                                            <td>{{$RequiMM->Requismat_Id}}</td>
+                                            <td>{{$RequiMM->Requismat_Date}}</td>
+                                            <td>{{$RequiMM->Requismat_Amount}}</td>
+                                            <td>{{$RequiMM->Material_Id}}</td>
+                                            <td>{{$RequiMM->Plan_Id}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -134,30 +122,16 @@ font-size: 16px;">
                             </div>
                         </div>
                     </div>
-                     <!-- End  Kitchen Sink -->
                 </div>
             </div>
         </div>
 </div>
-
-                 <!-- /. ROW  -->
 </body>
-             <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
-        </div>
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
     <script src="../assets/js/jquery-1.10.2.js"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
     <script src="../assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
     <script src="../assets/js/jquery.metisMenu.js"></script>
-     <!-- MORRIS CHART SCRIPTS -->
      <script src="../assets/js/morris/raphael-2.1.0.min.js"></script>
     <script src="../assets/js/morris/morris.js"></script>
-      <!-- CUSTOM SCRIPTS -->
     <script src="../assets/js/custom.js"></script>
 
 
