@@ -6,6 +6,7 @@ use App\Materials;
 use App\ProductionPlanning;
 use App\RequisitionMaterial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RequisitionMaterialController extends Controller
 {
@@ -13,7 +14,7 @@ class RequisitionMaterialController extends Controller
     {
         $RequiM = ProductionPlanning::all();
 
-        return view('RequisitionMaterials.ShowPlan' , compact('RequiM'));
+        return view('RequisitionMaterials.ShowPlan', compact('RequiM'));
     }
     public function create()
     {
@@ -31,30 +32,33 @@ class RequisitionMaterialController extends Controller
     {
         //
     }
-    public function update(Request $request , $id)
+    public function update(Request $request, $id)
     {
-        $RequisitionMaterial =  ProductionPlanning::
-        join('componentdetails','componentdetails.component_Id','=','production_plannings.component_Id')
-        ->join('materials','materials.Material_Id','=','componentdetails.Material_Id')
-        ->where('production_plannings.Plan_Id', $id)->first();
 
-        $c = $RequisitionMaterial-> Amount * $RequisitionMaterial->Comde_Amount;
+        $RequisitionMaterial =  ProductionPlanning::join('componentdetails', 'componentdetails.component_Id', '=', 'production_plannings.component_Id')
+            ->join('materials', 'materials.Material_Id', '=', 'componentdetails.Material_Id')
+            ->select(DB::raw('*, FLOOR(materials.Material_Amount/componentdetails.Comde_Amount) as balance'))
+            ->where('production_plannings.Plan_Id', $id)->orderBy('balance', 'ASC')->get();
 
-        RequisitionMaterial::create([
-            'Requismat_Date' => today(),
-            'Requismat_Amount' => $c,
-            'Material_Id' => $id,
-            'Plan_Id' => $id,
-        ]);
+        if ($RequisitionMaterial[0]->Amount <= $RequisitionMaterial[0]->balance) {
+            foreach ($RequisitionMaterial as $R) {
+                $c = $R->Amount * $R->Comde_Amount;
+                RequisitionMaterial::create([
+                    'Requismat_Date' => today(),
+                    'Requismat_Amount' => $c,
+                    'Material_Id' => $R->Material_Id,
+                    'Plan_Id' => $id,
+                ]);
+                Materials::find($R['Material_Id'])->update([
+                    'Material_Amount' => $R->Material_Amount - $c
+                ]);
+            }
+            return back()->with('success','สั่งผลิตสำเร็จ');
+        }
 
-        $update = Materials::find($RequisitionMaterial['Material_Id']);
-        $update->update([
-         'Material_Amount' => $RequisitionMaterial->Material_Amount - $c
-        ]);
-
-        return redirect()->back();
-
-
+        else{
+            return back()->with('fail','ไม่สำเร็จ');
+        }
     }
     public function destroy($id)
     {

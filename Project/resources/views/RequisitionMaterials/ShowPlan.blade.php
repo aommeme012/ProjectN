@@ -123,7 +123,7 @@ font-size: 16px;">
                                             <td>{{$RequiMM->Product_Id}}</td>
 
                                         <td>
-                                            <button type="submit" class="btn btn-warning btn-sm">Requisition</button>
+                                            <button type="submit" class="btn btn-warning btn-sm" onclick="Requisition();">Requisition</button>
                                         </td>
                                     </form>
 
@@ -150,7 +150,18 @@ font-size: 16px;">
     <script src="../assets/js/morris/morris.js"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="../assets/js/custom.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function Requisition(){
 
+        }
+        @if(session('success'))
+            swal("{{session('success')}}");
+        @endif
+        @if(session('fail'))
+            swal("{{session('fail')}}");
+        @endif
 
+    </script>
 </body>
 </html>
