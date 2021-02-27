@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +11,9 @@
     <link href="{{asset('/assets/js/morris/morris-0.4.3.min.css')}}" rel="stylesheet" />
     <link href="{{asset('/assets/css/custom.css')}}" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='/stylesheet' type='text/css' />
+
 </head>
+
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
@@ -25,7 +26,6 @@
                 </button>
                 <a class="navbar-brand">Synthetic Stone</a>
             </div>
-
             <div style="color: white;
                 padding: 15px 50px 5px 50px;
                 float: right;
@@ -34,7 +34,6 @@
             </div>
         </nav>
         <nav class="navbar-default navbar-side" role="navigation">
-            <br>
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>

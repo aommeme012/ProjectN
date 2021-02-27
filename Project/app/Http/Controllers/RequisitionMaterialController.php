@@ -53,11 +53,11 @@ class RequisitionMaterialController extends Controller
                     'Material_Amount' => $R->Material_Amount - $c
                 ]);
             }
-            return back()->with('success','สั่งผลิตสำเร็จ');
+            return back()->with('success','เบิกวัตถุดิบเสร็จสิน');
         }
 
         else{
-            return back()->with('fail','ไม่สำเร็จ');
+            return back()->with('fail','เบิกวัตถุดิบไม่สำเร็จ');
         }
     }
     public function destroy($id)
