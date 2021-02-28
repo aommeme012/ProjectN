@@ -32,7 +32,7 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a class="active-menu" > <i class="fa fa-sitemap fa-3x"></i> Manage data<span
+                        <a  > <i class="fa fa-sitemap fa-3x"></i> Manage data<span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -70,8 +70,7 @@
                         <a href="/Rec"><i class="fa fa-square-o fa-3x"></i> Receives</a>
                     </li>
                     <li>
-                        <a href="/Planing"><i class="fa fa-square-o fa-3x"></i>
-                            ProductionPlaning</a>
+                        <a class="active-menu" href="/Planing"><i class="fa fa-square-o fa-3x"></i> ProductionPlaning</a>
                     </li>
                     <li>
                         <a  href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> RequisitionMaterial</a>
@@ -86,7 +85,7 @@
     <script src="{{asset('assets/js/morris/morris.js')}}"></script>
     <script src="{{asset('assets/js/custom.js')}}"></script>
     <script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
-        @yield('component')
+        @yield('Planing')
     </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
+      <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Synthetic Stone</title>
     <link href="{{asset('/assets/css/bootstrap.css')}}" rel="stylesheet" />
@@ -20,20 +20,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">Synthetic Stone</a>
+                <a class="navbar-brand" href="index.html">Synthetic Stone</a>
             </div>
-            <div style="color: white;
-                padding: 15px 50px 5px 50px;
-                float: right;
-                font-size: 16px;">
-            </div>
+  <div style="color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;">
         </nav>
-        <nav class="navbar-default navbar-side" role="navigation">
+           <nav class="navbar-default navbar-side" role="navigation">
+            <br>
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
                     <li>
-                        <a class="active-menu" > <i class="fa fa-sitemap fa-3x"></i> Manage data<span
-                                class="fa arrow"></span></a>
+                        <a  href="#"><i class="fa fa-sitemap fa-3x"></i> Manage data<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{ route('dep.index')}}">Departments</a>
@@ -60,33 +61,33 @@
                                 <a href="/comde">component detail</a>
                             </li>
                         </ul>
-            </div>
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li>
-                        <a href="/Pur"><i class="fa fa-square-o fa-3x"></i> PurchaseOder</a>
-                    </li>
-                    <li>
-                        <a href="/Rec"><i class="fa fa-square-o fa-3x"></i> Receives</a>
-                    </li>
-                    <li>
-                        <a href="/Planing"><i class="fa fa-square-o fa-3x"></i>
-                            ProductionPlaning</a>
-                    </li>
-                    <li>
-                        <a  href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> RequisitionMaterial</a>
-                    </li>
+                    </div>
+                    <div class="sidebar-collapse">
+                        <ul class="nav" id="main-menu">
+                        <div class="sidebar-collapse">
+                            <ul class="nav" id="main-menu">
+                                <li>
+                                    <a  href="/Pur"><i class="fa fa-square-o fa-3x"></i> PurchaseOder</a>
+                                </li>
+                                <li>
+                                    <a  href="/Rec"><i class="fa fa-square-o fa-3x"></i> Receives</a>
+                                </li>
+                                <li>
+                                    <a  href="/Planing"><i class="fa fa-square-o fa-3x"></i> ProductionPlaning</a>
+                                </li>
+                                <li>
+                                    <a class="active-menu" href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> RequisitionMaterial</a>
+                                </li>
                 </ul>
             </div>
         </nav>
-    <script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
-    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.metisMenu.js')}}"></script>
-    <script src="{{asset('assets/js/morris/raphael-2.1.0.min.js')}}"></script>
-    <script src="{{asset('assets/js/morris/morris.js')}}"></script>
-    <script src="{{asset('assets/js/custom.js')}}"></script>
-    <script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
-        @yield('component')
-    </div>
+<script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.metisMenu.js')}}"></script>
+<script src="{{asset('assets/js/morris/raphael-2.1.0.min.js')}}"></script>
+<script src="{{asset('assets/js/morris/morris.js')}}"></script>
+<script src="{{asset('assets/js/custom.js')}}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @yield('Requisitionmat')
 </body>
 </html>
