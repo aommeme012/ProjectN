@@ -54,6 +54,8 @@ Route::resource('Plan', 'ProductionPlanningController');
 
 Route::resource('RequiMM','RequisitionMaterialController');
 
+Route::resource('P','ProductionController');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

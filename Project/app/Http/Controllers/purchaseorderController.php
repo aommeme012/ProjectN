@@ -52,21 +52,14 @@ class purchaseorderController extends Controller
     }
     public function edit($id)
     {
-        $Purc = PurchaseOrder::find($id);
-        $emps = Employee::all();
-        $parts = Partner::all();
-        return view('Receive.Edit_Receives',compact('Purc','emps','parts'));
+        //
     }
     public function update(Request $request, $id)
     {
-        $update=PurchaseOrder::findorFail($id);
-        $update->update($request->all());
-
-        return redirect('/comde');
+        //
     }
     public function destroy($id)
     {
-        PurchaseOrder::find($id)->delete();
-        return redirect('/comde');
+        //
     }
 }
