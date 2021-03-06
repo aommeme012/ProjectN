@@ -26,6 +26,9 @@ Route::get('/Receive','ReceiveController@create');
 
 Route::get('/Planing','ProductionPlanningController@create');
 
+Route::get('/Protion', 'ProductionController@create');
+
+
 Route::resource('/dep', 'departmentsController');
 
 Route::resource('/part', 'PartnerController');

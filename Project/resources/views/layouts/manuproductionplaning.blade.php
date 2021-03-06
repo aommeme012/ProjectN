@@ -75,6 +75,9 @@
                     <li>
                         <a  href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> RequisitionMaterial</a>
                     </li>
+                    <li>
+                        <a  href="/P"><i class="fa fa-square-o fa-3x"></i> Production</a>
+                    </li>
                 </ul>
             </div>
         </nav>

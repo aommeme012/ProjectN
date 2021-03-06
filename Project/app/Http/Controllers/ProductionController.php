@@ -13,15 +13,15 @@ class ProductionController extends Controller
     public function index()
     {
         $Production = RequisitionMaterial::all();
-        return view('Production.Showrequisitionmat',compact('Production'));
+        return view('Production.Showrequisitionmat', compact('Production'));
     }
     public function create()
     {
-
+        $Production = Production::all();
+        return view('Production.ProductionTable', compact('Production'));
     }
     public function store(Request $request)
     {
-
     }
     public function show()
     {
@@ -34,17 +34,15 @@ class ProductionController extends Controller
     public function update(Request $request, $id)
     {
         $production = RequisitionMaterial::all();
-        foreach ($production as $productions) {
-            Production::create([
-                'Production_Date' => today(),
-                'Emp_Id' => Auth::user()->Emp_Id,
-                'Requismat_Id' => $id,
-            ]);
-        }
+
+        Production::create([
+            'Production_Date' => today(),
+            'Emp_Id' => Auth::user()->Emp_Id,
+            'Requismat_Id' => $id,
+        ]);
         Production::find($id)->update([
             'Production_Status' => 'กำลังผลิตอยู่'
         ]);
-
         return redirect('/P');
     }
     public function destroy($id)
