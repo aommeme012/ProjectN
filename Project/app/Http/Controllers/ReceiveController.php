@@ -52,8 +52,6 @@ class ReceiveController extends Controller
                 'Material_Amount' => $a->Material_Amount + $a->Pdetail_Amount
             ]);
         }
-
-
         PurchaseOrder::find($id)->update([
             'Purchase_Status' => 'Complete'
         ]);

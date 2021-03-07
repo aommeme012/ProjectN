@@ -16,7 +16,7 @@ class CreateProductionsTable extends Migration
         Schema::create('productions', function (Blueprint $table) {
             $table->bigincrements('Production_Id', 5);
             $table->date('Production_Date');
-            $table->string('Production_Status',10)->default('Enable');
+            $table->string('Production_Status',10)->default('กำลังผลิตอยู่');
             $table->unsignedBigInteger('Requismat_Id');
             $table->foreign('Requismat_Id')->references('Requismat_Id')->on('requisition_materials')->ondelete('cascase');
             $table->unsignedBigInteger('Emp_Id');
