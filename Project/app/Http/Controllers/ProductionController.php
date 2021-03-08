@@ -6,21 +6,26 @@ use App\Production;
 use App\RequisitionMaterial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductionController extends Controller
 {
     public function index()
     {
-        $Production = RequisitionMaterial::all();
-        return view('Production.Showrequisitionmat', compact('Production'));
+        $Requimat = RequisitionMaterial::join('production_plannings','requisition_materials.Plan_Id','=','production_plannings.Plan_Id')
+        ->where('production_plannings.Planning_Status','Enable')->get();
+        return view('Production.Showrequisitionmat', compact('Requimat'));
     }
     public function create()
     {
-        $Production = Production::all();
+        $Production = DB::table('productions')
+        ->where('Production_Status', '=', 'กำลังผลิตอยู่')->get();
         return view('Production.ProductionTable', compact('Production'));
     }
     public function store(Request $request)
     {
+        return $request;
+
     }
     public function show()
     {
@@ -32,21 +37,27 @@ class ProductionController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $production = Production::join('requisition_materials', 'requisition_materials.Requismat_Id','=','productions.Requismat_Id')
-        ->where('productions.Requismat_Id',$id)->get();
-        return $production;
-    foreach ($production as $productions) {
+
         Production::create([
             'Production_Date' => today(),
             'Emp_Id' => Auth::user()->Emp_Id,
-            'Requismat_Id' =>  $id,
+            'Production_Status' => 'กำลังผลิตอยู่',
+            'Requismat_Id' => $request->Requismat_Id,
         ]);
+        return redirect('/P');
+
     }
-    Production::find($id)->update([
-        'Production_Status' => 'กำลังผลิตอยู่'
+    public function updatesuccess(Request $request,$id){
+
+    //return $id;
+    $update= Production::findorFail($id);
+    $update->update([
+        'Production_Status' => 'เสร็จสิ้น',
     ]);
-    return redirect('/P');
-}
+
+    return redirect('/Protion');
+
+    }
     public function destroy($id)
     {
         //

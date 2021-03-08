@@ -58,6 +58,7 @@ Route::resource('Plan', 'ProductionPlanningController');
 Route::resource('RequiMM','RequisitionMaterialController');
 
 Route::resource('P','ProductionController');
+Route::post('/updatesuccess/{id}', 'ProductionController@updatesuccess');
 
 Auth::routes();
 

@@ -8,7 +8,6 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
                             <h3>Production</h3>
-                            <a href="{{ route('P.create')}}" class="btn btn-primary btn-sm">Production</a>
                             <thead>
                                 <tr>
                                     <th>Production_Id</th>
@@ -17,18 +16,25 @@
                                     <th>Requismat_Id</th>
                                     <th>Emp_Id</th>
                                     <th></th>
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($Production as $P)
+                                <form role="form"  method="post" action="/updatesuccess/{{$P->Production_Id}}" >
+                                    {{ csrf_field() }}
+                                    {{-- @method('put') --}}
                                 <tr>
                                     <td>{{$P->Production_Id}}</td>
                                     <td>{{$P->Production_Date}}</td>
                                     <td>{{$P->Production_Status}}</td>
                                     <td>{{$P->Requismat_Id}}</td>
                                     <td>{{$P->Emp_Id}}</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-warning btn-sm" >test</button>
+                                    </td>
+
                                 </tr>
+                                </form>
                                 @endforeach
                             </tbody>
                         </table>

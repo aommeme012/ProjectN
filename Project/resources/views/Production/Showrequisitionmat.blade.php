@@ -8,6 +8,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
                             <h3>production</h3>
+                            <a href="/Protion" class="btn btn-primary btn-sm">Production</a>
                             <thead>
                                 <tr>
                                     <th>Requismat_Id</th>
@@ -18,7 +19,7 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            @foreach ($Production as $P)
+                            @foreach ($Requimat as $P)
                             <form role="form"  method="post" action="{{route('P.update',[$P->Requismat_Id])}}" >
                                 {{ csrf_field() }}
                                 @method('put')
