@@ -36,7 +36,7 @@
                                     <td>{{$P->Plan_Id}}</td>
 
                                 <td>
-                                    <button type="submit" class="btn btn-warning btn-sm" onclick="Production();">Production</button>
+                                    <button type="submit" class="btn btn-warning btn-sm" onclick="Production();">ยืนยันการผลิต</button>
                                 </td>
                             </form>
                                 @endforeach

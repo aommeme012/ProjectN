@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="panel-body">
                     <div style="float: right;">
-                        <a href="/Ption" class="btn btn-info btn-xs">รายการที่ผลิตเสร็จสิ้น</a>
+                        <a href="/Protion" class="btn btn-warning btn-xs">ย้อนกลับ</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
@@ -22,19 +22,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($Production as $P)
-                                <form role="form"  method="post" action="/updatesuccess/{{$P->Production_Id}}" >
-                                    {{ csrf_field() }}
+                                @foreach ($Ption as $P)
                                 <tr>
                                     <td>{{$P->Production_Id}}</td>
                                     <td>{{$P->Production_Date}}</td>
                                     <td>{{$P->Production_Status}}</td>
                                     <td>{{$P->Requismat_Id}}</td>
                                     <td>{{$P->Emp_Id}}</td>
-                                    <td>
-                                        <button type="submit" class="btn btn-warning btn-sm" >ยืนยันการผลิตเสร็จสิ้น</button>
-                                    </td>
-
                                 </tr>
                                 </form>
                                 @endforeach

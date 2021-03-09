@@ -30,6 +30,8 @@ Route::get('/Protion', 'ProductionController@create');
 
 Route::get('/Planings','ProductionPlanningController@Show');
 
+Route::get('/Ption','ProductionController@Show');
+
 Route::resource('/dep', 'departmentsController');
 
 Route::resource('/part', 'PartnerController');

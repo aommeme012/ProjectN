@@ -30,7 +30,9 @@ class ProductionController extends Controller
     }
     public function show()
     {
-        //
+        $Ption = DB::table('productions')
+        ->where('Production_Status', '=', 'เสร็จสิ้น')->get();
+        return view('Production.historyproduction', compact('Ption'));
     }
     public function edit($id)
     {
@@ -42,7 +44,7 @@ class ProductionController extends Controller
         join('production_plannings','requisition_materials.Plan_Id','=','production_plannings.Plan_Id')
         ->join('productions','requisition_materials.Requismat_Id','=','productions.Requismat_Id')
         ->where('production_plannings.Planning_Status','Enable')->first();
-        
+
 
         Production::create([
             'Production_Date' => today(),
