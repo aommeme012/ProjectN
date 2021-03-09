@@ -1,5 +1,5 @@
 @extends('layouts.manuproductionplaning')
-@section('Planing')
+@section('PlaningProduction')
 <div id="page-wrapper" >
     <div id="page-inner">
         <div class="row">
@@ -7,7 +7,7 @@
                 <div class="panel-body">
                         <div class="row">
                             <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                            <a href="/Plan" class="btn btn-danger square-btn-adjust">back</a>
+                            <a href="/Plan" class="btn btn-danger btn-xs">ไปหน้าตาราง</a>
                             </div>
                             <div class="col-md-6">
                                 <h3>ProductionPlaning</h3>

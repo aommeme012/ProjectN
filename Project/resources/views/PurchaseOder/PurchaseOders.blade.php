@@ -4,11 +4,9 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                    <a href="/Pdet" class="btn btn-danger square-btn-adjust">Detail</a>
-                </div>
-                <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                    <a href="/Purback" class="btn btn-danger square-btn-adjust">TablePurchaseOder</a>
+                <div style="float:right">
+                    <a href="/Purback" class="btn btn-default btn-xs">ตารางการสั่งซื้อ</a>
+                    <a href="/Pdet" class="btn btn-default btn-xs">รายละเอียดการสั่งซื้อ</a>
                 </div>
                 <div class="panel-body">
 

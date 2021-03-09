@@ -28,6 +28,7 @@ Route::get('/Planing','ProductionPlanningController@create');
 
 Route::get('/Protion', 'ProductionController@create');
 
+Route::get('/Planings','ProductionPlanningController@Show');
 
 Route::resource('/dep', 'departmentsController');
 

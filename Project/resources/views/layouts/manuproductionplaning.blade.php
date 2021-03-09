@@ -88,7 +88,7 @@
     <script src="{{asset('assets/js/morris/morris.js')}}"></script>
     <script src="{{asset('assets/js/custom.js')}}"></script>
     <script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
-        @yield('Planing')
+        @yield('PlaningProduction')
     </div>
 </body>
 </html>

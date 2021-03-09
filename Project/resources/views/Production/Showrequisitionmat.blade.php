@@ -5,10 +5,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel-body">
+                    <div style="float: right;">
+                    <a href="/Protion" class="btn btn-info btn-xs"  >รายการที่กำลังผลิตอยู่</a>
+                    </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>production</h3>
-                            <a href="/Protion" class="btn btn-primary btn-sm">Production</a>
+                            <h3>เลือกรายการที่จะผลิต</h3>
+                            <hr>
                             <thead>
                                 <tr>
                                     <th>Requismat_Id</th>
