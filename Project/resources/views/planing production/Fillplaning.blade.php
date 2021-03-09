@@ -10,15 +10,16 @@
                             <a href="/Plan" class="btn btn-danger btn-xs">ไปหน้าตาราง</a>
                             </div>
                             <div class="col-md-6">
-                                <h3>ProductionPlaning</h3>
+                                <h3>แผนการผลิต</h3>
+                                <hr>
                                 <form role="form"  method="post" action="{{route('Plan.store')}}">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label>Plan_Date</label>
+                                        <label>วันที่</label &nbsp>
                                         <input class="form-control" type="Date" name="Plan_Date">
-                                        <label>Amount</label>
+                                        <label>จำนวน</label>
                                         <input class="form-control" type="number" name="Amount">
-                                    <label>component</label>
+                                    <label>ส่วนประกอบ</label>
                                     <select class="form-control" name="component_Id">
                                     @foreach ($comps as $comp)
                                         <option value="{{$comp->component_Id}}">
@@ -26,7 +27,7 @@
                                         </option>
                                         @endforeach
                                     </select>
-                                    <label>Product</label>
+                                    <label>สินค้า</label>
                                     <select class="form-control" name="Product_Id">
                                     @foreach ($pros as $Pro)
                                         <option value="{{$Pro->Product_Id}}">
@@ -38,7 +39,7 @@
                             </div>
                         </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-sm">Planing</button>
+                                        <button type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
                                     </div>
                                 </form>
                 </div>

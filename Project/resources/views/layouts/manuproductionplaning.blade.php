@@ -32,7 +32,7 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a  > <i class="fa fa-sitemap fa-3x"></i> Manage data<span
+                        <a  > <i class="fa fa-sitemap fa-3x"></i>จัดการข้อมูล<span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>

@@ -32,52 +32,52 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a class="active-menu" > <i class="fa fa-sitemap fa-3x"></i> Manage data<span
+                        <a class="active-menu" > <i class="fa fa-sitemap fa-3x"></i> จัดการข้อมูล<span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{ route('dep.index')}}">Departments</a>
+                                <a href="{{ route('dep.index')}}">แผนกงาน</a>
                             </li>
                             <li>
-                                <a href="/emp">Employees</a>
+                                <a href="/emp">พนักงาน</a>
                             </li>
                             <li>
-                                <a href="/part">Partner</a>
+                                <a href="/part">บริษัทคู่ค้า</a>
                             </li>
                             <li>
-                                <a href="/mat">Materials</a>
+                                <a href="/mat">วัตถุดิบ</a>
                             </li>
                             <li>
-                                <a href="/type">TypeProduct</a>
+                                <a href="/type">ชนิดสินค้า</a>
                             </li>
                             <li>
-                                <a href="/Pro">Products</a>
+                                <a href="/Pro">สินค้า</a>
                             </li>
                             <li>
-                                <a href="/comp">component</a>
+                                <a href="/comp">ส่วนประกอบ</a>
                             </li>
                             <li>
-                                <a href="/comde">component detail</a>
+                                <a href="/comde">รายละเอียดส่วนประกอบ</a>
                             </li>
                         </ul>
             </div>
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a href="/Pur"><i class="fa fa-square-o fa-3x"></i> PurchaseOder</a>
+                        <a href="/Pur"><i class="fa fa-square-o fa-3x"></i>สั่งซื้อสินค้า</a>
                     </li>
                     <li>
-                        <a href="/Rec"><i class="fa fa-square-o fa-3x"></i> Receives</a>
+                        <a href="/Rec"><i class="fa fa-square-o fa-3x"></i> รับเข้าสินค้า</a>
                     </li>
                     <li>
                         <a href="/Planing"><i class="fa fa-square-o fa-3x"></i>
-                            ProductionPlaning</a>
+                            วางแผนการผลิต</a>
                     </li>
                     <li>
-                        <a  href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> RequisitionMaterial</a>
+                        <a  href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> เบิกวัตถุดิบ</a>
                     </li>
                     <li>
-                        <a  href="/P"><i class="fa fa-square-o fa-3x"></i> Production</a>
+                        <a  href="/P"><i class="fa fa-square-o fa-3x"></i> การผลิต</a>
                     </li>
                 </ul>
             </div>

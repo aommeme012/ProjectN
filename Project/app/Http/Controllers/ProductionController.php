@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Production;
+use App\ProductionPlanning;
 use App\RequisitionMaterial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,13 +38,23 @@ class ProductionController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $production = RequisitionMaterial::
+        join('production_plannings','requisition_materials.Plan_Id','=','production_plannings.Plan_Id')
+        ->join('productions','requisition_materials.Requismat_Id','=','productions.Requismat_Id')
+        ->where('production_plannings.Planning_Status','Enable')->first();
+        
 
         Production::create([
             'Production_Date' => today(),
             'Emp_Id' => Auth::user()->Emp_Id,
             'Production_Status' => 'กำลังผลิตอยู่',
-            'Requismat_Id' => $request->Requismat_Id,
+            'Requismat_Id' => $id,
         ]);
+
+        ProductionPlanning::findorFail($production['Plan_Id'])->update([
+            'Planning_Status' => 'Disable'
+        ]);
+
         return redirect('/P');
 
     }
