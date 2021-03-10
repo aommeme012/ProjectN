@@ -8,6 +8,7 @@ use App\Partner;
 use App\PurchaseOrder;
 use App\PurchaseOrderDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class purchaseorderController extends Controller
 {
@@ -29,9 +30,12 @@ class purchaseorderController extends Controller
     }
     public function store(Request $request)
     {
-        $Purc = new PurchaseOrder();
-        $Purc->fill($request->only($Purc->getFillable()));
-        $Purc->save();
+
+        $Purc  = PurchaseOrder::create([
+            'Purchase_Date' => today(),
+            'Emp_Id' => Auth::user()->Emp_Id,
+            'Partner_Id' => $request->Partner_Id,
+        ]);
 
         $Purchas = $request->Material_Id;
         for($i = 0; $i < count($Purchas); $i++){

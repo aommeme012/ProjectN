@@ -12,8 +12,8 @@ class RequisitionMaterialController extends Controller
 {
     public function index()
     {
-        $RequiM = ProductionPlanning::all();
-
+        $RequiM  = DB::table('production_plannings')
+        ->where('Planning_Status', '=', 'Enable')->get();
         return view('RequisitionMaterials.ShowPlan', compact('RequiM'));
     }
     public function create()

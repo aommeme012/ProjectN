@@ -12,21 +12,11 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <h3>Purchase</h3>
+                                <h3>สั่งซื้อวัตถุดิบ</h3>
                                 <form role="form"  method="post" action="{{route('Pur.store')}}">
                                     {{ csrf_field() }}
                                     <hr>
                                     <div class="form-group">
-                                        <label>Purchase_Date</label>
-                                        <input class="form-control" type="Date" name="Purchase_Date">
-                                    <label>Employees</label>
-                                    <select class="form-control" name="Emp_Id">
-                                        @foreach ($emps as $emp)
-                                            <option value="{{$emp->Emp_Id}}">
-                                            {{$emp->Fname}}
-                                            </option>
-                                            @endforeach
-                                    </select>
                                     <label>Partner</label>
                                     <select class="form-control" name="Partner_Id">
                                         @foreach ($parts as $part)
@@ -36,9 +26,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-
                                     <button  class="btn btn-warning" id="add-more" type="button">AddDetail</button>
-                                    <h3>DetailPurchase</h3>
                                     <hr>
                                     <div class="form-group" id="form-line">
                                      <label>Material</label>
