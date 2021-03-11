@@ -5,10 +5,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel-body">
-                    <div style="float: right;">
-                        <a href="/Ption" class="btn btn-info btn-xs">รายการที่ผลิตเสร็จสิ้น</a>
-                    </div>
                     <div class="table-responsive">
+                        <div style="float: right;">
+                            <a href="/Ption" class="btn btn-info btn-xs">รายการที่ผลิตเสร็จสิ้น</a>
+                        </div>
                         <table class="table table-striped table-bordered table-hover">
                             <h3>Production</h3>
                             <thead>

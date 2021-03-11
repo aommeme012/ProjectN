@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Employee;
 
 class LoginController extends Controller
 {
@@ -43,29 +41,17 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        //dd($request);
-        //return $request;
-
-        //$emp = Employee::find(1);
-        //dd($emp->Username);
-
-        //dd(Auth::attempt(['username' => 'wooq', 'password' => '123456']));
 
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
-            // Authentication passed...
             return redirect('/dep');
         }
-
         return redirect('/login');
     }
-
-
     public function logout()
     {
         Auth::logout();
         return redirect('/login');
     }
-
     protected function guard()
     {
         return Auth::guard('employee');

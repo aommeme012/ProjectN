@@ -7,8 +7,7 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>Receive</h3>
-                            <a href="{{ route('RequiMM.index')}}" class="btn btn-primary btn-sm">Requisition</a>
+                            <h3>ตารางเบิกสินค้า</h3>
                             <thead>
                                 <tr>
                                     <th>Requismat_Id</th>
@@ -19,13 +18,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($RequiM as $RequiMM)
+                                @foreach ($Requisitionmat as $RequiMat)
                                 <tr>
-                                    <td>{{$RequiMM->Requismat_Id}}</td>
-                                    <td>{{$RequiMM->Requismat_Date}}</td>
-                                    <td>{{$RequiMM->Requismat_Amount}}</td>
-                                    <td>{{$RequiMM->Material_Id}}</td>
-                                    <td>{{$RequiMM->Plan_Id}}</td>
+                                    <td>{{$RequiMat->Requismat_Id}}</td>
+                                    <td>{{$RequiMat->Requismat_Date}}</td>
+                                    <td>{{$RequiMat->Requismat_Amount}}</td>
+                                    <td>{{$RequiMat->Material_Id}}</td>
+                                    <td>{{$RequiMat->Plan_Id}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

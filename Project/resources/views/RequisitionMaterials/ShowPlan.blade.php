@@ -5,6 +5,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel-body">
+                    <div style="float: right;">
+                        <a href="/RequiMat" class="btn btn-info btn-xs">รายการที่เบิกวัตถุดิบ</a>
+                        </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
                             <h3>ProductionPlanning  </h3>

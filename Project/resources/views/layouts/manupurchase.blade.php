@@ -26,6 +26,10 @@
                 padding: 15px 50px 5px 50px;
                 float: right;
                 font-size: 16px;">
+               <form action="/logout" method="POST">
+                {{ csrf_field() }}
+                <button class="btn btn-danger square-btn-adjust" type="submit">{{ Auth::user()->Fname }}</button>
+               </form>
             </div>
         </nav>
         <nav class="navbar-default navbar-side" role="navigation">

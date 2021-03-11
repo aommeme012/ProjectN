@@ -32,6 +32,8 @@ Route::get('/Planings','ProductionPlanningController@Show');
 
 Route::get('/Ption','ProductionController@Show');
 
+Route::get('/RequiMat','RequisitionMaterialController@Show');
+
 Route::resource('/dep', 'departmentsController');
 
 Route::resource('/part', 'PartnerController');

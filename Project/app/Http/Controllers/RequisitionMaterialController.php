@@ -24,9 +24,10 @@ class RequisitionMaterialController extends Controller
     {
         //
     }
-    public function show($id)
+    public function show()
     {
-        //
+        $Requisitionmat = RequisitionMaterial::all();
+        return view('RequisitionMaterials.RequisitionMaterial',compact('Requisitionmat'));
     }
     public function edit($id)
     {
