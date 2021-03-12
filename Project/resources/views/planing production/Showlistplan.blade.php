@@ -38,6 +38,7 @@
                                         <button type="submit" class="btn btn-warning btn-sm">ทำรายการอีกครั้ง</button>
                                     </td>
                                 </tr>
+                                </form>
                                 @endforeach
                             </tbody>
                         </table>

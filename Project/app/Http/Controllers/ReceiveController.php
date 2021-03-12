@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Employee;
 use App\Materials;
-use App\Partner;
 use App\PurchaseOrder;
 use App\PurchaseOrderDetail;
 use App\Receive;

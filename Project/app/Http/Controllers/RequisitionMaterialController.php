@@ -26,8 +26,8 @@ class RequisitionMaterialController extends Controller
     }
     public function show()
     {
-        $Requisitionmat = RequisitionMaterial::all();
-        return view('RequisitionMaterials.RequisitionMaterial',compact('Requisitionmat'));
+        $Remat = RequisitionMaterial::all();
+        return view('RequisitionMaterials.RequisitionMaterial',compact('Remat'));
     }
     public function edit($id)
     {

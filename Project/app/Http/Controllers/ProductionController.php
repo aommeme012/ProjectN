@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use App\Production;
 use App\ProductionPlanning;
 use App\RequisitionMaterial;
@@ -13,14 +14,14 @@ class ProductionController extends Controller
 {
     public function index()
     {
-        $Requimat = RequisitionMaterial::join('production_plannings','requisition_materials.Plan_Id','=','production_plannings.Plan_Id')
-        ->where('production_plannings.Planning_Status','Enable')->get();
+        $Requimat = RequisitionMaterial::join('production_plannings', 'requisition_materials.Plan_Id', '=', 'production_plannings.Plan_Id')
+            ->where('production_plannings.Planning_Status', 'Enable')->get();
         return view('Production.Showrequisitionmat', compact('Requimat'));
     }
     public function create()
     {
         $Production = DB::table('productions')
-        ->where('Production_Status', '=', 'กำลังผลิตอยู่')->get();
+            ->where('Production_Status', '=', 'ผลิตอยู่')->get();
         return view('Production.ProductionTable', compact('Production'));
     }
     public function store(Request $request)
@@ -30,7 +31,7 @@ class ProductionController extends Controller
     public function show()
     {
         $Ption = DB::table('productions')
-        ->where('Production_Status', '=', 'เสร็จสิ้น')->get();
+            ->where('Production_Status', '=', 'เสร็จสิ้น')->get();
         return view('Production.historyproduction', compact('Ption'));
     }
     public function edit($id)
@@ -39,36 +40,40 @@ class ProductionController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $production = RequisitionMaterial::
-        join('production_plannings','requisition_materials.Plan_Id','=','production_plannings.Plan_Id')
-        ->join('productions','requisition_materials.Requismat_Id','=','productions.Requismat_Id')
-        ->where('production_plannings.Planning_Status','Enable')->first();
-
-
         Production::create([
             'Production_Date' => today(),
             'Emp_Id' => Auth::user()->Emp_Id,
-            'Production_Status' => 'กำลังผลิตอยู่',
+            'Production_Status' => 'ผลิตอยู่',
             'Requismat_Id' => $id,
         ]);
-
+        $production = RequisitionMaterial::join('production_plannings', 'requisition_materials.Plan_Id', '=', 'production_plannings.Plan_Id')
+            ->join('productions', 'requisition_materials.Requismat_Id', '=', 'productions.Requismat_Id')
+            ->join('products', 'production_plannings.Product_Id', '=', 'products.Product_Id')
+            ->where('production_plannings.Planning_Status', 'Enable')->first();
         ProductionPlanning::findorFail($production['Plan_Id'])->update([
             'Planning_Status' => 'Disable'
         ]);
 
         return redirect('/P');
-
     }
-    public function updatesuccess(Request $request,$id){
+    public function updatesuccess(Request $request, $id)
+    {
 
-    //return $id;
-    $update= Production::findorFail($id);
-    $update->update([
-        'Production_Status' => 'เสร็จสิ้น',
-    ]);
+        $propro = Production::join('requisition_materials', 'productions.Requismat_Id', '=', 'requisition_materials.Requismat_Id')
+            ->join('production_plannings', 'requisition_materials.Plan_Id', '=', 'production_plannings.Plan_Id')
+            ->join('products', 'production_plannings.Product_Id', '=', 'products.Product_Id')
+            ->where('productions.Production_Id', $id)->get();
+        foreach ($propro as $prop) {
+            Product::find($prop->Product_Id)->update([
+                'Product_Amount' => $prop->Product_Amount + $prop->Amount
+            ]);
+        }
+        $update = Production::findorFail($id);
+        $update->update([
+            'Production_Status' => 'เสร็จสิ้น',
+        ]);
 
-    return redirect('/Protion');
-
+        return redirect('/Protion');
     }
     public function destroy($id)
     {

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,14 +21,11 @@
                 </button>
                 <a class="navbar-brand">Synthetic Stone</a>
             </div>
-            <div style="color: white;
-                padding: 15px 50px 5px 50px;
-                float: right;
-                font-size: 16px;">
-               <form action="/logout" method="POST">
-                {{ csrf_field() }}
-                <button class="btn btn-danger square-btn-adjust" type="submit">{{ Auth::user()->Fname }}</button>
-               </form>
+            <div style="padding: 15px 50px 5px 50px;float: right;">
+                <form action="/logout" method="POST">
+                    {{ csrf_field() }}
+                    <button class="btn btn-danger btn-xs" type="submit">{{ Auth::user()->Fname }}</button>
+                </form>
             </div>
         </nav>
         <nav class="navbar-default navbar-side" role="navigation">
@@ -82,6 +78,9 @@
                     </li>
                     <li>
                         <a  href="/P"><i class="fa fa-square-o fa-3x"></i> Production</a>
+                    </li>
+                    <li>
+                        <a  href="/RequiPP"><i class="fa fa-square-o fa-3x"></i> RequisitionProduct</a>
                     </li>
                 </ul>
             </div>

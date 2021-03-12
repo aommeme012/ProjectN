@@ -1,6 +1,6 @@
 <html>
 <head>
-    <meta charset="utf-8" />
+      <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Synthetic Stone</title>
     <link href="{{asset('/assets/css/bootstrap.css')}}" rel="stylesheet" />
@@ -16,11 +16,11 @@
                 <a class="navbar-brand" href="index.html">Synthetic Stone</a>
             </div>
             <div style="padding: 15px 50px 5px 50px;float: right;">
-                <form action="/logout" method="POST">
-                    {{ csrf_field() }}
-                    <button class="btn btn-danger btn-xs" type="submit">{{ Auth::user()->Fname }}</button>
-                </form>
-            </div>
+           <form action="/logout" method="POST">
+            {{ csrf_field() }}
+            <button class="btn btn-danger square-btn-adjust" type="submit">{{ Auth::user()->Fname }}</button>
+           </form>
+        </div>
         </nav>
            <nav class="navbar-default navbar-side" role="navigation">
             <br>
@@ -74,11 +74,12 @@
                                     <a  href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> RequisitionMaterial</a>
                                 </li>
                                 <li>
-                                    <a class="active-menu" href="/P"><i class="fa fa-square-o fa-3x"></i> Production</a>
+                                     <a  href="/P"><i class="fa fa-square-o fa-3x"></i> Production</a>
                                 </li>
                                 <li>
-                                    <a  href="/RequiPP"><i class="fa fa-square-o fa-3x"></i> RequisitionProduct</a>
-                                </li>
+                                    <a class="active-menu" href="/RequiPP"><i class="fa fa-square-o fa-3x"></i> RequisitionProduct</a>
+                               </li>
+
                 </ul>
             </div>
         </nav>
@@ -89,6 +90,6 @@
 <script src="{{asset('assets/js/morris/morris.js')}}"></script>
 <script src="{{asset('assets/js/custom.js')}}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    @yield('Prodcution')
+    @yield('RequisitionPro')
 </body>
 </html>

@@ -1,42 +1,39 @@
-@extends('layouts.manuproduction')
-@section('Prodcution')
+@extends('layouts.manurequisitionproduct')
+@section('RequisitionPro')
 <div id="page-wrapper" >
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel-body">
                     <div style="float: right;">
-                    <a href="/Protion" class="btn btn-info btn-xs" >รายการที่กำลังผลิตอยู่</a>
-                    </div>
+                        <a href="/RequiMat" class="btn btn-info btn-xs">รายการที่เบิกสินค้า</a>
+                        </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>เลือกรายการที่จะผลิต</h3>
-                            <hr>
+                            <h3>Production</h3>
                             <thead>
                                 <tr>
+                                    <th>Production_Id</th>
+                                    <th>Production_Date</th>
                                     <th>Requismat_Id</th>
-                                    <th>Requismat_Date</th>
-                                    <th>Requismat_Amount</th>
-                                    <th>Material_Id</th>
-                                    <th>Plan_Id</th>
+                                    <th>Emp_Id</th>
                                     <th></th>
                                 </tr>
                             </thead>
-                            @foreach ($Requimat as $P)
-                            <form role="form"  method="post" action="{{route('P.update',[$P->Requismat_Id])}}" >
+                            @foreach ($RequiP as $RequiPP)
+                            <form role="form"  method="post" action="{{route('RequiPP.update',[$RequiPP->Production_Id])}}" >
                                 {{ csrf_field() }}
                                 @method('put')
                             <tbody>
 
                                 <tr>
-                                    <td>{{$P->Requismat_Id}}</td>
-                                    <td>{{$P->Requismat_Date}}</td>
-                                    <td>{{$P->Requismat_Amount}}</td>
-                                    <td>{{$P->Material_Id}}</td>
-                                    <td>{{$P->Plan_Id}}</td>
+                                    <td>{{$RequiPP->Production_Id}}</td>
+                                    <td>{{$RequiPP->Production_Date}}</td>
+                                    <td>{{$RequiPP->Requismat_Id}}</td>
+                                    <td>{{$RequiPP->Emp_Id}}</td>
 
                                 <td>
-                                    <button type="submit" class="btn btn-warning btn-sm" onclick="Production();">ยืนยันการผลิต</button>
+                                    <button type="submit" class="btn btn-warning btn-sm" onclick="Requisition();">Requisition</button>
                                 </td>
                             </form>
                                 @endforeach
@@ -50,7 +47,7 @@
     </div>
 </div>
 <script>
-    function Production(){
+    function Requisition(){
     }
     @if(session('success'))
         swal("{{session('success')}}");
