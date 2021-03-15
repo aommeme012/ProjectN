@@ -50,6 +50,7 @@ class ProductionController extends Controller
             ->join('productions', 'requisition_materials.Requismat_Id', '=', 'productions.Requismat_Id')
             ->join('products', 'production_plannings.Product_Id', '=', 'products.Product_Id')
             ->where('production_plannings.Planning_Status', 'Enable')->first();
+
         ProductionPlanning::findorFail($production['Plan_Id'])->update([
             'Planning_Status' => 'Disable'
         ]);
@@ -63,6 +64,7 @@ class ProductionController extends Controller
             ->join('production_plannings', 'requisition_materials.Plan_Id', '=', 'production_plannings.Plan_Id')
             ->join('products', 'production_plannings.Product_Id', '=', 'products.Product_Id')
             ->where('productions.Production_Id', $id)->get();
+            
         foreach ($propro as $prop) {
             Product::find($prop->Product_Id)->update([
                 'Product_Amount' => $prop->Product_Amount + $prop->Amount

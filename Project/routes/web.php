@@ -34,6 +34,8 @@ Route::get('/Ption','ProductionController@Show');
 
 Route::get('/RequiMat','RequisitionMaterialController@Show');
 
+Route::get('/RequiPro','RequisitionProductController@Show');
+
 Route::resource('/dep', 'departmentsController');
 
 Route::resource('/part', 'PartnerController');
@@ -45,8 +47,6 @@ Route::resource('type', 'TypeProductController');
 Route::resource('Pro', 'ProductController');
 
 Route::resource('emp', 'employeeController');
-
-Route::resource('admin', 'adminController');
 
 Route::resource('comp', 'componentController');
 

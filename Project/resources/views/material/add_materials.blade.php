@@ -11,7 +11,7 @@
                                         </div>
                                     <div class="col-md-6">
                                         <h3>Add Materials</h3>
-                                        <form role="form"  method="post" action="{{route('mat.store')}}" enctype="multipart/form-data">
+                                        <form role="form"  method="post" action="{{route('mat.store')}}" >
                                             {{ csrf_field() }}
                                             <div class="form-group">
                                                 <label>Material Name</label>

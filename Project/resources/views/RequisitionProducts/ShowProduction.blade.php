@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="panel-body">
                     <div style="float: right;">
-                        <a href="/RequiMat" class="btn btn-info btn-xs">รายการที่เบิกสินค้า</a>
+                        <a href="/RequiPro" class="btn btn-info btn-xs">รายการที่เบิกสินค้า</a>
                         </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
