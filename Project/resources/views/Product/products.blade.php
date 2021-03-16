@@ -29,13 +29,14 @@
                                     <td>{{$Pro->Product_Status}}</td>
                                     <td>{{$Pro->Type_Id}}</td>
                                     <td>
-                                        <a href="{{ route('Pro.edit',[$Pro->Product_Id])}}" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="{{ route('Pro.edit',[$Pro->Product_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
                                     </td>
                                     <td>
-                                        <form class="form-inline" method="post" action="{{route('Pro.destroy',[$Pro->Product_Id])}}" enctype="multipart/form-data">
+                                        <form id="form_{{$Pro->Product_Id}}" class="form-inline" method="post" action="{{route('Pro.destroy',[$Pro->Product_Id])}}" enctype="multipart/form-data">
                                             {{ csrf_field() }}
                                             @method('delete')
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            <button type="button" class="btn btn-danger btn-sm"
+                                            onclick = "delete_{{$Pro->Product_Id}}()"><i class = "fa fa-trash-o"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -48,6 +49,29 @@
         </div>
         </div>
     </div>
+    <script>
+        @foreach ( $pros as $Pro )
+    function delete_{{$Pro->Product_Id}}() {
+        swal({
+      title: "คุณแน่ใจนะที่จะลบอันนี้",
+      text: "คุณต้องการที่จะลบ {{$Pro->Product_Name}} ?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal("{{$Pro->Product_Name}} ลบเสร็จสิ้น ", {
+          icon: "success"
+
+        })
+        .then(()=>{
+            document.getElementById('form_{{$Pro->Product_Id}}').submit();
+        });
+      }
+    });
+        }
+            @endforeach
+    </script>
 @endsection
 
 

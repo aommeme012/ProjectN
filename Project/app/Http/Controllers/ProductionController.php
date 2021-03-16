@@ -34,6 +34,12 @@ class ProductionController extends Controller
             ->where('Production_Status', '=', 'เสร็จสิ้น')->get();
         return view('Production.historyproduction', compact('Ption'));
     }
+    public function showlist()
+    {
+        $showlist = DB::table('productions')
+            ->where('Production_Status', '=', 'เบิก')->get();
+        return view('Production.showlistrequisitionpro', compact('showlist'));
+    }
     public function edit($id)
     {
         //
@@ -64,7 +70,7 @@ class ProductionController extends Controller
             ->join('production_plannings', 'requisition_materials.Plan_Id', '=', 'production_plannings.Plan_Id')
             ->join('products', 'production_plannings.Product_Id', '=', 'products.Product_Id')
             ->where('productions.Production_Id', $id)->get();
-            
+
         foreach ($propro as $prop) {
             Product::find($prop->Product_Id)->update([
                 'Product_Amount' => $prop->Product_Amount + $prop->Amount

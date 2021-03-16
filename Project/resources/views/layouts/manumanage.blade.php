@@ -85,6 +85,7 @@
         <script src="{{asset('assets/js/morris/morris.js')}}"></script>
         <script src="{{asset('assets/js/custom.js')}}"></script>
         <script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         @yield('component')
     </div>
 </body>

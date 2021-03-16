@@ -40,7 +40,6 @@ class RequisitionProductController extends Controller
         ->join('products', 'production_plannings.Product_Id', '=', 'products.Product_Id')
         ->where('productions.Production_Id', $id)->get();
 
-
         foreach ($RequisitionProduct as $RP) {
             $requisproducts = $RP->Amount;
                     RequisitionProduct::create([
@@ -52,6 +51,9 @@ class RequisitionProductController extends Controller
             }
                 Product::find($RP['Product_Id'])->update([
                     'Product_Amount' => $RP->Product_Amount - $requisproducts
+                ]);
+                Production::findorFail($RP['Production_Id'])->update([
+                    'Production_Status' => 'เบิก'
                 ]);
                 return back();
 }

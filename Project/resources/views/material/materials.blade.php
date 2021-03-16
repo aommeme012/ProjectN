@@ -27,13 +27,14 @@
                                             <td>{{$mat->Material_Amount}}</td>
                                             <td>{{$mat->Material_Status}}</td>
                                             <td>
-                                                <a href="{{ route('mat.edit',[$mat->Material_Id])}}" class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="{{ route('mat.edit',[$mat->Material_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
                                             </td>
                                             <td>
-                                                <form class="form-inline" method="post" action="{{route('mat.destroy',[$mat->Material_Id])}}" enctype="multipart/form-data">
+                                                <form id="form_{{$mat->Material_Id}}" class="form-inline" method="post" action="{{route('mat.destroy',[$mat->Material_Id])}}" >
                                                     {{ csrf_field() }}
                                                     @method('delete')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                    <button type="button" class="btn btn-danger btn-sm"
+                                                    onclick = "delete_{{$mat->Material_Id}}()"><i class = "fa fa-trash-o"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -46,5 +47,28 @@
                 </div>
                 </div>
             </div>
+            <script>
+                @foreach ( $mats as $mat )
+            function delete_{{$mat->Material_Id}}() {
+                swal({
+              title: "คุณแน่ใจนะที่จะลบอันนี้",
+              text: "คุณต้องการที่จะลบ {{$mat->Material_Name}} ?",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+            }).then((willDelete) => {
+              if (willDelete) {
+                swal("{{$mat->Material_Name}} ลบเสร็จสิ้น ", {
+                  icon: "success"
+
+                })
+                .then(()=>{
+                    document.getElementById('form_{{$mat->Material_Id}}').submit();
+                });
+              }
+            });
+                }
+                    @endforeach
+            </script>
 @endsection
 

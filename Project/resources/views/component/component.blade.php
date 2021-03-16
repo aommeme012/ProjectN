@@ -27,13 +27,14 @@
                                     <td>{{$comp->component_Name}}</td></a>
                                     <td>{{$comp->component_Status}}</td>
                                     <td>
-                                        <a href="{{ route('comp.edit',[$comp->component_Id])}}" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="{{ route('comp.edit',[$comp->component_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
                                     </td>
                                     <td>
-                                        <form class="form-inline" method="post" action="{{route('comp.destroy',[$comp->component_Id])}}" >
+                                        <form id="form_{{$comp->component_Id}}" class="form-inline" method="post" action="{{route('comp.destroy',[$comp->component_Id])}}" >
                                             {{ csrf_field() }}
                                             @method('delete')
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            <button type="button" class="btn btn-danger btn-sm"
+                                            onclick = "delete_{{$comp->component_Id}}()"> <i class = "fa fa-trash-o"> </i></button>
                                         </form>
                                     </td>
                                     <td>
@@ -47,6 +48,29 @@
                 </div>
             </div>
         </div>
-        </div>
     </div>
+</div>
+<script>
+    @foreach ( $comps as $comp )
+function delete_{{$comp->component_Id}}() {
+    swal({
+  title: "คุณแน่ใจนะที่จะลบอันนี้",
+  text: "คุณต้องการที่จะลบ {{$comp->component_Name}} ?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("{{$comp->component_Name}} ลบเสร็จสิ้น ", {
+      icon: "success"
+
+    })
+    .then(()=>{
+        document.getElementById('form_{{$comp->component_Id}}').submit();
+    });
+  }
+});
+    }
+        @endforeach
+</script>
 @endsection

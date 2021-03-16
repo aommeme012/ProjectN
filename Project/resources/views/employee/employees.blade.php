@@ -40,13 +40,14 @@
                                         <td>{{$emp->Emp_Status}}</td>
                                         <td>{{$emp->Dep_Id}}</td>
                                         <td>
-                                            <a href="{{ route('emp.edit',[$emp->Emp_Id])}}" class="btn btn-warning btn-sm">Edit</a>
+                                            <a href="{{ route('emp.edit',[$emp->Emp_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
                                         </td>
                                         <td>
-                                            <form class="form-inline" method="post" action="{{route('emp.destroy',[$emp->Emp_Id])}}" enctype="multipart/form-data">
+                                            <form id="form_{{$emp->Emp_Id}}" class="form-inline" method="post" action="{{route('emp.destroy',[$emp->Emp_Id])}}">
                                                 {{ csrf_field() }}
                                                 @method('delete')
-                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                <button type="button" class="btn btn-danger btn-sm"
+                                                onclick = "delete_{{$emp->Emp_Id}}()"><i class = "fa fa-trash-o"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -59,5 +60,28 @@
             </div>
         </div>
     </div>
+    <script>
+        @foreach ( $emps as $emp )
+    function delete_{{$emp->Emp_Id}}() {
+        swal({
+      title: "คุณแน่ใจนะที่จะลบอันนี้",
+      text: "คุณต้องการที่จะลบ {{$emp->Fname}} ?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal("{{$emp->Fname}} ลบเสร็จสิ้น ", {
+          icon: "success"
+
+        })
+        .then(()=>{
+            document.getElementById('form_{{$emp->Emp_Id}}').submit();
+        });
+      }
+    });
+        }
+            @endforeach
+    </script>
 @endsection
 

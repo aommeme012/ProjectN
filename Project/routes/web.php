@@ -32,6 +32,8 @@ Route::get('/Planings','ProductionPlanningController@Show');
 
 Route::get('/Ption','ProductionController@Show');
 
+Route::get('/showlistproduction','ProductionController@Showlist');
+
 Route::get('/RequiMat','RequisitionMaterialController@Show');
 
 Route::get('/RequiPro','RequisitionProductController@Show');

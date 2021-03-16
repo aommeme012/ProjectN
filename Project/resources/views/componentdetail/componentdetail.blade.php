@@ -29,14 +29,15 @@
                                     <td>{{$comde->component_Id}}</td>
                                     <td>
                                         <a href="{{ route('comde.edit',[$comde->Comde_Id])}}"
-                                            class="btn btn-warning btn-sm">Edit</a>
+                                            class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
                                     </td>
                                     <td>
-                                        <form class="form-inline" method="post"
+                                        <form id="form_{{$comde->Comde_Id}}" class="form-inline" method="post"
                                             action="{{route('comde.destroy',[$comde->Comde_Id])}}">
                                             {{ csrf_field() }}
                                             @method('delete')
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            <button type="button" class="btn btn-danger btn-sm"
+                                            onclick = "delete_{{$comde->Comde_Id}}()"><i class = "fa fa-trash-o"> </i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -46,9 +47,31 @@
                     </div>
                 </div>
             </div>
-            <!-- End  Kitchen Sink -->
         </div>
     </div>
 </div>
+<script>
+    @foreach ( $comdes as $comde )
+function delete_{{$comde->Comde_Id}}() {
+    swal({
+  title: "คุณแน่ใจนะที่จะลบอันนี้",
+  text: "คุณต้องการที่จะลบ {{$comde->Comde_Id}} ?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("{{$comde->Comde_Id}} ลบเสร็จสิ้น ", {
+      icon: "success"
+
+    })
+    .then(()=>{
+        document.getElementById('form_{{$comde->Comde_Id}}').submit();
+    });
+  }
+});
+    }
+        @endforeach
+</script>
 @endsection
 
