@@ -31,7 +31,6 @@
                                     <td>{{$RequiPP->Production_Date}}</td>
                                     <td>{{$RequiPP->Requismat_Id}}</td>
                                     <td>{{App\Employee::find($RequiPP->Emp_Id)->Fname}}</td>
-
                                 <td>
                                     <button type="submit" class="btn btn-warning btn-sm" onclick="Requisition();">Requisition</button>
                                 </td>

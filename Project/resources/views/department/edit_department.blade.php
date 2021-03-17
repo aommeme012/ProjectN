@@ -43,7 +43,7 @@
                                                 </div>
                                             @endif
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-warning btn-sm">edit</button>
+                                        <button  type="button" onclick="checkEdit()" class="btn btn-warning btn-sm">edit</button>
                                     </div>
                                 </form>
                             </div>
@@ -53,4 +53,23 @@
             </div>
         </div>
     </div>
+    <script>
+    function checkEdit() {
+        swal({
+  title: "คุณแน่ใจ",
+  text: "จะแก้ไข {{$dep->Dep_Name}} ?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("{{$dep->Dep_Name}} แก้ไขเรียบร้อย", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('editDep').submit();
+    });
+    }
+});
+}
+</script>
 @endsection

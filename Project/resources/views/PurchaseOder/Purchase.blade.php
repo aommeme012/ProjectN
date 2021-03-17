@@ -15,7 +15,7 @@
                                     <th>Purchase_Date</th>
                                     <th>Emp_Id</th>
                                     <th>Partner_Id</th>
-                                    <th>Purchase_Status<th>
+                                    <th>Purchase_Status</th>
                                 </tr>
                             </thead>
                             <tbody>

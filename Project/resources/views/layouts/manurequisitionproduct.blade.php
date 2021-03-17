@@ -18,7 +18,7 @@
             <div style="padding: 15px 50px 5px 50px;float: right;">
            <form action="/logout" method="POST">
             {{ csrf_field() }}
-            <button class="btn btn-danger square-btn-adjust" type="submit">{{ Auth::user()->Fname }}</button>
+            <button class="btn btn-danger btn-xs" type="submit">{{ Auth::user()->Fname }}</button>
            </form>
         </div>
         </nav>

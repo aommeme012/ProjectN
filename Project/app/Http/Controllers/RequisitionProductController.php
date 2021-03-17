@@ -46,7 +46,7 @@ class RequisitionProductController extends Controller
                     'Requispro_Date' => today(),
                     'Requispro_Amount' => $requisproducts,
                     'Product_Id' => $RP->Product_Id,
-                    'Emp_Id' => $id,
+                    'Emp_Id' => $RP->Emp_Id,
                 ]);
             }
                 Product::find($RP['Product_Id'])->update([
