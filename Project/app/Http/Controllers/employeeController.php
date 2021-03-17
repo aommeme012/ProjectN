@@ -23,7 +23,7 @@ class employeeController extends Controller
     }
     public function store(Request $request)
     {
-        //return "hi";
+
         Employee::create([
             'Fname' => $request->Fname,
             'Lname' => $request->Lname,
@@ -36,7 +36,7 @@ class employeeController extends Controller
             'type' => 0,
             'Dep_Id' => $request->Dep_Id,
         ]);
-        //Employee::create($post);
+    
         return back();
     }
     public function show(Employee $Employee)

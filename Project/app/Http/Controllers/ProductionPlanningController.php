@@ -39,15 +39,41 @@ class ProductionPlanningController extends Controller
     }
     public function edit($id)
     {
-        //
+        $Plan = ProductionPlanning::find($id);
+        $comps = component::all();
+        $pros = Product::all();
+        return view('planing production.edit_planing', compact('Plan','comps','pros'));
     }
+    // public function updatesuccess(Request $request, $id)
+    // {
+    //     $update=ProductionPlanning::findorFail($id);
+    //     $update->update($request->all());
+    //     return redirect('/Plan');
+    // }
+
     public function update(Request $request, $id)
     {
-        ProductionPlanning::find($id)->update([
-            'Planning_Status' => 'Enable'
+        $planingproduction = ProductionPlanning::join('components','production_plannings.component_Id','=','components.component_Id')
+        ->join('products','production_plannings.Product_Id','=','products.Product_Id')
+        ->where('production_plannings.Plan_Id',$id)->get();
+
+        foreach ($planingproduction as $planingproductions) {
+        ProductionPlanning::create([
+            'Plan_Date' => today(),
+            'Amount' =>  $planingproductions->Amount,
+            'Planning_Status' => 'Enable',
+            'component_Id' => $planingproductions->component_Id,
+            'Product_Id' => $planingproductions->Product_Id,
+
         ]);
-        return redirect('/Plan');
     }
+    return redirect('/Plan');
+        // ProductionPlanning::find($id)->update([
+        //     'Planning_Status' => 'Enable'
+        // ]);
+        // return redirect('/Plan');
+    }
+
     public function destroy($id)
     {
         //

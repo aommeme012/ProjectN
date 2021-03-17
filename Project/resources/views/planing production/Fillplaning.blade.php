@@ -16,7 +16,7 @@
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label>วันที่</label &nbsp>
-                                        <input class="form-control" type="Date" name="Plan_Date">
+                                        <input class="form-control" type="Date" name="Plan_Date" id="start" min = <?php echo date('Y-m-d',);?> value="<?php echo date('Y-m-d',); ?>">
                                         <label>จำนวน</label>
                                         <input class="form-control" type="number" name="Amount">
                                     <label>ส่วนประกอบ</label>
@@ -41,12 +41,11 @@
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
                                     </div>
-                                </form>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 @endsection
 

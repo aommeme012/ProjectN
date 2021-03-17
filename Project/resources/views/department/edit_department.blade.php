@@ -11,7 +11,7 @@
                                 </div>
                             <div class="col-md-6">
                                 <h3>Add Departments</h3>
-                                <form role="form"  method="post" action="{{route('dep.update',[$dep->Dep_Id])}}" enctype="multipart/form-data">
+                                <form role="form"  method="post" action="{{route('dep.update',[$dep->Dep_Id])}}" >
                                     {{ csrf_field() }}
                                     @method('put')
                                     <div class="form-group">
