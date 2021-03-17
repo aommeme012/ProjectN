@@ -14,7 +14,7 @@
                             <hr>
                             @foreach ($comde as $item)
                             <label>componentdetail of {{$item->component_Name}}</label>
-                            <label>{{$item->Material_Name}} {{$item->Comde_Amount}}</label>
+                            <label>{{$item->Material_Name}} {{$item->Comde_Amount}} {{$item->component_Value}}</label>
                             @endforeach
                         </div>
                     </div>

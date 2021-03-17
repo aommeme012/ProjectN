@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                    <a href="/Pdet" class="btn btn-danger square-btn-adjust">Detail</a>
+                    <a href="/comp" class="btn btn-danger square-btn-adjust">ย้อนกลับ</a>
                 </div>
                 <div class="panel-body">
 
@@ -17,14 +17,17 @@
                                     {{ csrf_field() }}
                                     <hr>
                                     <div class="form-group">
-                                        <label>component_Name</label>
+                                        <label>ชื่อส่วนประกอบ</label>
                                         <input class="form-control" type="text" name="component_Name">
+
                                     </div>
                                     <button  class="btn btn-warning" id="add-more" type="button">AddDetail</button>
                                     <h3>DetailComponent</h3>
                                     <hr>
+                                    <label>ส่วนผสม</label>
+                                    <input class="form-control" type="text" name="component_Value">
                                     <div class="form-group" id="form-line">
-                                     <label>Material</label>
+                                     <label>วัตถุดิบ</label>
                                             <select class="form-control" name="Material_Id[0]">
                                                 @foreach ($mats as $mat)
                                                     <option value="{{$mat->Material_Id}}">
@@ -32,7 +35,7 @@
                                                     </option>
                                                     @endforeach
                                             </select>
-                                    <label>Comde_Amount</label>
+                                    <label>จำนวนวัตถุดิบ</label>
                                     <input class="form-control" type="Number" name="Comde_Amount[0]">
                                     </div>
                                     <div class="form-group">
@@ -51,7 +54,7 @@
 $(document).ready(function(){
     var i = 1;
     $('#add-more').click(function(){
-        $('#form-line').append(" <label>Material</label>"+
+        $('#form-line').append(" <label>วัตถุดิบ</label>"+
         "<select class=\"form-control\" name=\"Material_Id["+i+"]\">"+
         "@foreach ($mats as $mat)"+
         "<option value=\"{{$mat->Material_Id}}\">"+
@@ -59,7 +62,7 @@ $(document).ready(function(){
         "</option>"+
         "@endforeach"+
         "</select>"+
-        "<label>Comde_Amount</label>"+
+        "<label>จำนวนวัตถุดิบ</label>"+
         "<input class=\"form-control\" type=\"Number\" name=\"Comde_Amount["+i+"]\">");
         i++;
     });

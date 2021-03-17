@@ -14,10 +14,9 @@
                                 <tr>
                                     <th>Comde_Id</th>
                                     <th>Comde_Amount</th>
+                                    <th>component_Value</th>
                                     <th>Material_Id</th>
                                     <th>component_Id</th>
-                                    <th></th>
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -25,21 +24,10 @@
                                 <tr>
                                     <td>{{$comde->Comde_Id}}</td>
                                     <td>{{$comde->Comde_Amount}}</td>
-                                    <td>{{$comde->Material_Id}}</td>
-                                    <td>{{$comde->component_Id}}</td>
-                                    <td>
-                                        <a href="{{ route('comde.edit',[$comde->Comde_Id])}}"
-                                            class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
-                                    </td>
-                                    <td>
-                                        <form id="form_{{$comde->Comde_Id}}" class="form-inline" method="post"
-                                            action="{{route('comde.destroy',[$comde->Comde_Id])}}">
-                                            {{ csrf_field() }}
-                                            @method('delete')
-                                            <button type="button" class="btn btn-danger btn-sm"
-                                            onclick = "delete_{{$comde->Comde_Id}}()"><i class = "fa fa-trash-o"> </i></button>
-                                        </form>
-                                    </td>
+                                    <td>{{$comde->component_Value}}</td>
+                                    <td>{{App\Materials::find($comde->Material_Id)->Material_Name}}</td>
+                                    <td>{{App\component::find($comde->component_Id)->component_Name}}</td>
+                                </form>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -50,28 +38,5 @@
         </div>
     </div>
 </div>
-<script>
-    @foreach ( $comdes as $comde )
-function delete_{{$comde->Comde_Id}}() {
-    swal({
-  title: "คุณแน่ใจนะที่จะลบอันนี้",
-  text: "คุณต้องการที่จะลบ {{$comde->Comde_Id}} ?",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-}).then((willDelete) => {
-  if (willDelete) {
-    swal("{{$comde->Comde_Id}} ลบเสร็จสิ้น ", {
-      icon: "success"
-
-    })
-    .then(()=>{
-        document.getElementById('form_{{$comde->Comde_Id}}').submit();
-    });
-  }
-});
-    }
-        @endforeach
-</script>
 @endsection
 

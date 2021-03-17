@@ -12,9 +12,9 @@
 
                             <thead>
                                 <tr>
-                                    <th>component_Id</th>
-                                    <th>component_Name</th>
-                                    <th>component_Status</th>
+                                    <th>ไอดี</th>
+                                    <th>ชื่อส่วนผสม</th>
+                                    <th>สถานะส่วนผสม</th>
                                     <th></th>
                                     <th></th>
                                     <th></th>

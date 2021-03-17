@@ -15,9 +15,6 @@
                                     <th>Pdetail_Amount</th>
                                     <th>Material_Id</th>
                                     <th>Purchase_Id</th>
-                                    <th></th>
-                                    <th></th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -25,18 +22,8 @@
                                 <tr>
                                     <td>{{$Pdet->Pdetail_Id}}</td>
                                     <td>{{$Pdet->Pdetail_Amount}}</td>
-                                    <td>{{$Pdet->Material_Id}}</td>
-                                    <td>{{$Pdet->Purchase_Id}}</td>
-                                    <td>
-                                        <a href="{{ route('Pdet.edit',[$Pdet->Purchase_Id])}}" class="btn btn-warning btn-sm">Edit</a>
-                                    </td>
-                                    <td>
-                                        <form class="form-inline" method="post" action="{{route('Pdet.destroy',[$Pdet->Pdetail_Id])}}" >
-                                            {{ csrf_field() }}
-                                            @method('delete')
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                        </form>
-                                    </td>
+                                    <td>{{App\Materials::find($Pdet->Material_Id)->Material_Name}}</td>
+                                    <td>{{App\PurchaseOrder::find($Pdet->Purchase_Id)->Purchase_Date}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

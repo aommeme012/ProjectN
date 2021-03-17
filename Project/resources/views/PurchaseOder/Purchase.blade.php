@@ -23,8 +23,8 @@
                                 <tr>
                                     <td>{{$Pur->Purchase_Id}}</td>
                                     <td>{{$Pur->Purchase_Date}}</td>
-                                    <td>{{$Pur->Emp_Id}}</td>
-                                    <td>{{$Pur->Partner_Id}}</td>
+                                    <td>{{App\Employee::find($Pur->Emp_Id)->Fname}}</td>
+                                    <td>{{App\Partner::find($Pur->Partner_Id)->Partner_Name}}</td>
                                     <td>{{$Pur->Purchase_Status}}</td>
                                 </tr>
                                 @endforeach
@@ -34,7 +34,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 </div>
 @endsection

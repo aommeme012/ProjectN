@@ -27,8 +27,8 @@
                                     <td>{{$RP->Requispro_Id}}</td>
                                     <td>{{$RP->Requispro_Date}}</td>
                                     <td>{{$RP->Requispro_Amount}}</td>
-                                    <td>{{$RP->Product_Id}}</td>
-                                    <td>{{$RP->Emp_Id}}</td>
+                                    <td>{{App\Product::find($RP->Product_Id)->Product_Name}}</td>
+                                    <td>{{App\Employee::find($RP->Emp_Id)->Fname}}</td>
                             </form>
                                 @endforeach
                         </tbody>

@@ -32,8 +32,8 @@
                                     <td>{{$Plan->Plan_Date}}</td>
                                     <td>{{$Plan->Amount}}</td>
                                     <td>{{$Plan->Planning_Status}}</td>
-                                    <td>{{$Plan->component_Id}}</td>
-                                    <td>{{$Plan->Product_Id}}</td>
+                                    <td>{{App\component::find($Plan->component_Id)->component_Name}}</td>
+                                    <td>{{App\Product::find($Plan->Product_Id)->Product_Name}}</td>
                                     <td>
                                         <button type="submit" class="btn btn-warning btn-sm">ทำรายการอีกครั้ง</button>
                                     </td>

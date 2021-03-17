@@ -17,7 +17,7 @@
                                     <th>Production_Date</th>
                                     <th>Production_Status</th>
                                     <th>Requismat_Id</th>
-                                    <th>Emp_Id</th>
+                                    <th>Fname</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -30,7 +30,7 @@
                                     <td>{{$P->Production_Date}}</td>
                                     <td>{{$P->Production_Status}}</td>
                                     <td>{{$P->Requismat_Id}}</td>
-                                    <td>{{$P->Emp_Id}}</td>
+                                    <td>{{$P->Fname}}</td>
                                     <td>
                                         <button type="submit" class="btn btn-warning btn-sm" >ยืนยันการผลิตเสร็จสิ้น</button>
                                     </td>

@@ -15,12 +15,14 @@ class ProductionController extends Controller
     public function index()
     {
         $Requimat = RequisitionMaterial::join('production_plannings', 'requisition_materials.Plan_Id', '=', 'production_plannings.Plan_Id')
-            ->where('production_plannings.Planning_Status', 'Enable')->get();
+        ->join('materials','requisition_materials.Material_Id','=','materials.Material_Id')
+        ->where('production_plannings.Planning_Status', 'Enable')->get();
+
         return view('Production.Showrequisitionmat', compact('Requimat'));
     }
     public function create()
     {
-        $Production = DB::table('productions')
+        $Production = DB::table('productions')->join('employees','productions.Emp_Id','=','employees.Emp_Id')
             ->where('Production_Status', '=', 'ผลิตอยู่')->get();
         return view('Production.ProductionTable', compact('Production'));
     }
@@ -30,7 +32,7 @@ class ProductionController extends Controller
     }
     public function show()
     {
-        $Ption = DB::table('productions')
+        $Ption = DB::table('productions')->join('employees','productions.Emp_Id','=','employees.Emp_Id')
             ->where('Production_Status', '=', 'เสร็จสิ้น')->get();
         return view('Production.historyproduction', compact('Ption'));
     }

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                    <a href="/Pdet" class="btn btn-danger square-btn-adjust">Detail</a>
+                    <a href="/comp" class="btn btn-danger square-btn-adjust">Detail</a>
                 </div>
                 <div class="panel-body">
 
@@ -50,6 +50,9 @@
                                 <hr>
                                 @foreach ($comde as $comdetail)
                                 <div class="form-group" id="form-line">
+                                    <label>component_Value</label>
+                                    <input class="form-control" type="text" name="component_Value"
+                                        value="{{$comdetail->component_Value}}">
                                     <input type="hidden" name='Comde_Id[]' value="{{$comdetail->Comde_Id}}">
                                     <label>Material</label>
                                     <select class="form-control" name="Material_Id[]">

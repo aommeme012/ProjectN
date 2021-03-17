@@ -27,7 +27,7 @@
                                     <td>{{$Pro->Product_Name}}</td>
                                     <td>{{$Pro->Product_Amount}}</td>
                                     <td>{{$Pro->Product_Status}}</td>
-                                    <td>{{$Pro->Type_Id}}</td>
+                                    <td>{{App\TypeProduct::find($Pro->Type_Id)->Type_Name}}</td>
                                     <td>
                                         <a href="{{ route('Pro.edit',[$Pro->Product_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
                                     </td>

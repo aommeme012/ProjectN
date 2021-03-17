@@ -17,8 +17,8 @@
                                     <th>Production_Date</th>
                                     <th>Production_Status</th>
                                     <th>Requismat_Id</th>
-                                    <th>Emp_Id</th>
-                                    <th></th>
+                                    <th>Fname</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -28,7 +28,7 @@
                                     <td>{{$P->Production_Date}}</td>
                                     <td>{{$P->Production_Status}}</td>
                                     <td>{{$P->Requismat_Id}}</td>
-                                    <td>{{$P->Emp_Id}}</td>
+                                    <td>{{$P->Fname}}</td>
                                 </tr>
                                 </form>
                                 @endforeach

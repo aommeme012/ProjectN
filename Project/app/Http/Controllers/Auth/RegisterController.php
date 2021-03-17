@@ -47,13 +47,13 @@ class RegisterController extends Controller
     public function test()
     {
             return Employee::create([
-                'Fname' => "QQ",
-                'Lname' => "ABc",
-                'Address' => "123/456",
-                'Tel'=> "0123456789",
+                'Fname' => "อชิตพล",
+                'Lname' => "พลานุวัฒน์",
+                'Address' => "43/374 ลาดกระบัง14/1",
+                'Tel'=> "0631587049",
                 'Sex'=> "ชาย",
-                'Username'=> "wooq",
-                'Password' => bcrypt("123456"),
+                'Username'=> "achitphon",
+                'Password' => bcrypt("0802998177"),
                 'Emp_Status' => "Enable",
                 'Type'=> "0",
                 'Dep_Id'=> "1",

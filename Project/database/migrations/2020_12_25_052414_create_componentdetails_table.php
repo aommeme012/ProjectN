@@ -16,6 +16,7 @@ class CreateComponentdetailsTable extends Migration
         Schema::create('componentdetails', function (Blueprint $table) {
             $table->Bigincrements('Comde_Id', 5);
             $table->integer('Comde_Amount');
+            $table->string('component_Value', 255);
             $table->unsignedBigInteger('Material_Id');
             $table->foreign('Material_Id')->references('Material_Id')->on('materials')->ondelete('cascade');
             $table->unsignedBigInteger('component_Id');

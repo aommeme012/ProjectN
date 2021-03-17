@@ -27,7 +27,6 @@ class ProductionPlanningController extends Controller
     }
     public function store(Request $request)
     {
-       // return $request;
         $post=$request->all();
         ProductionPlanning::create($post);
         return back();

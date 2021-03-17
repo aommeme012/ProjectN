@@ -11,6 +11,7 @@ class componentdetail extends Model
 
     protected $fillable = [
         'Comde_Amount',
+        'component_Value',
         'Material_Id',
         'component_Id',
     ];

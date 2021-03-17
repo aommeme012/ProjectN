@@ -7,7 +7,7 @@ use App\componentdetail;
 use App\Materials;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use Illuminate\View\Component as ViewComponent;
+
 
 class componentController extends Controller
 {
@@ -19,6 +19,7 @@ class componentController extends Controller
     }
     public function create()
     {
+        $comps = component::all();
         $mats = Materials::all();
         return view('component.add_component',compact('mats'));
     }
@@ -32,21 +33,18 @@ class componentController extends Controller
         $component = $request->Material_Id;
         for($i = 0; $i < count($component); $i++){
             componentdetail::create([
+                'component_Value'=>$request->component_Value,
                 'Comde_Amount' => $request->Comde_Amount[$i],
                 'Material_Id' => $request->Material_Id[$i],
                 'component_Id' =>  $comp->component_Id,
             ]);
         }
         return back();
-        // $post=$request->all();
-        // component::create($post);
-        // return view('component.add_component');
     }
 
     public function show($id)
     {
         $comde = componentdetail::find($id);
-
         $mats = $comde -> Material_Id;
         $comps = $comde -> component_Id;
         $comde = $comde -> Comde_Amount;
@@ -62,8 +60,6 @@ class componentController extends Controller
             ->join('components','componentdetails.component_Id','=','components.component_Id')
             ->where('componentdetails.component_Id',$id)->get();
         $mats = Materials::all();
-        // return $comde;
-        //return $comde;
         return view('component.edit_component',compact('component','comde','mats'));
     }
 
@@ -77,11 +73,13 @@ class componentController extends Controller
             if(isset($request->Comde_Id[$i])){
                // return "hi";
                 DB::table('componentdetails')->where('Comde_Id',$request->Comde_Id[$i])->update([
+                    'component_Value'=>$request->component_Value,
                     'Material_Id' => $request->Material_Id[$i],
                     'Comde_Amount' => $request->Comde_Amount[$i],
                 ]);
             } else{
                 componentdetail::create([
+                    'component_Value'=>$request->component_Value,
                     'Material_Id' => $request->Material_Id[$i],
                     'Comde_Amount' => $request->Comde_Amount[$i],
                     'component_Id' => $id,

@@ -32,8 +32,8 @@
                                     <td>{{$P->Requismat_Id}}</td>
                                     <td>{{$P->Requismat_Date}}</td>
                                     <td>{{$P->Requismat_Amount}}</td>
-                                    <td>{{$P->Material_Id}}</td>
-                                    <td>{{$P->Plan_Id}}</td>
+                                    <td>{{$P->Material_Name}}</td>
+                                    <td>{{$P->Plan_Date}}</td>
 
                                 <td>
                                     <button type="submit" class="btn btn-warning btn-sm" onclick="Production();">ยืนยันการผลิต</button>

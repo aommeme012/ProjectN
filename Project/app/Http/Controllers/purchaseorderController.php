@@ -22,6 +22,8 @@ class purchaseorderController extends Controller
     }
     public function create()
     {
+
+
         $Purc = PurchaseOrder::all();
         $emps = Employee::all();
         $parts = Partner::all();
@@ -46,21 +48,19 @@ class purchaseorderController extends Controller
             ]);
         }
         return back();
-        // $post=$request->all();
-        // PurchaseOrder::create($post);
-        // return redirect('/Purback');
+
     }
-    public function show(PurchaseOrder $PurchaseOrder)
+    public function show(PurchaseOrder $PurchaseOrder )
     {
-        //
+       //
     }
     public function edit($id)
     {
-        //
+       //
     }
     public function update(Request $request, $id)
     {
-        //
+
     }
     public function destroy($id)
     {

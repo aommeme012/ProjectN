@@ -29,8 +29,8 @@
                                     <tr>
                                         <td>{{$Rec->Purchase_Id}}</td>
                                         <td>{{$Rec->Purchase_Date}}</td>
-                                        <td>{{$Rec->Emp_Id}}</td>
-                                        <td>{{$Rec->Partner_Id}}</td>
+                                        <td>{{App\Employee::find($Rec->Emp_Id)->Fname}}</td>
+                                        <td>{{App\Partner::find($Rec->Partner_Id)->Partner_Name}}</td>
                                         <td>{{$Rec->Purchase_Status}}</td>
                                         <td>
                                             <?php $orders = App\PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
@@ -42,7 +42,7 @@
                                         </td>
                                         <td>
                                             <button type="submit"
-                                                class="btn btn-warning btn-sm">receive</button>
+                                             class="btn btn-warning btn-sm">receive</button>
                                         </td>
                                 </tbody>
                             </form>

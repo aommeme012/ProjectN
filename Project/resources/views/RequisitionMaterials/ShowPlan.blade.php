@@ -31,8 +31,8 @@
                                     <td>{{$RequiMM->Plan_Id}}</td>
                                     <td>{{$RequiMM->Plan_Date}}</td>
                                     <td>{{$RequiMM->Amount}}</td>
-                                    <td>{{$RequiMM->component_Id}}</td>
-                                    <td>{{$RequiMM->Product_Id}}</td>
+                                    <td>{{App\component::find($RequiMM->component_Id)->component_Name}}</td>
+                                    <td>{{App\Product::find($RequiMM->Product_Id)->Product_Name}}</td>
 
                                 <td>
                                     <button type="submit" class="btn btn-warning btn-sm" onclick="Requisition();">Requisition</button>

@@ -38,7 +38,7 @@
                                         <td>{{$emp->Username}}</td>
                                         {{-- <td>{{$emp->Password}}</td> --}}
                                         <td>{{$emp->Emp_Status}}</td>
-                                        <td>{{$emp->Dep_Id}}</td>
+                                        <td>{{App\Departments::find($emp->Dep_Id)->Dep_Name}}</td>
                                         <td>
                                             <a href="{{ route('emp.edit',[$emp->Emp_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
                                         </td>
