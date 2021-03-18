@@ -21,7 +21,7 @@
                                 </tr>
                             </thead>
                             @foreach ($RequiP as $RequiPP)
-                            <form role="form"  method="post" action="{{route('RequiPP.update',[$RequiPP->Production_Id])}}" >
+                            <form id="Requisitionpro" role="form"  method="post" action="{{route('RequiPP.update',[$RequiPP->Production_Id])}}" >
                                 {{ csrf_field() }}
                                 @method('put')
                             <tbody>
@@ -32,7 +32,7 @@
                                     <td>{{$RequiPP->Requismat_Id}}</td>
                                     <td>{{App\Employee::find($RequiPP->Emp_Id)->Fname}}</td>
                                 <td>
-                                    <button type="submit" class="btn btn-warning btn-sm" onclick="Requisition();">Requisition</button>
+                                    <button onclick="Requisitionpro()" type="button" class="btn btn-warning btn-sm" onclick="Requisition();">Requisition</button>
                                 </td>
                             </form>
                                 @endforeach
@@ -46,14 +46,23 @@
     </div>
 </div>
 <script>
-    function Requisition(){
-    }
-    @if(session('success'))
-        swal("{{session('success')}}");
-    @endif
-    @if(session('fail'))
-        swal("{{session('fail')}}");
-    @endif
+    function Requisitionpro() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "ที่จะเบิกสินค้าชิ้นนี้",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("เบิกสินค้าเสร็จสิ้น", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('Requisitionpro').submit();
+    });
+        }
+    });
+}
 </script>
 @endsection
 

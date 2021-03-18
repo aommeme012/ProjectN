@@ -7,11 +7,11 @@
                         <div class="panel-body">
                                 <div class="row">
                                     <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                    <a href="/emp" class="btn btn-danger square-btn-adjust">back</a>
+                                    <a href="/emp" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                     </div>
                                     <div class="col-md-6">
                                         <h3>Add employees</h3>
-                                        <form role="form"  method="post" action="{{route('emp.store')}}">
+                                        <form id="addEmp" role="form"  method="post" action="{{route('emp.store')}}">
                                             {{ csrf_field() }}
                                             <div class="form-group">
                                                 <label>Fname</label>
@@ -45,7 +45,7 @@
                                         </div>
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-sm">create</button>
+                                                <button onclick="addEmp()" type="button" class="btn btn-primary btn-sm">create</button>
                                             </div>
                                         </form>
                         </div>
@@ -55,4 +55,23 @@
         </div>
     </div>
 </div>
+<script>
+    function addEmp() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "ที่จะเพิ่มพนักงาน",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("เพิ่มพนักงานสำเร็จสำเร็จ", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('addEmp').submit();
+    });
+        }
+    });
+}
+</script>
 @endsection

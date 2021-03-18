@@ -29,13 +29,13 @@
                                     <td>{{$part->Partner_Tel}}</td>
                                     <td>{{$part->Partner_Status}}</td>
                                     <td>
-                                        <a href="{{ route('part.edit',[$part->Partner_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
+                                        <a href="{{ route('part.edit',[$part->Partner_Id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>
                                     </td>
                                     <td>
                                         <form id="form_{{$part->Partner_Id}}" class="form-inline" method="post" action="{{route('part.destroy',[$part->Partner_Id])}}">
                                             {{ csrf_field() }}
                                             @method('delete')
-                                            <button type="submit" class="btn btn-danger btn-sm"
+                                            <button type="button" class="btn btn-danger btn-sm"
                                             onclick = "delete_{{$part->Partner_Id}}()"><i class = "fa fa-trash-o"></i></button>
                                         </form>
                                     </td>

@@ -27,7 +27,7 @@
                                     <td>{{$comp->component_Name}}</td></a>
                                     <td>{{$comp->component_Status}}</td>
                                     <td>
-                                        <a href="{{ route('comp.edit',[$comp->component_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
+                                        <a href="{{ route('comp.edit',[$comp->component_Id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>
                                     </td>
                                     <td>
                                         <form id="form_{{$comp->component_Id}}" class="form-inline" method="post" action="{{route('comp.destroy',[$comp->component_Id])}}" >

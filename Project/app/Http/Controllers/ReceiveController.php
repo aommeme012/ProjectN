@@ -19,7 +19,8 @@ class ReceiveController extends Controller
     }
     public function create()
     {
-        //
+        $rec = Receive::all();
+        return view('Receive.ReceivesTable',compact('rec'));
     }
     public function store(Request $request)
     {

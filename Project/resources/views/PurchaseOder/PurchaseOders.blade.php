@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <h3>สั่งซื้อวัตถุดิบ</h3>
-                                <form role="form"  method="post" action="{{route('Pur.store')}}">
+                                <form id="Purchase" role="form"  method="post" action="{{route('Pur.store')}}">
                                     {{ csrf_field() }}
                                     <hr>
                                     <div class="form-group">
@@ -41,7 +41,7 @@
                                     <input class="form-control" type="Number" name="Pdetail_Amount[0]">
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-sm" >PurchaseOrder</button>
+                                        <button onclick="checkPurchase()" type="button" class="btn btn-primary btn-sm" >PurchaseOrder</button>
                             </div>
                     </form>
                 </div>
@@ -49,6 +49,25 @@
         </div>
     </div>
 </div>
+<script>
+    function checkPurchase() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "ที่จะสั่งซื้อ{{$mat->Material_Name}}",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("{{$mat->Material_Name}} สั่งซื้อเสร็จเรียบร้อย", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('Purchase').submit();
+    });
+        }
+    });
+}
+</script>
 <script>
 $(document).ready(function(){
     var i = 1;

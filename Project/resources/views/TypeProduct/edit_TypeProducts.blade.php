@@ -7,11 +7,11 @@
                 <div class="panel-body">
                         <div class="row">
                             <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                <a href="/type" class="btn btn-danger square-btn-adjust">back</a>
+                                <a href="/type" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                 </div>
                             <div class="col-md-6">
                                 <h3>TypeProducts</h3>
-                                <form  method="post" action="{{route('type.update',[$type->Type_Id])}}" >
+                                <form id="editType" method="post" action="{{route('type.update',[$type->Type_Id])}}" >
                                     {{ csrf_field() }}
                                 @method('put')
                                     <div class="form-group">
@@ -42,16 +42,35 @@
                                             </div>
                                         @endif
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-warning btn-sm">edit</button>
+                                        <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">edit</button>
                                     </div>
-                    </form>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-</div>
+<script>
+    function checkEdit() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "จะแก้ไข {{$type->Type_Name}} ?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("{{$type->Type_Name}} แก้ไขเรียบร้อย", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('editType').submit();
+    });
+        }
+    });
+}
+</script>
 @endsection
 
 

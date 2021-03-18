@@ -26,7 +26,7 @@
                                     <td>{{$type->Type_Name}}</td>
                                     <td>{{$type->Type_Status}}</td>
                                     <td>
-                                        <a href="{{ route('type.edit',[$type->Type_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
+                                        <a href="{{ route('type.edit',[$type->Type_Id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>
                                     </td>
                                     <td>
                                         <form id="form_{{$type->Type_Id}}" class="form-inline" method="post" action="{{route('type.destroy',[$type->Type_Id])}}">

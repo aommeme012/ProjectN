@@ -4,6 +4,9 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
+                <div style="float:right">
+                    <a href="/Receive" class="btn btn-default btn-xs">รายการที่รับเข้า</a>
+                </div>
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
@@ -20,7 +23,7 @@
                                 </tr>
                             </thead>
                             @foreach ($receive as $Rec)
-                            <form role="form" method="post"
+                            <form role="form" method="post" id="Receives"
                                 action="{{route('Rec.update',[$Rec->Purchase_Id])}}">
                                 {{ csrf_field() }}
                                 @method('put')
@@ -41,7 +44,7 @@
                                             @endforeach
                                         </td>
                                         <td>
-                                            <button type="submit"
+                                            <button onclick="checkReceives()" type="button"
                                              class="btn btn-warning btn-sm">receive</button>
                                         </td>
                                 </tbody>
@@ -56,5 +59,24 @@
 </div>
 </div>
 </body>
+<script>
+    function checkReceives() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "ที่จะรับวัตถุดิบชิ้นนี้เข้า",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("รับวัตถุดิบเข้าเสร็จเรียบร้อย", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('Receives').submit();
+    });
+        }
+    });
+}
+</script>
 @endsection
 

@@ -12,7 +12,7 @@
                             <div class="col-md-6">
                                 <h3>แผนการผลิต</h3>
                                 <hr>
-                                <form role="form"  method="post" action="{{route('Plan.store')}}">
+                                <form id="Plan" role="form"  method="post" action="{{route('Plan.store')}}">
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label>วันที่</label &nbsp>
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
+                                        <button onclick="CheckPlan()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
                                     </div>
                     </form>
                 </div>
@@ -47,5 +47,24 @@
         </div>
     </div>
 </div>
+<script>
+    function CheckPlan() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "ที่จะวาแผนการผลิตชิ้นนี้",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("วางแผนเสร็จสิ้น", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('Plan').submit();
+    });
+        }
+    });
+}
+</script>
 @endsection
 

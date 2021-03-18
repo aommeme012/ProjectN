@@ -27,7 +27,7 @@
                                             <td>{{$mat->Material_Amount}}</td>
                                             <td>{{$mat->Material_Status}}</td>
                                             <td>
-                                                <a href="{{ route('mat.edit',[$mat->Material_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
+                                                <a href="{{ route('mat.edit',[$mat->Material_Id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>
                                             </td>
                                             <td>
                                                 <form id="form_{{$mat->Material_Id}}" class="form-inline" method="post" action="{{route('mat.destroy',[$mat->Material_Id])}}" >

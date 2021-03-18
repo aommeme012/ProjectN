@@ -40,7 +40,7 @@
                                         <td>{{$emp->Emp_Status}}</td>
                                         <td>{{App\Departments::find($emp->Dep_Id)->Dep_Name}}</td>
                                         <td>
-                                            <a href="{{ route('emp.edit',[$emp->Emp_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
+                                            <a href="{{ route('emp.edit',[$emp->Emp_Id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>
                                         </td>
                                         <td>
                                             <form id="form_{{$emp->Emp_Id}}" class="form-inline" method="post" action="{{route('emp.destroy',[$emp->Emp_Id])}}">

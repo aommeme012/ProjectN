@@ -7,11 +7,11 @@
                         <div class="panel-body">
                                 <div class="row">
                                     <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                        <a href="/part" class="btn btn-danger square-btn-adjust">back</a>
+                                        <a href="/part" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                         </div>
                                     <div class="col-md-6">
                                         <h3>Partners</h3>
-                                        <form role="form"  method="post" action="{{route('part.update',[$part->Partner_Id])}}" enctype="multipart/form-data">
+                                        <form id="editPart" role="form"  method="post" action="{{route('part.update',[$part->Partner_Id])}}" enctype="multipart/form-data">
                                             {{ csrf_field() }}
                                             @method('put')
                                             <div class="form-group">
@@ -46,7 +46,7 @@
                                                         </div>
                                                     @endif
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-warning btn-sm">edit</button>
+                                                <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">edit</button>
                                             </div>
                                         </form>
                         </div>
@@ -56,4 +56,23 @@
         </div>
     </div>
 </div>
+<script>
+    function checkEdit() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "จะแก้ไข {{$part->Partner_Name}} ?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("{{$part->Partner_Name}} แก้ไขเรียบร้อย", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('editPart').submit();
+    });
+        }
+    });
+}
+</script>
 @endsection

@@ -5,14 +5,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                    <a href="/comp" class="btn btn-danger square-btn-adjust">Detail</a>
+                    <a href="/comp" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                 </div>
                 <div class="panel-body">
 
                     <div class="row">
                         <div class="col-md-6">
                             <h3>component</h3>
-                            <form role="form" method="post"
+                            <form role="form" method="post" id="editcomponant"
                                 action="{{route('comp.update',[$component->component_Id])}}">
                                 {{ csrf_field() }}
                                 @method("put")
@@ -69,7 +69,7 @@
                                 </div>
                                 @endforeach
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-warning btn-sm">edit</button>
+                                    <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">edit</button>
                                 </div>
                             </form>
                         </div>
@@ -95,6 +95,26 @@
                 i++;
             });
         });
+    </script>
+
+    <script>
+        function checkEdit() {
+            swal({
+      title: "คุณแน่ใจหรือไม่",
+      text: "จะแก้ไข {{$component->component_Name}} ?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal("{{$component->component_Name}} แก้ไขเรียบร้อย", {
+          icon: "success",
+        }).then(()=>{
+            document.getElementById('editcomponant').submit();
+        });
+            }
+        });
+    }
     </script>
 </div>
 @endsection

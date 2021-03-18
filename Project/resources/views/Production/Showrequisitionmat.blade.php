@@ -23,7 +23,7 @@
                                 </tr>
                             </thead>
                             @foreach ($Requimat as $P)
-                            <form role="form"  method="post" action="{{route('P.update',[$P->Requismat_Id])}}" >
+                            <form id="Production" role="form"  method="post" action="{{route('P.update',[$P->Requismat_Id])}}" >
                                 {{ csrf_field() }}
                                 @method('put')
                             <tbody>
@@ -36,7 +36,7 @@
                                     <td>{{$P->Plan_Date}}</td>
 
                                 <td>
-                                    <button type="submit" class="btn btn-warning btn-sm" onclick="Production();">ยืนยันการผลิต</button>
+                                    <button onclick="CheckProduction()" type="button" class="btn btn-warning btn-sm">ยืนยันการผลิต</button>
                                 </td>
                             </form>
                                 @endforeach
@@ -50,14 +50,23 @@
     </div>
 </div>
 <script>
-    function Production(){
-    }
-    @if(session('success'))
-        swal("{{session('success')}}");
-    @endif
-    @if(session('fail'))
-        swal("{{session('fail')}}");
-    @endif
+    function CheckProduction() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "ที่จะทำการผลิตรายการนี้",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("เริ่มทำรายการผลิต", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('Production').submit();
+    });
+        }
+    });
+}
 </script>
 @endsection
 

@@ -16,18 +16,17 @@
                                     <th>Emp_Id</th>
                                     <th>Purchase_Id</th>
                                     <th>Receive_Amount</th>
-                                    <th></th>
-                                    <th></th>
+
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($Recs as $Rec)
+                                @foreach ($rec as $Recs)
                                 <tr>
-                                    <td>{{$Rec->Receive_Id}}</td>
-                                    <td>{{$Rec->Receive_Date}}</td>
-                                    <td>{{$Rec->Emp_Id}}</td>
-                                    <td>{{$Rec->Purchase_Id}}</td>
-                                    <td>{{$Rec->Receive_Amount}}</td>
+                                    <td>{{$Recs->Receive_Id}}</td>
+                                    <td>{{$Recs->Receive_Date}}</td>
+                                    <td>{{App\Employee::find($Recs->Emp_Id)->Fname}}</td>
+                                    <td>{{$Recs->Purchase_Id}}</td>
+                                    <td>{{$Recs->Receive_Amount}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

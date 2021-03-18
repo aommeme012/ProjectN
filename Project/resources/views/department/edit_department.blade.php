@@ -7,11 +7,11 @@
                 <div class="panel-body">
                         <div class="row">
                             <div style="padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                <a href="/dep" class="btn btn-danger square-btn-adjust">back</a>
+                                <a href="/dep" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                 </div>
                             <div class="col-md-6">
                                 <h3>Add Departments</h3>
-                                <form role="form"  method="post" action="{{route('dep.update',[$dep->Dep_Id])}}" >
+                                <form id="editDep" role="form"  method="post" action="{{route('dep.update',[$dep->Dep_Id])}}" >
                                     {{ csrf_field() }}
                                     @method('put')
                                     <div class="form-group">
@@ -42,8 +42,9 @@
                                                     </label>
                                                 </div>
                                             @endif
+
                                     <div class="form-group">
-                                        <button  type="button" onclick="checkEdit()" class="btn btn-warning btn-sm">edit</button>
+                                        <button  type="button" onclick="checkEdit()" class="btn btn-warning btn-sm"  >edit</button>
                                     </div>
                                 </form>
                             </div>
@@ -56,7 +57,7 @@
     <script>
     function checkEdit() {
         swal({
-  title: "คุณแน่ใจ",
+  title: "คุณแน่ใจหรือไม่",
   text: "จะแก้ไข {{$dep->Dep_Name}} ?",
   icon: "warning",
   buttons: true,
@@ -68,8 +69,9 @@
     }).then(()=>{
         document.getElementById('editDep').submit();
     });
-    }
-});
+        }
+    });
 }
 </script>
 @endsection
+

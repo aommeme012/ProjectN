@@ -29,7 +29,7 @@
                                     <td>{{$Pro->Product_Status}}</td>
                                     <td>{{App\TypeProduct::find($Pro->Type_Id)->Type_Name}}</td>
                                     <td>
-                                        <a href="{{ route('Pro.edit',[$Pro->Product_Id])}}" class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
+                                        <a href="{{ route('Pro.edit',[$Pro->Product_Id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>
                                     </td>
                                     <td>
                                         <form id="form_{{$Pro->Product_Id}}" class="form-inline" method="post" action="{{route('Pro.destroy',[$Pro->Product_Id])}}" enctype="multipart/form-data">

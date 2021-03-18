@@ -25,7 +25,7 @@
                                     <td>{{$dep->Dep_Name}}</td>
                                     <td>{{$dep->Dep_Status}}</td>
                                     <td>
-                                        <a href="{{ route('dep.edit',[$dep->Dep_Id])}}"class="btn btn-warning btn-sm"><i class = "fa fa-pencil"></i></a>
+                                        <a href="{{ route('dep.edit',[$dep->Dep_Id])}}"class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>
                                     </td>
                                     <td>
                                         <form id="form_{{$dep->Dep_Id}}" class="form-inline" method="post"

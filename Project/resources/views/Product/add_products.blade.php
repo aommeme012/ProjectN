@@ -7,11 +7,11 @@
                 <div class="panel-body">
                         <div class="row">
                             <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                <a href="/Pro" class="btn btn-danger square-btn-adjust">back</a>
+                                <a href="/Pro" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                 </div>
                             <div class="col-md-6">
                                 <h3>Add Product</h3>
-                                <form role="form"  method="post" action="{{route('Pro.store')}}">
+                                <form id="addProduct" role="form"  method="post" action="{{route('Pro.store')}}">
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label>Product_Name</label>
@@ -30,7 +30,7 @@
                                 </div>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-sm">create</button>
+                                        <button onclick="addProduct()" type="button" class="btn btn-primary btn-sm">create</button>
                                     </div>
                                 </form>
                     </div>
@@ -41,5 +41,24 @@
 </div>
 </div>
 </div>
+<script>
+    function addProduct() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "ที่จะเพิ่มสินค้า",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("เพิ่มสินค้าสำเร็จ", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('addProduct').submit();
+    });
+        }
+    });
+}
+</script>
 @endsection
 

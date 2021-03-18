@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="panel-body">
                     <div style="float: right;">
-                    <a  href="/RequiPP" class="btn btn-warning btn-xs" >back</a>
+                    <a  href="/RequiPP" class="btn btn-warning btn-xs" ><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">

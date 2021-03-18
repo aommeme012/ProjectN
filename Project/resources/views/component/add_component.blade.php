@@ -6,14 +6,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                    <a href="/comp" class="btn btn-danger square-btn-adjust">ย้อนกลับ</a>
+                    <a href="/comp" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                 </div>
                 <div class="panel-body">
 
                         <div class="row">
                             <div class="col-md-6">
                                 <h3>component</h3>
-                                <form role="form"  method="post" action="{{route('comp.store')}}">
+                                <form id="component" role="form"  method="post" action="{{route('comp.store')}}">
                                     {{ csrf_field() }}
                                     <hr>
                                     <div class="form-group">
@@ -39,7 +39,7 @@
                                     <input class="form-control" type="Number" name="Comde_Amount[0]">
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-sm" >create</button>
+                                        <button onclick="addcomponent()" type="button" class="btn btn-primary btn-sm" >create</button>
                             </div>
                     </form>
                 </div>
@@ -67,5 +67,25 @@ $(document).ready(function(){
         i++;
     });
 });
+</script>
+
+<script>
+    function addcomponent() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "ที่จะสร้างสูตร",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("สร้างสูตรสำเร็จ", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('component').submit();
+    });
+        }
+    });
+}
 </script>
 @endsection

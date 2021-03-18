@@ -7,11 +7,11 @@
                         <div class="panel-body">
                                 <div class="row">
                                     <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                        <a href="/emp" class="btn btn-danger square-btn-adjust">back</a>
+                                        <a href="/emp" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                         </div>
                                     <div class="col-md-6">
                                         <h3>employees</h3>
-                                        <form  method="post" action="{{route('emp.update',[$emp->Emp_Id])}}" >
+                                        <form id="editEmp" method="post" action="{{route('emp.update',[$emp->Emp_Id])}}" >
                                             {{ csrf_field() }}
                                         @method('put')
                                         <div class="form-group">
@@ -69,7 +69,7 @@
                                                         </div>
                                                     @endif
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-warning btn-sm">edit</button>
+                                                <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">edit</button>
                                             </div>
                                         </form>
                         </div>
@@ -79,5 +79,24 @@
         </div>
     </div>
 </div>
+<script>
+function checkEdit() {
+    swal({
+title: "คุณแน่ใจหรือไม่",
+text: "จะแก้ไข {{$emp->Fname}} ?",
+icon: "warning",
+buttons: true,
+dangerMode: true,
+}).then((willDelete) => {
+if (willDelete) {
+swal("{{$emp->Fname}} แก้ไขเรียบร้อย", {
+  icon: "success",
+}).then(()=>{
+    document.getElementById('editEmp').submit();
+});
+    }
+});
+}
+</script>
 @endsection
 

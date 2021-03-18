@@ -36,50 +36,50 @@
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{ route('dep.index')}}">Departments</a>
+                                <a href="{{ route('dep.index')}}">แผนกงาน</a>
                             </li>
                             <li>
-                                <a href="/emp">Employees</a>
+                                <a href="/emp">พนักงาน</a>
                             </li>
                             <li>
-                                <a href="/part">Partner</a>
+                                <a href="/part">บริษัทคู่ค้า</a>
                             </li>
                             <li>
-                                <a href="/mat">Materials</a>
+                                <a href="/mat">วัตถุดิบ</a>
                             </li>
                             <li>
-                                <a href="/type">TypeProduct</a>
+                                <a href="/type">ชนิดสินค้า</a>
                             </li>
                             <li>
-                                <a href="/Pro">Products</a>
+                                <a href="/Pro">สินค้า</a>
                             </li>
                             <li>
-                                <a href="/comp">component</a>
+                                <a href="/comp">ส่วนประกอบ</a>
                             </li>
                             <li>
-                                <a href="/comde">component detail</a>
+                                <a href="/comde">รายละเอียดส่วนประกอบ</a>
                             </li>
                         </ul>
             </div>
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a href="/Pur"><i class="fa fa-square-o fa-3x"></i> PurchaseOder</a>
+                        <a href="/Pur"><i class="fa fa-table fa-3x"></i>สั่งซื้อสินค้า</a>
                     </li>
                     <li>
-                        <a href="/Rec"><i class="fa fa-square-o fa-3x"></i> Receives</a>
+                        <a href="/Rec"><i class="fa fa-dashboard fa-3x"></i> รับเข้าสินค้า</a>
                     </li>
                     <li>
-                        <a class="active-menu" href="/Planing"><i class="fa fa-square-o fa-3x"></i> ProductionPlaning</a>
+                        <a class="active-menu" href="/Planing"><i class="fa fa-bar-chart-o fa-3x"></i>วางแผนการผลิต</a>
                     </li>
                     <li>
-                        <a  href="/RequiMM"><i class="fa fa-square-o fa-3x"></i> RequisitionMaterial</a>
+                        <a href="/RequiMM"><i class="fa fa-desktop fa-3x"></i> เบิกวัตถุดิบ</a>
                     </li>
                     <li>
-                        <a  href="/P"><i class="fa fa-square-o fa-3x"></i> Production</a>
+                        <a href="/P"><i class="fa fa-bar-chart-o fa-3x"></i> การผลิต</a>
                     </li>
                     <li>
-                        <a  href="/RequiPP"><i class="fa fa-square-o fa-3x"></i> RequisitionProduct</a>
+                        <a  href="/RequiPP"><i class="fa fa-flask fa-3x"></i>เบิกสินค้า</a>
                     </li>
                 </ul>
             </div>
@@ -91,6 +91,7 @@
     <script src="{{asset('assets/js/morris/morris.js')}}"></script>
     <script src="{{asset('assets/js/custom.js')}}"></script>
     <script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         @yield('PlaningProduction')
     </div>
 </body>

@@ -7,18 +7,18 @@
                 <div class="panel-body">
                         <div class="row">
                             <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                <a href="/mat" class="btn btn-danger square-btn-adjust">back</a>
+                                <a href="/mat" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                 </div>
                             <div class="col-md-6">
                                 <h3>Materials</h3>
-                                <form role="form"  method="post" action="{{route('mat.update',[$mat->Material_Id])}}" enctype="multipart/form-data">
+                                <form id="editMat" role="form"  method="post" action="{{route('mat.update',[$mat->Material_Id])}}" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     @method('put')
                                     <div class="form-group">
                                         <label>Material Name</label>
                                     <input class="form-control" type="text" name="Material_Name" value="{{$mat->Material_Name}}">
                                     <label>Material Amount</label>
-                                    <input class="form-control" type="text" name="Material_Amount" value="{{$mat->Material_Amount}}">
+                                    <input class="form-control" type="text" name="Material_Amount" value="{{$mat->Material_Amount}}" disabled>
                                     </div>
                                     @if ($mat->Material_Status == "Enable")
                                                 <div class="radio">
@@ -44,7 +44,7 @@
                                                 </div>
                                             @endif
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-warning btn-sm">edit</button>
+                                        <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">edit</button>
                                     </div>
                                 </form>
                         </div>
@@ -54,5 +54,24 @@
         </div>
     </div>
 </div>
+<script>
+    function checkEdit() {
+        swal({
+  title: "คุณแน่ใจหรือไม่",
+  text: "จะแก้ไข {{$mat->Material_Name}} ?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+  if (willDelete) {
+    swal("{{$mat->Material_Name}} แก้ไขเรียบร้อย", {
+      icon: "success",
+    }).then(()=>{
+        document.getElementById('editMat').submit();
+    });
+        }
+    });
+}
+</script>
 @endsection
 
