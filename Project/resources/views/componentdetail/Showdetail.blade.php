@@ -7,10 +7,10 @@
                 <div class="panel-body">
                     <div class="row">
                         <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                            <a href="/comde" class="btn btn-danger square-btn-adjust">back</a>
+                            <a href="/comde" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                         </div>
                         <div class="col-md-6">
-                            <h1>DetailComponent</h1>
+                            <h1>รายละเอียดของสูตรตัวนี้</h1>
                             <hr>
                             @foreach ($comde as $item)
                             <label>componentdetail of {{$item->component_Name}}</label>

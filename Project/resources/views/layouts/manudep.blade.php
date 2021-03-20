@@ -24,56 +24,10 @@
         </nav>
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
+                <br>
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a class="active-menu"> <i class="fa fa-sitemap fa-3x" disabled ></i> จัดการข้อมูล<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{ route('dep.index')}}">แผนกงาน</a>
-                            </li>
-                            <li>
-                                <a href="/emp">พนักงาน</a>
-                            </li>
-                            <li>
-                                <a href="/part">บริษัทคู่ค้า</a>
-                            </li>
-                            <li>
-                                <a href="/mat">วัตถุดิบ</a>
-                            </li>
-                            <li>
-                                <a href="/type">ชนิดสินค้า</a>
-                            </li>
-                            <li>
-                                <a href="/Pro">สินค้า</a>
-                            </li>
-                            <li>
-                                <a href="/comp">ส่วนประกอบ</a>
-                            </li>
-                            <li>
-                                <a href="/comde">รายละเอียดส่วนประกอบ</a>
-                            </li>
-                        </ul>
-            </div>
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li>
-                        <a href="/Pur"><i class="fa fa-table fa-3x"></i>สั่งซื้อสินค้า</a>
-                    </li>
-                    <li>
-                        <a href="/Rec"><i class="fa fa-dashboard fa-3x"></i> รับเข้าสินค้า</a>
-                    </li>
-                    <li>
-                        <a href="/Planing"><i class="fa fa-bar-chart-o fa-3x" disabled ></i>วางแผนการผลิต</a>
-                    </li>
-                    <li>
-                        <a href="/RequiMM"><i class="fa fa-desktop fa-3x" disabled ></i> เบิกวัตถุดิบ</a>
-                    </li>
-                    <li>
-                        <a href="/P"><i class="fa fa-bar-chart-o fa-3x" disabled ></i> การผลิต</a>
-                    </li>
-                    <li>
-                        <a  href="/RequiPP"><i class="fa fa-flask fa-3x" disabled ></i>เบิกสินค้า</a>
+                        <a class="active-menu" href="/PurEmp"><i class="fa fa-table fa-3x"></i>สั่งซื้อสินค้า</a>
                     </li>
                 </ul>
             </div>

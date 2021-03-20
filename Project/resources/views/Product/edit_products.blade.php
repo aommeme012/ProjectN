@@ -7,19 +7,19 @@
                         <div class="panel-body">
                                 <div class="row">
                                     <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                        <a href="/Pro" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                                        <a href="/Pro" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                         </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <h3>Products</h3>
                                         <form id="editProduct" method="post" action="{{route('Pro.update',[$Pro->Product_Id])}}" >
                                             {{ csrf_field() }}
                                         @method('put')
                                             <div class="form-group">
-                                            <label>Product_Name</label>
+                                            <label>ชื่อนสินค้า</label>
                                                 <input class="form-control" type="text" name="Product_Name"value="{{$Pro->Product_Name}}">
-                                            <label>Product_Amount</label>
+                                            <label>จำนวนสินค้า</label>
                                                 <input class="form-control" type="text" name="Product_Amount"value="{{$Pro->Product_Amount}} " disabled>
-                                                <label>TypeProduct</label>
+                                                <label>เลือกชนิดสินค้า</label>
                                                 <select class="form-control" name="Type_Id">
                                                     @foreach ($types as $type)
                                                         <option value="{{$type->Type_Id}}">
@@ -54,7 +54,7 @@
                                                 @endif
                                         </label>
                                             <div class="form-group">
-                                                <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">edit</button>
+                                                <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">แก้ไข</button>
                                             </div>
                                         </form>
                         </div>

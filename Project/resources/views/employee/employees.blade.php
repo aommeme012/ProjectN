@@ -7,20 +7,22 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover">
-                                <h3>Employees</h3>
-                                <a href="{{ route('emp.create')}}" class="btn btn-primary btn-sm">Add Employees</a>
+                                <div class="a"><h3>ข้อมูลของพนักงาน</h3></div>
+                                <hr>
+                                <a href="{{ route('emp.create')}}" class="btn btn-primary btn-sm">เพิ่มข้อมูลพนักงาน</a><br><br>
                                 <thead>
                                     <tr>
-                                        <th>Emp_Id</th>
-                                        <th>Fname</th>
-                                        <th>Lname</th>
-                                        <th>Address</th>
-                                        <th>Tel</th>
-                                        <th>Sex</th>
+                                        <th>ลำดับพนักงาน</th>
+                                        <th>รหัสพนักงาน</th>
+                                        <th>ชื่อ</th>
+                                        <th>นามสกุล</th>
+                                        <th>ที่อยู่</th>
+                                        <th>เบอร์</th>
+                                        <th>เพศ</th>
                                         <th>Username</th>
                                         {{-- <th>Password</th> --}}
-                                        <th>Emp_Status</th>
-                                        <th>Dep_Id</th>
+                                        <th>สถานะของพนักงาน</th>
+                                        <th>ชื่อแผนก</th>
                                         <th></th>
                                         <th></th>
 
@@ -30,6 +32,7 @@
                                     @foreach ($emps as $emp)
                                     <tr>
                                         <td>{{$emp->Emp_Id}}</td>
+                                        <td></td>
                                         <td>{{$emp->Fname}}</td>
                                         <td>{{$emp->Lname}}</td>
                                         <td>{{$emp->Address}}</td>

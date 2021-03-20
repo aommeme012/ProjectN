@@ -7,19 +7,21 @@
                 <div class="panel-body">
                         <div class="row">
                             <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                <a href="/Pro" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                                <a href="/Pro" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                 </div>
-                            <div class="col-md-6">
-                                <h3>Add Product</h3>
+                            <div class="col-md-4">
+                                <h3>เพิ่มข้อมูลสินค้า</h3>
+                                <hr>
                                 <form id="addProduct" role="form"  method="post" action="{{route('Pro.store')}}">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label>Product_Name</label>
-                                        <input class="form-control" type="text" name="Product_Name">
-                                        <label>Product_Amount</label>
-                                        <input class="form-control" type="text" name="Product_Amount">
+                                        
+                                        <input class="form-control" type="text" name="Product_Name"placeholder="ชื่อสินค้า">
+                                        <br>
+                                        <input class="form-control" type="text" name="Product_Amount"placeholder="จำนวนสินค้า">
                                         <div class="form-group">
-                                    <label>TypeProduct</label>
+                                        <br>
+                                    <label>เลือกชนิดสินค้า</label>
                                     <select class="form-control" name="Type_Id">
                                     @foreach ($types as $type)
                                         <option value="{{$type->Type_Id}}">
@@ -30,7 +32,7 @@
                                 </div>
                                     </div>
                                     <div class="form-group">
-                                        <button onclick="addProduct()" type="button" class="btn btn-primary btn-sm">create</button>
+                                        <button onclick="addProduct()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
                                     </div>
                                 </form>
                     </div>

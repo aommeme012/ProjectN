@@ -7,20 +7,21 @@
                         <div class="panel-body">
                                 <div class="row">
                                     <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                        <a href="/mat" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                                        <a href="/mat" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                         </div>
-                                    <div class="col-md-6">
-                                        <h3>Add Materials</h3>
+                                    <div class="col-md-4">
+                                        <h3>เพิ่มข้อมูลวัตถุดิบ</h3>
+                                        <hr>
                                         <form id="addMat" role="form"  method="post" action="{{route('mat.store')}}" >
                                             {{ csrf_field() }}
                                             <div class="form-group">
-                                                <label>Material Name</label>
-                                                <input class="form-control" type="text" name="Material_Name">
-                                                <label>Material Amount</label>
-                                                <input class="form-control" type="text" name="Material_Amount">
+
+                                                <input class="form-control" type="text" name="Material_Name"placeholder="ชื่อวัตถุดิบ">
+                                                <br>
+                                                <input class="form-control" type="text" name="Material_Amount"placeholder="จำนวนวัตถุดิบ">
                                             </div>
                                             <div class="form-group">
-                                                <button onclick="addMat()" type="button" class="btn btn-primary btn-sm">create</button>
+                                                <button onclick="addMat()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
                                             </div>
                                         </form>
                             </div>

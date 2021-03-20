@@ -7,17 +7,18 @@
                 <div class="panel-body">
                         <div class="row">
                             <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                <a href="/mat" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                                <a href="/mat" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                 </div>
-                            <div class="col-md-6">
-                                <h3>Materials</h3>
+                            <div class="col-md-4">
+                                <h3>แก้ไขข้อมูลวัตถุดิบ</h3>
+                                <hr>
                                 <form id="editMat" role="form"  method="post" action="{{route('mat.update',[$mat->Material_Id])}}" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     @method('put')
                                     <div class="form-group">
-                                        <label>Material Name</label>
+                                        <label>ชื่อวัตถุดิบ</label>
                                     <input class="form-control" type="text" name="Material_Name" value="{{$mat->Material_Name}}">
-                                    <label>Material Amount</label>
+                                    <label>จำนวนวัตถุดิบ</label>
                                     <input class="form-control" type="text" name="Material_Amount" value="{{$mat->Material_Amount}}" disabled>
                                     </div>
                                     @if ($mat->Material_Status == "Enable")

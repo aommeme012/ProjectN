@@ -7,14 +7,17 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>TypeProduct</h3>
-                            <a href="{{ route('type.create')}}" class="btn btn-primary btn-sm">Add TypeProduct</a>
+                            <div class="a"><h3>ข้อมูลชนิดของสินค้า</h3></div>
+                            <hr>
+
+                            <a href="{{ route('type.create')}}" class="btn btn-primary btn-sm">เพิ่มข้อมูลชนิดของสินค้า</a>
+                            <br><br>
 
                             <thead>
                                 <tr>
-                                    <th>Type_Id</th>
-                                    <th>Type_Name</th>
-                                    <th>Type_Status</th>
+                                    <th>รหัสชนิดสินค้า</th>
+                                    <th>ชื่อชนิดสินค้า</th>
+                                    <th>สถานะชนิดสินค้า</th>
                                     <th></th>
                                     <th></th>
                                 </tr>

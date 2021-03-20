@@ -7,15 +7,17 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>Product</h3>
-                            <a href="{{ route('Pro.create')}}" class="btn btn-primary btn-sm">Add Product</a>
+                            <div class="a"><h3>ข้อมูลสินค้า</h3></div>
+                            <hr>
+                            <a href="{{ route('Pro.create')}}" class="btn btn-primary btn-sm">เพิ่มข้อมูลสินค้า</a>
+                            <br><br>
                             <thead>
                                 <tr>
-                                    <th>Product_Id</th>
-                                    <th>Product_Name</th>
-                                    <th>Product_Amount</th>
-                                    <th>Product_Status</th>
-                                    <th>Type_Id</th>
+                                    <th>รหัสสินค้า</th>
+                                    <th>ชื่อสินค้า</th>
+                                    <th>จำนวนสินค้า</th>
+                                    <th>สถานะสินค้า</th>
+                                    <th>ชนิดสินค้า</th>
                                     <th></th>
                                     <th></th>
                                 </tr>

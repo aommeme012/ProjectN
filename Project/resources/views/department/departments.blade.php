@@ -1,19 +1,22 @@
 ﻿@extends('layouts.manumanage')
 @section('component')
+
 <div id="page-wrapper" >
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel-body">
+
                     <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover">
-                            <h3>Departments</h3>
-                            <a href="{{ route('dep.create')}}" class="btn btn-primary btn-sm">Add Departments</a>
+                            <div class="a"><h3>ข้อมูลของแผนกงาน</h3></div>
+                            <hr>
+                            <a href="{{ route('dep.create')}}" class="btn btn-primary btn-sm">เพิ่มข้อมูลแผนกงาน</a><br><br>
                             <thead>
                                 <tr>
-                                    <th>Dep_Id</th>
-                                    <th>Dep_Name</th>
-                                    <th>Dep_Status</th>
+                                    <th>รหัสแผนกงาน</th>
+                                    <th>ชื่อแผนกงาน</th>
+                                    <th>สถานะแผนกงาน</th>
                                     <th></th>
                                     <th></th>
                                 </tr>

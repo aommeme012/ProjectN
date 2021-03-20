@@ -7,34 +7,36 @@
                         <div class="panel-body">
                                 <div class="row">
                                     <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                    <a href="/emp" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                                    <a href="/emp" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                     </div>
-                                    <div class="col-md-6">
-                                        <h3>Add employees</h3>
+                                    <div class="col-md-4">
+                                        <h3><i class="w3-xxxlarge glyphicon glyphicon-user">&nbsp;เพิ่มข้อมูลพนักงาน</i></h3>
+                                        <hr>
                                         <form id="addEmp" role="form"  method="post" action="{{route('emp.store')}}">
                                             {{ csrf_field() }}
                                             <div class="form-group">
-                                                <label>Fname</label>
-                                                <input class="form-control" type="text" name="Fname">
-                                                <label>Lname</label>
-                                                <input class="form-control" type="text" name="Lname">
+
+                                                <input class="form-control" type="text" name="Fname" placeholder="ชื่อ">
+                                                <br>
+                                                <input class="form-control" type="text" name="Lname"placeholder="นามสกุล">
                                                 <div class="form-group">
-                                                <label>Address</label>
-                                                <input class="form-control" type="text" name="Address">
+                                                    <br>
+                                                <input class="form-control" type="text" name="Address"placeholder="ที่อยู่">
                                                 <div class="form-group">
-                                                <label>Tel</label>
-                                                <input class="form-control" type="text" name="Tel">
+                                                    <br>
+                                                <input class="form-control" type="text" name="Tel"placeholder="เบอร์โทร">
                                                 <div class="form-group">
-                                                <label>Sex</label>
-                                                <input class="form-control" type="text" name="Sex">
+                                                    <br>
+                                                <input class="form-control" type="text" name="Sex"placeholder="เพศ">
                                                 <div class="form-group">
-                                                <label>Username</label>
-                                                <input class="form-control" type="text" name="Username">
+                                                    <br>
+                                                <input class="form-control" type="text" name="Username"placeholder="Username">
                                                 <div class="form-group">
-                                                <label>Password</label>
-                                                <input class="form-control" type="text" name="Password">
+                                                    <br>
+                                                <input class="form-control" type="text" name="Password"placeholder="Password">
                                                 <div class="form-group">
-                                            <label>Dep</label>
+                                                    <br>
+                                            <label>เลือกแผนกงาน</label>
                                             <select class="form-control" name="Dep_Id">
                                             @foreach ($deps as $dep)
                                                 <option value="{{$dep->Dep_Id}}">
@@ -45,7 +47,7 @@
                                         </div>
                                             </div>
                                             <div class="form-group">
-                                                <button onclick="addEmp()" type="button" class="btn btn-primary btn-sm">create</button>
+                                                <button onclick="addEmp()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
                                             </div>
                                         </form>
                         </div>

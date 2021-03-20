@@ -7,8 +7,10 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>PurchaseOder testttt</h3>
-                            <a href="{{ route('Pur.index')}}" class="btn btn-primary btn-sm">PurchaseOder</a>
+                            <h3>รายการสั่งซื้อวัตถุดิบ</h3>
+                            
+                            <a href="Purdetail" class="btn btn-info btn-sm">รายละเอียดการสั่งซื้อ</a><br><br>
+
                             <thead>
                                 <tr>
                                     <th>Purchase_Id</th>
@@ -16,6 +18,7 @@
                                     <th>Emp_Id</th>
                                     <th>Partner_Id</th>
                                     <th>Purchase_Status</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -26,6 +29,7 @@
                                     <td>{{App\Employee::find($Pur->Emp_Id)->Fname}}</td>
                                     <td>{{App\Partner::find($Pur->Partner_Id)->Partner_Name}}</td>
                                     <td>{{$Pur->Purchase_Status}}</td>
+
                                 </tr>
                                 @endforeach
                             </tbody>

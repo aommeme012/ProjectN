@@ -3,21 +3,24 @@
 <div id="page-wrapper" >
     <div id="page-inner">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <div class="panel-body">
                         <div class="row">
                             <div style="padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                <a href="/dep" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                                <a href="/dep" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></i></a>
                                 </div>
-                            <div class="col-md-6">
-                                <h3>Add Departments</h3>
+                            <div class="col-md-3">
+                                <h3>หน้าแก้ไขข้อมูลของแผนกงาน</h3></i>
+                                <hr>
                                 <form id="editDep" role="form"  method="post" action="{{route('dep.update',[$dep->Dep_Id])}}" >
                                     {{ csrf_field() }}
                                     @method('put')
-                                    <div class="form-group">
-                                        <label>Dep Name</label>
-                                    <input class="form-control" type="text" name="Dep_Name" value="{{$dep->Dep_Name}}">
+                                    <h4>ชื่อแผนกงาน</h4>
+                                    <div class="a"><div class="form-group"></div>
+                                    <input class="form-control" type="text" name="Dep_Name" value="{{$dep->Dep_Name}}"placeholder="ชื่อแผนกงาน">
                                     </div>
+
+
                                         <div class="form-group">
                                             @if ($dep->Dep_Status == "Enable")
                                                 <div class="radio">
@@ -44,7 +47,7 @@
                                             @endif
 
                                     <div class="form-group">
-                                        <button  type="button" onclick="checkEdit()" class="btn btn-warning btn-sm"  >edit</button>
+                                        <button  type="button" onclick="checkEdit()" class="btn btn-warning btn-sm"  >แก้ไขข้อมูล</button>
                                     </div>
                                 </form>
                             </div>

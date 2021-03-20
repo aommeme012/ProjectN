@@ -29,7 +29,9 @@ class ProductionPlanningController extends Controller
     {
         $post=$request->all();
         ProductionPlanning::create($post);
-        return back();
+        return redirect('/Plan');
+        // $pp = ProductionPlanning::create($post);
+        // return view('planing production.showdetail',compact('pp'));
     }
     public function show(ProductionPlanning $ProductionPlanning)
     {
@@ -37,6 +39,7 @@ class ProductionPlanningController extends Controller
         ->where('Planning_Status', '=', 'Disable')->get();
         return view('planing production.Showlistplan', compact('Planings'));
     }
+
     public function edit($id)
     {
         $Plan = ProductionPlanning::find($id);

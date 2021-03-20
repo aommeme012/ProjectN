@@ -7,15 +7,17 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>Partners</h3>
-                            <a href="{{ route('part.create')}}" class="btn btn-primary btn-sm">Add Partners</a>
+                            <div class="a"><h3>ข้อมูลบริษัทคู่ค้า</h3></div>
+                            <hr>
+                            <a href="{{ route('part.create')}}" class="btn btn-primary btn-sm">เพิ่มข้อมูลบริษัทคู่ค้า</a>
+                            <br> <br>
                             <thead>
                                 <tr>
-                                    <th>Partner Id</th>
-                                    <th>Partner Name</th>
-                                    <th>Partner Address</th>
-                                    <th>Partner Tel</th>
-                                    <th>Partner Status</th>
+                                    <th>รหัสบริษัทคู่ค้า</th>
+                                    <th>ชื่อบริษัทคู่ค้า</th>
+                                    <th>ที่อยู่บริษัทคู่ค้า</th>
+                                    <th>เบอร์โทรบริษัทคู่ค้า</th>
+                                    <th>สถานะบริษัทคู่ค้า</th>
                                     <th></th>
                                     <th></th>
                                 </tr>

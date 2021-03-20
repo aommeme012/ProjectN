@@ -7,15 +7,16 @@
                 <div class="panel-body">
                         <div class="row">
                             <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                <a href="/type" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                                <a href="/type" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                 </div>
                             <div class="col-md-6">
-                                <h3>TypeProducts</h3>
+                                <h3>แก้ไขข้อมูลชนิดสินค้า</h3>
+                                <hr>
                                 <form id="editType" method="post" action="{{route('type.update',[$type->Type_Id])}}" >
                                     {{ csrf_field() }}
                                 @method('put')
                                     <div class="form-group">
-                                    <label>Type_Name</label>
+                                    <label>ชื่อชนิดสินค้า</label>
                                         <input class="form-control" type="text" name="Type_Name"value="{{$type->Type_Name}}">
                                     </div>
                                     @if ($type->Type_Status == "Enable")
@@ -42,7 +43,7 @@
                                             </div>
                                         @endif
                                     <div class="form-group">
-                                        <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">edit</button>
+                                        <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">แก้ไข</button>
                                     </div>
                             </form>
                         </div>

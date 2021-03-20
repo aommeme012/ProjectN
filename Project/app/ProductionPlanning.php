@@ -16,4 +16,12 @@ class ProductionPlanning extends Model
         'Product_Id',
         'Planning_Status',
     ];
+    // public function Component()
+    // {
+    //     return $this->belongsTo(component::class ,'component_Id','component_Id');
+    // }
+    // public function Product()
+    // {
+    //     return $this->hasOne(Product::class ,'Product_Id','Product_Id');
+    // }
 }

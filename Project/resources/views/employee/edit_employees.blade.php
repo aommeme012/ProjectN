@@ -7,35 +7,36 @@
                         <div class="panel-body">
                                 <div class="row">
                                     <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                                        <a href="/emp" class="btn btn-danger square-btn-adjust"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                                        <a href="/emp" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                         </div>
-                                    <div class="col-md-6">
-                                        <h3>employees</h3>
+                                    <div class="col-md-4">
+                                        <h3>แก้ไขข้อมูลพนักงาน</h3>
+                                        <hr>
                                         <form id="editEmp" method="post" action="{{route('emp.update',[$emp->Emp_Id])}}" >
                                             {{ csrf_field() }}
                                         @method('put')
                                         <div class="form-group">
-                                            <label>Fname</label>
+                                            <label>ชื่อ</label>
                                             <input class="form-control" type="text" name="Fname"value="{{$emp->Fname}}">
-                                            <label>Lname</label>
+                                            <label>นามสกุล</label>
                                             <input class="form-control" type="text" name="Lname"value="{{$emp->Lname}}">
                                             <div class="form-group">
-                                            <label>Address</label>
+                                            <label>ที่อยู่</label>
                                             <input class="form-control" type="text" name="Address"value="{{$emp->Address}}">
                                             <div class="form-group">
-                                            <label>Tel</label>
+                                            <label>เบอร์โทร</label>
                                             <input class="form-control" type="text" name="Tel"value="{{$emp->Tel}}">
                                             <div class="form-group">
-                                            <label>Sex</label>
+                                            <label>เพศ</label>
                                             <input class="form-control" type="text" name="Sex"value="{{$emp->Sex}}">
                                             <div class="form-group">
                                             <label>Username</label>
                                             <input class="form-control" type="text" name="Username"value="{{$emp->Username}}">
                                             <div class="form-group">
-                                            <label>Password</label>
-                                            <input class="form-control" type="text" name="Password"value="{{$emp->Password}}">
+                                            {{-- <label>Password</label>
+                                            <input class="form-control" type="text" name="Password"value="{{$emp->Password}}"> --}}
                                             <div class="form-group">
-                                        <label>Dep</label>
+                                        <label>เลือกแผนกงาน</label>
                                         <select class="form-control" name="Dep_Id">
                                         @foreach ($deps as $dep)
                                             <option value="{{$dep->Dep_Id}}">

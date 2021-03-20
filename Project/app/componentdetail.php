@@ -15,4 +15,8 @@ class componentdetail extends Model
         'Material_Id',
         'component_Id',
     ];
+    // public function Material()
+    // {
+    //     return $this->hasMany(Materials::class ,'Material_Id','Material_Id');
+    // }
 }

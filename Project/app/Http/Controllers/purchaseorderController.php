@@ -30,8 +30,6 @@ class purchaseorderController extends Controller
     }
     public function create()
     {
-
-
         $Purc = PurchaseOrder::all();
         $emps = Employee::all();
         $parts = Partner::all();
@@ -60,7 +58,8 @@ class purchaseorderController extends Controller
     }
     public function show(PurchaseOrder $PurchaseOrder )
     {
-       //
+        $Purdetails = PurchaseOrderDetail::all();
+        return view('PurchaseOderDetail.PdetailDep', compact('Purdetails'));
     }
     public function edit($id)
     {

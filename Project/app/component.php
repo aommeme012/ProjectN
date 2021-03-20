@@ -13,4 +13,8 @@ class component extends Model
         'component_Name',
         'component_Status',
     ];
+    // public function Componendetail()
+    // {
+    //     return $this->hasOne(componentdetail::class ,'component_Id','component_Id');
+    // }
 }

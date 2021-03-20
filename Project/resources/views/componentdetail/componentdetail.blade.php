@@ -7,16 +7,17 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>component detail</h3>
-                            <a href="{{ route('comp.create')}}" class="btn btn-primary btn-sm">Add component detail</a>
-
+                            <div class="a"><h3>รายละเอียดส่วนผสม</h3></div>
+                            <hr>
+                            <a href="{{ route('comp.create')}}" class="btn btn-primary btn-sm">เพิ่มข้อมูลส่วนผสม</a>
+<br><br>
                             <thead>
                                 <tr>
-                                    <th>Comde_Id</th>
-                                    <th>Comde_Amount</th>
-                                    <th>component_Value</th>
-                                    <th>Material_Id</th>
-                                    <th>component_Id</th>
+                                    <th>รหัสรายละเอียด</th>
+                                    <th>จำนวนวัตถุดิบ</th>
+                                    <th>ส่วนผสม</th>
+                                    <th>รหัสวัตถุดิบ</th>
+                                    <th>ชื่อสูตรผสม</th>
                                 </tr>
                             </thead>
                             <tbody>

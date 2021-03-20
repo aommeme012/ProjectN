@@ -7,12 +7,13 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>component</h3>
-                            <a href="{{ route('comp.create')}}" class="btn btn-primary btn-sm">Add component</a>
-
+                            <div class="a"><h3>ข้อมูลส่วนผสม</h3></div>
+                            <hr>
+                            <a href="{{ route('comp.create')}}" class="btn btn-primary btn-sm">เพิ่มข้อมูลส่วนผสม</a>
+                            <br><br>
                             <thead>
                                 <tr>
-                                    <th>ไอดี</th>
+                                    <th>รหัสส่วนผสม</th>
                                     <th>ชื่อส่วนผสม</th>
                                     <th>สถานะส่วนผสม</th>
                                     <th></th>

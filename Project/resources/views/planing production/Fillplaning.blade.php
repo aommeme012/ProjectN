@@ -39,7 +39,7 @@
                             </div>
                         </div>
                                     <div class="form-group">
-                                        <button onclick="CheckPlan()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
+                                        <button  onclick="CheckPlan()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
                                     </div>
                     </form>
                 </div>

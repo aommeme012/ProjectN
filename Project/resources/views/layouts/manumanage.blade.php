@@ -10,6 +10,11 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='/stylesheet' type='text/css' />
     </head>
 <body>
+    <style>
+        div.a {
+            text-align: center;
+        }
+        </style>
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">

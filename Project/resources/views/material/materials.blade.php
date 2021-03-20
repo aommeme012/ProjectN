@@ -7,14 +7,17 @@
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
-                                    <h3>Materials</h3>
-                                    <a href="{{ route('mat.create')}}" class="btn btn-primary btn-sm">Add Materials</a>
+                                    <div class="a"><h3>ข้อมูลวัตถุดิบ</h3></div>
+                                    <hr>
+                                    <a href="{{ route('mat.create')}}" class="btn btn-primary btn-sm">เพิ่มข้อมูลพนักงาน</a>
+                                    <br><br>
                                     <thead>
                                         <tr>
-                                            <th>Material_Id</th>
-                                            <th>Material_Name</th>
-                                            <th>Material_Amount</th>
-                                            <th>Material_Status</th>
+                                            <th>ลำดับ</th>
+                                            <th>รหัสวัตถุดิบ</th>
+                                            <th>ชื่อวัตถุดิบ</th>
+                                            <th>จำนวนวัตถุดิบ</th>
+                                            <th>สถานะวัตถุดิบ</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
@@ -23,6 +26,7 @@
                                         @foreach ($mats as $mat)
                                         <tr>
                                             <td>{{$mat->Material_Id}}</td>
+                                            <td></td>
                                             <td>{{$mat->Material_Name}}</td>
                                             <td>{{$mat->Material_Amount}}</td>
                                             <td>{{$mat->Material_Status}}</td>
