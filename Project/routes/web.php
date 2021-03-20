@@ -55,6 +55,7 @@ Route::resource('comp', 'componentController');
 Route::resource('comde', 'componentdetailController');
 
 Route::resource('Pur', 'purchaseorderController');
+Route::get('PurEmp', 'purchaseorderController@indexEmployee');
 
 Route::resource('Rec', 'ReceiveController');
 

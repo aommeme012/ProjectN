@@ -20,6 +20,14 @@ class purchaseorderController extends Controller
         $mats = Materials::all();
         return view('PurchaseOder.PurchaseOders', compact('Purc','emps','parts','mats'));
     }
+    public function indexEmployee()
+    {
+        $Purc = PurchaseOrder::all();
+        $emps = Employee::all();
+        $parts = Partner::all();
+        $mats = Materials::all();
+        return view('PurchaseOder.PurchaseDep', compact('Purc','emps','parts','mats'));
+    }
     public function create()
     {
 

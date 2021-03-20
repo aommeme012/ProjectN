@@ -53,13 +53,13 @@
     function checkPurchase() {
         swal({
   title: "คุณแน่ใจหรือไม่",
-  text: "ที่จะสั่งซื้อ{{$mat->Material_Name}}",
+  text: "ที่จะสั่งซื้อ}",
   icon: "warning",
   buttons: true,
   dangerMode: true,
 }).then((willDelete) => {
   if (willDelete) {
-    swal("{{$mat->Material_Name}} สั่งซื้อเสร็จเรียบร้อย", {
+    swal(" สั่งซื้อเสร็จเรียบร้อย", {
       icon: "success",
     }).then(()=>{
         document.getElementById('Purchase').submit();

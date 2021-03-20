@@ -17,10 +17,14 @@ class EmployOnly
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Auth::user()->Emp_Status === "Enable") {
+        if(Auth::user()->Emp_Status != "Enable") {
+            Auth::logout();
             return redirect('/login');
         }
 
+
         return $next($request);
+
+
     }
 }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\PurchaseOrder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware(['auth','employeeOnly']);
     }
 
     /**
@@ -23,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect('/dep');
+        if(Auth::user()->Dep_Id == 1 ){
+            return redirect('/dep');
+        }
+        if(Auth::user()->Dep_Id == 2){
+            return redirect('/PurEmp');
+        }
+
     }
 }
+
