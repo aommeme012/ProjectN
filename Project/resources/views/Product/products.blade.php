@@ -18,6 +18,7 @@
                                     <th>จำนวนสินค้า</th>
                                     <th>สถานะสินค้า</th>
                                     <th>ชนิดสินค้า</th>
+                                    <th>รูปตัวอย่างสินค้า</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -30,6 +31,7 @@
                                     <td>{{$Pro->Product_Amount}}</td>
                                     <td>{{$Pro->Product_Status}}</td>
                                     <td>{{App\TypeProduct::find($Pro->Type_Id)->Type_Name}}</td>
+                                    <td></td>
                                     <td>
                                         <a href="{{ route('Pro.edit',[$Pro->Product_Id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>
                                     </td>

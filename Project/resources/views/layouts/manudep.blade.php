@@ -27,7 +27,7 @@
                 <br>
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a class="active-menu" href="/PurEmp"><i class="fa fa-table fa-3x"></i>สั่งซื้อสินค้า</a>
+                        <a class="active-menu" href="/PurEmp"><i class="fa fa-table fa-3x"></i>สั่งซื้อวัตถุดิบ</a>
                     </li>
                 </ul>
             </div>

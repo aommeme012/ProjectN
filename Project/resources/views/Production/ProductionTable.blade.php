@@ -10,14 +10,15 @@
                             <a href="/Ption" class="btn btn-info btn-xs">รายการที่ผลิตเสร็จสิ้น</a>
                         </div>
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>Production</h3>
+                            <div class="a"><h3>ข้อมูลรายการที่ผลิต</h3></div>
+                            <hr>
                             <thead>
                                 <tr>
-                                    <th>Production_Id</th>
-                                    <th>Production_Date</th>
-                                    <th>Production_Status</th>
-                                    <th>Requismat_Id</th>
-                                    <th>Fname</th>
+                                    <th>รหัสการผลิต</th>
+                                    <th>วันที่การผลิต</th>
+                                    <th>สถานะการผลิต</th>
+                                    <th>รหัสการเบิก</th>
+                                    <th>ชื่อคนที่สั่งผลิต</th>
                                     <th></th>
                                 </tr>
                             </thead>

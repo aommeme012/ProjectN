@@ -10,17 +10,18 @@
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>วางแผนการผลิต</h3>
+                            <div class="a"><h3>ข้อมูลการวางแผนการผลิต</h3></div>
                             <hr>
-                            <a href="{{ route('Plan.create')}}" class="btn btn-primary btn-sm">Add Planing</a>
+                            <a href="{{ route('Plan.create')}}" class="btn btn-primary btn-sm">เพิ่มการวางแผน</a>
+                            <br><br>
                             <thead>
                                 <tr>
-                                    <th>Plan_Id</th>
-                                    <th>Plan_Date</th>
-                                    <th>Amount</th>
-                                    <th>Planning_Status</th>
-                                    <th>component_Id</th>
-                                    <th>Product_Id</th>
+                                    <th>รหัสการวางแผน</th>
+                                    <th>วันที่การวางแผน</th>
+                                    <th>จำนวนที่จะผลิต</th>
+                                    <th>สถานะการวางแผน</th>
+                                    <th>ส่วนประกอบ</th>
+                                    <th>สินค้าที่จะผลิต</th>
 
                                 </tr>
                             </thead>

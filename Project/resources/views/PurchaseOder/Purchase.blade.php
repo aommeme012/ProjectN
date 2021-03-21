@@ -7,15 +7,17 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>PurchaseOder</h3>
-                            <a href="{{ route('Pur.index')}}" class="btn btn-primary btn-sm">PurchaseOder</a>
+                            <div class="a"><h3>ข้อมูลการสั่งซื้อวัตถุดิบ</h3></div>
+                            <hr>
+                            <a href="{{ route('Pur.index')}}" class="btn btn-primary btn-sm">เพิ่มการสั่งซื้อ</a>
+                            <br><br>
                             <thead>
                                 <tr>
-                                    <th>Purchase_Id</th>
-                                    <th>Purchase_Date</th>
-                                    <th>Emp_Id</th>
-                                    <th>Partner_Id</th>
-                                    <th>Purchase_Status</th>
+                                    <th>รหัสการสั่งซื้อ</th>
+                                    <th>วันที่การสั่งซื้อ</th>
+                                    <th>ชื่อพนักงานที่สั่งซื้อ</th>
+                                    <th>บริษัทคู่ค้า</th>
+                                    <th>สถานะการสั่งซื้อ</th>
                                 </tr>
                             </thead>
                             <tbody>

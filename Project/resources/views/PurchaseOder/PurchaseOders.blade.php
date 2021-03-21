@@ -11,13 +11,13 @@
                 <div class="panel-body">
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <h3>สั่งซื้อวัตถุดิบ</h3>
                                 <form id="Purchase" role="form"  method="post" action="{{route('Pur.store')}}">
                                     {{ csrf_field() }}
                                     <hr>
                                     <div class="form-group">
-                                    <label>Partner</label>
+                                    <label>เลือกบริษัทคู่ค้า</label>
                                     <select class="form-control" name="Partner_Id">
                                         @foreach ($parts as $part)
                                             <option value="{{$part->Partner_Id}}">
@@ -26,10 +26,10 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <button  class="btn btn-warning" id="add-more" type="button">AddDetail</button>
+                                    <button  class="btn btn-warning" id="add-more" type="button">เลือกวัตถุดิบเพิ่ม</button>
                                     <hr>
                                     <div class="form-group" id="form-line">
-                                     <label>Material</label>
+                                     <label>วัตถุดิบ</label>
                                             <select class="form-control" name="Material_Id[0]">
                                                 @foreach ($mats as $mat)
                                                     <option value="{{$mat->Material_Id}}">
@@ -37,11 +37,11 @@
                                                     </option>
                                                     @endforeach
                                             </select>
-                                    <label>Pdetail_Amount</label>
-                                    <input class="form-control" type="Number" name="Pdetail_Amount[0]">
+                                    <br>
+                                    <input class="form-control" type="Number" name="Pdetail_Amount[0]" placeholder="จำนวนวัตถุดิบ">
                                     </div>
                                     <div class="form-group">
-                                        <button onclick="checkPurchase()" type="button" class="btn btn-primary btn-sm" >PurchaseOrder</button>
+                                        <button onclick="checkPurchase()" type="button" class="btn btn-primary btn-sm" >เพิ่มการสั่งซื้อ</button>
                             </div>
                     </form>
                 </div>
@@ -72,7 +72,7 @@
 $(document).ready(function(){
     var i = 1;
     $('#add-more').click(function(){
-        $('#form-line').append(" <label>Material</label>"+
+        $('#form-line').append(" <label>วัตถุดิบ</label>"+
         "<select class=\"form-control\" name=\"Material_Id["+i+"]\">"+
         "@foreach ($mats as $mat)"+
         "<option value=\"{{$mat->Material_Id}}\">"+
@@ -80,7 +80,7 @@ $(document).ready(function(){
         "</option>"+
         "@endforeach"+
         "</select>"+
-        "<label>Pdetail_Amount</label>"+
+        "<label>จำนวนวัตถุดิบ</label>"+
         "<input class=\"form-control\" type=\"Number\" name=\"Pdetail_Amount["+i+"]\">");
         i++;
     });

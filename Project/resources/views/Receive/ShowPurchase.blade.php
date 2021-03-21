@@ -10,15 +10,16 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>PurchaseOder</h3>
+                            <div class="a"><h3>ข้อมูลการสั่งซื้อ</h3></div>
+                            <hr>
                             <thead>
                                 <tr>
-                                    <th>Purchase_Id</th>
-                                    <th>Purchase_Date</th>
-                                    <th>Emp_Id</th>
-                                    <th>Partner_Id</th>
-                                    <th>Purchase_Status</th>
-                                    <th>Detail</th>
+                                    <th>รหัสการสั่งซื้อ</th>
+                                    <th>วันที่การสั่งซื้อ</th>
+                                    <th>พนักงานที่สั่งซื้อ</th>
+                                    <th>บริษัทคู่ค้า</th>
+                                    <th>สถานะการสั่งซื้อ</th>
+                                    <th>รายละเอียดวัตถุดิบที่อยู่ในคลัง</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -45,7 +46,7 @@
                                         </td>
                                         <td>
                                             <button onclick="checkReceives()" type="button"
-                                             class="btn btn-warning btn-sm">receive</button>
+                                             class="btn btn-warning btn-sm">รับวัตถุดิบเข้า</button>
                                         </td>
                                 </tbody>
                             </form>

@@ -7,19 +7,20 @@
                 <div class="panel-body">
                         <div class="row">
                             <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
-                            <a href="/Plan" class="btn btn-danger btn-xs">ไปหน้าตาราง</a>
+                            <a href="/Plan" class="btn btn-danger btn-xs">หน้ารายการวางแผน</a>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <h3>แผนการผลิต</h3>
                                 <hr>
                                 <form id="Plan" role="form"  method="post" action="{{route('Plan.store')}}">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label>วันที่</label &nbsp>
+                                        <label>วันที่การวางแผน</label &nbsp>
                                         <input class="form-control" type="Date" name="Plan_Date" id="start" min = <?php echo date('Y-m-d',);?> value="<?php echo date('Y-m-d',); ?>">
-                                        <label>จำนวน</label>
-                                        <input class="form-control" type="number" name="Amount">
-                                    <label>ส่วนประกอบ</label>
+                                        <br>
+                                        <input class="form-control" type="number" name="Amount"placeholder="จำนวนที่จะผลิต">
+                                        <br>
+                                    <label>เลือกส่วนประกอบ</label>
                                     <select class="form-control" name="component_Id">
                                     @foreach ($comps as $comp)
                                         <option value="{{$comp->component_Id}}">
@@ -27,7 +28,7 @@
                                         </option>
                                         @endforeach
                                     </select>
-                                    <label>สินค้า</label>
+                                    <label>เลือกสินค้า</label>
                                     <select class="form-control" name="Product_Id">
                                     @foreach ($pros as $Pro)
                                         <option value="{{$Pro->Product_Id}}">

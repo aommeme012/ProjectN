@@ -7,15 +7,17 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>Receive</h3>
-                            <a href="{{ route('Rec.index')}}" class="btn btn-primary btn-sm">Receive</a>
+                            <div class="a"><h3>ข้อมูลการรับวัตถุดิบ</h3></div>
+                            <hr>
+                            <a href="{{ route('Rec.index')}}" class="btn btn-primary btn-sm">รับวัตถุดิบ</a>
+<br><br>
                             <thead>
                                 <tr>
-                                    <th>Receive_Id</th>
-                                    <th>Receive_Date</th>
-                                    <th>Emp_Id</th>
-                                    <th>Purchase_Id</th>
-                                    <th>Receive_Amount</th>
+                                    <th>รหัสรับวัตถุดิบ</th>
+                                    <th>วันที่รับวัตถุดิบ</th>
+                                    <th>พนักงาน</th>
+                                    <th>รายการสั่งซื้อ</th>
+                                    <th>จำนวนที่รับวัตถุดิบเข้า</th>
 
                                 </tr>
                             </thead>

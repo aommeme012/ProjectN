@@ -63,10 +63,10 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a href="/Pur"><i class="fa fa-table fa-3x"></i>สั่งซื้อสินค้า</a>
+                        <a href="/Pur"><i class="fa fa-table fa-3x"></i>สั่งซื้อวัตถุดิบ</a>
                     </li>
                     <li>
-                        <a href="/Rec"><i class="fa fa-dashboard fa-3x"></i> รับเข้าสินค้า</a>
+                        <a href="/Rec"><i class="fa fa-dashboard fa-3x"></i> รับเข้าวัตถุดิบ</a>
                     </li>
                     <li>
                         <a href="/Planing"><i class="fa fa-bar-chart-o fa-3x"></i>วางแผนการผลิต</a>

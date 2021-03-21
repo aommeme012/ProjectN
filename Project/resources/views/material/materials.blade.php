@@ -17,6 +17,7 @@
                                             <th>รหัสวัตถุดิบ</th>
                                             <th>ชื่อวัตถุดิบ</th>
                                             <th>จำนวนวัตถุดิบ</th>
+                                            <th>หน่วยวัตถุดิบ</th>
                                             <th>สถานะวัตถุดิบ</th>
                                             <th></th>
                                             <th></th>
@@ -29,6 +30,7 @@
                                             <td></td>
                                             <td>{{$mat->Material_Name}}</td>
                                             <td>{{$mat->Material_Amount}}</td>
+                                            <td></td>
                                             <td>{{$mat->Material_Status}}</td>
                                             <td>
                                                 <a href="{{ route('mat.edit',[$mat->Material_Id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>

@@ -10,15 +10,15 @@
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>เลือกรายการที่จะผลิต</h3>
+                            <div class="a"><h3>เลือกรายการที่จะผลิต</h3></div>
                             <hr>
                             <thead>
                                 <tr>
-                                    <th>Requismat_Id</th>
-                                    <th>Requismat_Date</th>
-                                    <th>Requismat_Amount</th>
-                                    <th>Material_Id</th>
-                                    <th>Plan_Id</th>
+                                    <th>รหัสการเบิก</th>
+                                    <th>วันที่การเบิก</th>
+                                    <th>จำนวนวัตถุดิบที่เบิก</th>
+                                    <th>วัตถุดิบที่เบิก</th>
+                                    <th>วันที่การวางแผน</th>
                                     <th></th>
                                 </tr>
                             </thead>

@@ -6,19 +6,19 @@
             <div class="col-md-12">
                 <div class="panel-body">
                     <div style="float: right;">
-                    <a  href="/RequiPP" class="btn btn-warning btn-xs" ><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                    <a  href="/RequiPP" class="btn btn-danger" ><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>รายการที่เบิกไปแล้ว</h3>
+                            <div class="a"><h3>รายการที่เบิกไปแล้ว</h3></div>
                             <hr>
                             <thead>
                                 <tr>
-                                    <th>Requispro_Id</th>
-                                    <th>Requispro_Date</th>
-                                    <th>Requispro_Amount</th>
-                                    <th>Product_Id</th>
-                                    <th>Emp_Id</th>
+                                    <th>รหัสสินค้า</th>
+                                    <th>วันที่เบิกสินค้า</th>
+                                    <th>จำนวนสินค้าที่เบิก</th>
+                                    <th>ชื่อสินค้าที่เบิก</th>
+                                    <th>ชื่อพนักงานที่เบิก</th>
                                 </tr>
                             </thead>
                             @foreach ($Repro as $RP)

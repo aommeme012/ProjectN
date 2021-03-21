@@ -10,14 +10,15 @@
                         </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>ProductionPlanning  </h3>
+                            <div class="a"><h3>แผนการผลิตที่จะเบิก</h3></div>
+                            <hr>
                             <thead>
                                 <tr>
-                                    <th>Plan_Id</th>
-                                    <th>Plan_Date</th>
-                                    <th>Amount</th>
-                                    <th>component_Id</th>
-                                    <th>Product_Id</th>
+                                    <th>รหัสการวางแผน</th>
+                                    <th>วันที่การวางแผน</th>
+                                    <th>จำนวนที่จะผลิต</th>
+                                    <th>ส่วนประกอบ</th>
+                                    <th>สินค้าที่จะผลิต</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -35,7 +36,7 @@
                                     <td>{{App\Product::find($RequiMM->Product_Id)->Product_Name}}</td>
 
                                 <td>
-                                    <button type="submit" class="btn btn-warning btn-sm" onclick="Requisition();">Requisition</button>
+                                    <button type="submit" class="btn btn-warning btn-sm" onclick="Requisition();">เบิกวัตถุดิบ</button>
                                 </td>
                             </form>
                                 @endforeach

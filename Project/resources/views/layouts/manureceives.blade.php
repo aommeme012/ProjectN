@@ -10,6 +10,11 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='/stylesheet' type='text/css' />
 </head>
 <body>
+    <style>
+        div.a {
+            text-align: center;
+        }
+        </style>
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -58,10 +63,10 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a href="/Pur"><i class="fa fa-table fa-3x"></i>สั่งซื้อสินค้า</a>
+                        <a href="/Pur"><i class="fa fa-table fa-3x"></i>สั่งซื้อวัตถุดิบ</a>
                     </li>
                     <li>
-                        <a class="active-menu" href="/Rec"><i class="fa fa-dashboard fa-3x"></i> รับเข้าสินค้า</a>
+                        <a class="active-menu" href="/Rec"><i class="fa fa-dashboard fa-3x"></i> รับเข้าวัตถุดิบ</a>
                     </li>
                     <li>
                         <a href="/Planing"><i class="fa fa-bar-chart-o fa-3x"></i>วางแผนการผลิต</a>

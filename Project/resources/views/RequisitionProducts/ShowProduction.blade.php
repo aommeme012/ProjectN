@@ -10,13 +10,14 @@
                         </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>Production</h3>
+                            <div class="a"><h3>ข้อมูลรายการผลิต</h3></div>
+                            <hr>
                             <thead>
                                 <tr>
-                                    <th>Production_Id</th>
-                                    <th>Production_Date</th>
-                                    <th>Requismat_Id</th>
-                                    <th>Emp_Id</th>
+                                    <th>รหัสการผลิต</th>
+                                    <th>วันที่การผลิต</th>
+                                    <th>รหัสการเบิกวัตถุดิบ</th>
+                                    <th>ชื่อคนที่สั่งผลิต</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -32,7 +33,7 @@
                                     <td>{{$RequiPP->Requismat_Id}}</td>
                                     <td>{{App\Employee::find($RequiPP->Emp_Id)->Fname}}</td>
                                 <td>
-                                    <button onclick="Requisitionpro()" type="button" class="btn btn-warning btn-sm" onclick="Requisition();">Requisition</button>
+                                    <button onclick="Requisitionpro()" type="button" class="btn btn-warning btn-sm" onclick="Requisition();">เบิกสินค้า</button>
                                 </td>
                             </form>
                                 @endforeach

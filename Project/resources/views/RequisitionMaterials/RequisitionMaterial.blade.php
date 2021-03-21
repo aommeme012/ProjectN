@@ -6,19 +6,19 @@
             <div class="col-md-12">
                 <div class="panel-body">
                     <div style="float: right;">
-                    <a href="/RequiMM" class="btn btn-warning btn-xs" ><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                    <a href="/RequiMM" class="btn btn-danger" ><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>รายการที่เบิกไปแล้ว</h3>
+                            <div class="a"><h3>รายการที่เบิกไปแล้ว</h3></div>
                             <hr>
                             <thead>
                                 <tr>
-                                    <th>Requismat_Id</th>
-                                    <th>Requismat_Date</th>
-                                    <th>Requismat_Amount</th>
-                                    <th>Material_Id</th>
-                                    <th>Plan_Id</th>
+                                    <th>รหัสการเบิก</th>
+                                    <th>วันที่การเบิก</th>
+                                    <th>จำนวนวัตถุดิบที่เบิก</th>
+                                    <th>วัตถุดิบที่เบิก</th>
+                                    <th>รหัสการวางแผน</th>
                                 </tr>
                             </thead>
                             @foreach ($Remat as $R)

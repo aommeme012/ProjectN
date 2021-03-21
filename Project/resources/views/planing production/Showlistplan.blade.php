@@ -6,19 +6,20 @@
             <div class="col-md-12">
                 <div class="panel-body">
                     <div style="float: right;">
-                        <a href="/Plan" class="btn btn-warning btn-xs"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
+                        <a href="/Plan" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <h3>ประวัติการวางแผน</h3>
+                            <div class="a"><h3>ประวัติการวางแผน</h3></div>
+                            <hr>
                             <thead>
                                 <tr>
-                                    <th>Plan_Id</th>
-                                    <th>Plan_Date</th>
-                                    <th>Amount</th>
-                                    <th>Planning_Status</th>
-                                    <th>component_Id</th>
-                                    <th>Product_Id</th>
+                                    <th>รหัสการวางแผน</th>
+                                    <th>วันที่การวางแผน</th>
+                                    <th>จำนวนที่จะผลิต</th>
+                                    <th>สถานะการวางแผน</th>
+                                    <th>ส่วนประกอบ</th>
+                                    <th>สินค้าที่จะผลิต</th>
                                     <th></th>
                                 </tr>
                             </thead>
