@@ -41,7 +41,7 @@
                                             ->where('purchase_orders.Purchase_Status','Enable')->get(); ?>
                                             @foreach ($orders as $o)
                                             <?php $material = App\Materials::find($o->Material_Id); ?>
-                                            {{$material->Material_Name}} {{$material->Material_Amount}}<br>
+                                            {{$material->idmat}} {{$material->Material_Name}} {{$material->Material_Amount}}<br>
                                             @endforeach
                                         </td>
                                         <td>

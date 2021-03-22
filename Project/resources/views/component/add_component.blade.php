@@ -31,7 +31,7 @@
                                             <select class="form-control" name="Material_Id[0]">
                                                 @foreach ($mats as $mat)
                                                     <option value="{{$mat->Material_Id}}">
-                                                    {{$mat->Material_Name}}
+                                                    {{$mat->idmat}}
                                                     </option>
                                                     @endforeach
                                             </select>
