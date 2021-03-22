@@ -18,6 +18,7 @@ class Employee extends Authentication
     ];
 
     protected $fillable = [
+        'idemp',
         'Fname',
         'Lname',
         'Address',

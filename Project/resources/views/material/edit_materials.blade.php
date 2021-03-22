@@ -16,11 +16,14 @@
                                     {{ csrf_field() }}
                                     @method('put')
                                     <div class="form-group">
-                                        <label>ชื่อวัตถุดิบ</label>
+                                    <label>รหัสวัตถุดิบ</label>
+                                    <input class="form-control" type="text" name="idmat" value="{{$mat->idmat}}">
+                                    <label>ชื่อวัตถุดิบ</label>
                                     <input class="form-control" type="text" name="Material_Name" value="{{$mat->Material_Name}}">
                                     <label>จำนวนวัตถุดิบ</label>
                                     <input class="form-control" type="text" name="Material_Amount" value="{{$mat->Material_Amount}}" disabled>
-                                    </div>
+                                    <label>หน่วยวัตถุดิบ</label>
+                                    <input class="form-control" type="text" name="unitmaterial" value="{{$mat->unitmaterial}}">
                                     @if ($mat->Material_Status == "Enable")
                                                 <div class="radio">
                                                     <label>
@@ -45,7 +48,7 @@
                                                 </div>
                                             @endif
                                     <div class="form-group">
-                                        <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">edit</button>
+                                        <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">แกไข</button>
                                     </div>
                                 </form>
                         </div>

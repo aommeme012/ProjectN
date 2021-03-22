@@ -15,6 +15,7 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->bigincrements('Emp_Id', 5);
+            $table->String('idemp',255);
             $table->String('Fname', 255);
             $table->String('Lname', 255);
             $table->String('Address', 255);

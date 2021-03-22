@@ -32,7 +32,7 @@
                                     @foreach ($emps as $emp)
                                     <tr>
                                         <td>{{$emp->Emp_Id}}</td>
-                                        <td></td>
+                                        <td>{{$emp->idemp}}</td>
                                         <td>{{$emp->Fname}}</td>
                                         <td>{{$emp->Lname}}</td>
                                         <td>{{$emp->Address}}</td>

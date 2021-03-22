@@ -15,8 +15,10 @@ class CreateMaterialsTable extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->Bigincrements('Material_Id' ,3);
+            $table->String('idmat' ,255);
             $table->String('Material_Name' ,255);
             $table->Integer('Material_Amount');
+            $table->String('unitmaterial',255);
             $table->String('Material_Status')->default('Enable');
             $table->timestamps();
         });

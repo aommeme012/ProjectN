@@ -15,10 +15,13 @@
                                         <form id="addMat" role="form"  method="post" action="{{route('mat.store')}}" >
                                             {{ csrf_field() }}
                                             <div class="form-group">
-
+                                                <input class="form-control" type="text" name="idmat"placeholder="รหัสวัตถุดิบ">
+                                                <br>
                                                 <input class="form-control" type="text" name="Material_Name"placeholder="ชื่อวัตถุดิบ">
                                                 <br>
                                                 <input class="form-control" type="text" name="Material_Amount"placeholder="จำนวนวัตถุดิบ">
+                                                <br>
+                                                <input class="form-control" type="text" name="unitmaterial"placeholder="หน่วยวัตถุดิบ">
                                             </div>
                                             <div class="form-group">
                                                 <button onclick="addMat()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>

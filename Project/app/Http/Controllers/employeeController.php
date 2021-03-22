@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class employeeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     // public function __construct()
     // {
     //     $this->middlewear('auth');
@@ -25,6 +30,7 @@ class employeeController extends Controller
     {
 
         Employee::create([
+            'idemp' => $request->idemp,
             'Fname' => $request->Fname,
             'Lname' => $request->Lname,
             'Address' => $request->Address,
@@ -36,7 +42,7 @@ class employeeController extends Controller
             'type' => 0,
             'Dep_Id' => $request->Dep_Id,
         ]);
-    
+
         return back();
     }
     public function show(Employee $Employee)
