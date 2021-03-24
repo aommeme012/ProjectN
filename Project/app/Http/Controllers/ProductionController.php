@@ -80,6 +80,7 @@ class ProductionController extends Controller
         }
         $update = Production::findorFail($id);
         $update->update([
+            'Production_Date' => today(),
             'Production_Status' => 'เสร็จสิ้น',
         ]);
 
