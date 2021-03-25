@@ -69,12 +69,7 @@ class employeeController extends Controller
     }
     public function destroy($id)
     {
-       $deleteemp = Employee::find($id);
-       if($deleteemp->Dep_Status == "Enable"){
-        $deleteemp->delete();
-        return redirect()->back()->with('success');
-       }else{
-           return redirect()->back()->with('fail');
-       }
+       Employee::find($id)->delete();
+        return redirect()->back();
     }
 }

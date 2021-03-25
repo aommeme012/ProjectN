@@ -12,14 +12,14 @@
                                     <div class="col-md-6">
                                         <h3>เพิ่มข้อมูลชนิดของสินค้า</h3>
                                         <hr>
-                                        <form id="checkType" role="form"  method="post" action="{{route('type.store')}}" >
+                                        <form id="checkType" role="form"  method="post" action="{{route('type.store')}}">
                                             {{ csrf_field() }}
                                             <div class="form-group">
 
-                                                <input class="form-control" type="text" name="Type_Name"placeholder="ชื่อชนิดสินค้า">
+                                                <input class="form-control" type="text" name="Type_Name"placeholder="ชื่อชนิดสินค้า" required>
                                             </div>
                                             <div class="form-group">
-                                                <button onclick="checkType()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
+                                                <button onclick="checkType()" type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
                                             </div>
                                         </form>
                         </div>
@@ -29,7 +29,7 @@
         </div>
     </div>
 </div>
-<script>
+{{-- <script>
     function checkType() {
         swal({
   title: "คุณแน่ใจหรือไม่",
@@ -47,6 +47,6 @@
         }
     });
 }
-</script>
+</script> --}}
 @endsection
 

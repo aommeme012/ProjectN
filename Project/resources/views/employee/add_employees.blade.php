@@ -15,26 +15,26 @@
                                         <form id="addEmp" role="form"  method="post" action="{{route('emp.store')}}">
                                             {{ csrf_field() }}
                                             <div class="form-group">
-                                                <input class="form-control" type="text" name="idemp" placeholder="รหัสพนักงาน">
+                                                <input class="form-control" type="text" name="idemp" placeholder="รหัสพนักงาน"required>
                                                 <br>
-                                                <input class="form-control" type="text" name="Fname" placeholder="ชื่อ">
+                                                <input class="form-control" type="text" name="Fname" placeholder="ชื่อ"required>
                                                 <br>
-                                                <input class="form-control" type="text" name="Lname"placeholder="นามสกุล">
+                                                <input class="form-control" type="text" name="Lname"placeholder="นามสกุล"required>
                                                 <div class="form-group">
                                                     <br>
-                                                <input class="form-control" type="text" name="Address"placeholder="ที่อยู่">
+                                                <input class="form-control" type="text" name="Address"placeholder="ที่อยู่"required>
                                                 <div class="form-group">
                                                     <br>
-                                                <input class="form-control" type="text" name="Tel"placeholder="เบอร์โทร">
+                                                <input class="form-control" type="text" name="Tel"placeholder="เบอร์โทร"  required>
                                                 <div class="form-group">
                                                     <br>
-                                                <input class="form-control" type="text" name="Sex"placeholder="เพศ">
+                                                <input class="form-control" type="text" name="Sex"placeholder="เพศ"required>
                                                 <div class="form-group">
                                                     <br>
-                                                <input class="form-control" type="text" name="Username"placeholder="Username">
+                                                <input class="form-control" type="text" name="Username"placeholder="Username"required>
                                                 <div class="form-group">
                                                     <br>
-                                                <input class="form-control" type="text" name="Password"placeholder="Password">
+                                                <input class="form-control" type="text" name="Password"placeholder="Password"required>
                                                 <div class="form-group">
                                                     <br>
                                             <label>เลือกแผนกงาน</label>
@@ -48,7 +48,7 @@
                                         </div>
                                             </div>
                                             <div class="form-group">
-                                                <button onclick="addEmp()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
+                                                <button onclick="addEmp()" type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
                                             </div>
                                         </form>
                         </div>
@@ -58,7 +58,7 @@
         </div>
     </div>
 </div>
-<script>
+{{-- <script>
     function addEmp() {
         swal({
   title: "คุณแน่ใจหรือไม่",
@@ -76,5 +76,5 @@
         }
     });
 }
-</script>
+</script> --}}
 @endsection

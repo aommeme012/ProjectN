@@ -21,8 +21,7 @@ class EmployOnly
             Auth::logout();
             return redirect('/login');
         }
-
-
+        
         return $next($request);
 
 

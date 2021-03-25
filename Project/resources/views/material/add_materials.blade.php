@@ -15,16 +15,16 @@
                                         <form id="addMat" role="form"  method="post" action="{{route('mat.store')}}" >
                                             {{ csrf_field() }}
                                             <div class="form-group">
-                                                <input class="form-control" type="text" name="idmat"placeholder="รหัสวัตถุดิบ">
+                                                <input class="form-control" type="text" name="idmat"placeholder="รหัสวัตถุดิบ" required>
                                                 <br>
-                                                <input class="form-control" type="text" name="Material_Name"placeholder="ชื่อวัตถุดิบ">
+                                                <input class="form-control" type="text" name="Material_Name"placeholder="ชื่อวัตถุดิบ" required>
                                                 <br>
-                                                <input class="form-control" type="text" name="Material_Amount"placeholder="จำนวนวัตถุดิบ">
+                                                <input class="form-control" type="text" name="Material_Amount"placeholder="จำนวนวัตถุดิบ" required>
                                                 <br>
-                                                <input class="form-control" type="text" name="unitmaterial"placeholder="หน่วยวัตถุดิบ">
+                                                <input class="form-control" type="text" name="unitmaterial"placeholder="หน่วยวัตถุดิบ" required>
                                             </div>
                                             <div class="form-group">
-                                                <button onclick="addMat()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
+                                                <button onclick="addMat()" type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
                                             </div>
                                         </form>
                             </div>
@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <script>
+    {{-- <script>
         function addMat() {
             swal({
       title: "คุณแน่ใจหรือไม่",
@@ -52,5 +52,5 @@
             }
         });
     }
-    </script>
+    </script> --}}
 @endsection

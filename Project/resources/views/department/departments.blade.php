@@ -60,7 +60,7 @@ function delete_{{$dep->Dep_Id}}() {
   dangerMode: true,
 }).then((willDelete) => {
   if (willDelete) {
-    swal("............", {
+    swal("กำลังดำเนินการ..........", {
       icon: false,
       button: false,
     timer:1000

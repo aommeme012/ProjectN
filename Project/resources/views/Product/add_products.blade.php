@@ -15,10 +15,10 @@
                                 <form id="addProduct" role="form"  method="post" action="{{route('Pro.store')}}">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        
-                                        <input class="form-control" type="text" name="Product_Name"placeholder="ชื่อสินค้า">
+
+                                        <input class="form-control" type="text" name="Product_Name"placeholder="ชื่อสินค้า" required>
                                         <br>
-                                        <input class="form-control" type="text" name="Product_Amount"placeholder="จำนวนสินค้า">
+                                        <input class="form-control" type="text" name="Product_Amount"placeholder="จำนวนสินค้า" required>
                                         <div class="form-group">
                                         <br>
                                     <label>เลือกชนิดสินค้า</label>
@@ -32,7 +32,7 @@
                                 </div>
                                     </div>
                                     <div class="form-group">
-                                        <button onclick="addProduct()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
+                                        <button onclick="addProduct()" type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
                                     </div>
                                 </form>
                     </div>
@@ -43,7 +43,7 @@
 </div>
 </div>
 </div>
-<script>
+{{-- <script>
     function addProduct() {
         swal({
   title: "คุณแน่ใจหรือไม่",
@@ -61,6 +61,6 @@
         }
     });
 }
-</script>
+</script> --}}
 @endsection
 

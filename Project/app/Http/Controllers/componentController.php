@@ -26,8 +26,6 @@ class componentController extends Controller
 
     public function store(Request $request)
     {
-
-
         $comp = new component();
         $comp->fill($request->only($comp->getFillable()));
         $comp->save();
@@ -41,8 +39,13 @@ class componentController extends Controller
                 'component_Id' =>  $comp->component_Id,
             ]);
         }
-        return back();
-    }
+            //     // $updatestatusmat= Materials::findorFail($request->Material_Id);
+            //     // $updatestatusmat->update([
+            //     // 'Material_Status' => 'ถูกใช้ไปแล้ว'
+            // ]);
+
+            return back();
+}
 
     public function show($id)
     {

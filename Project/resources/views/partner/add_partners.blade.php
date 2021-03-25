@@ -16,14 +16,14 @@
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <br>
-                                        <input class="form-control" type="text" name="Partner_Name" placeholder="ชื่อบริษัทคู่ค้า">
+                                        <input class="form-control" type="text" name="Partner_Name" placeholder="ชื่อบริษัทคู่ค้า" required>
                                         <br>
-                                        <input class="form-control" type="text" name="Partner_Address"placeholder="ที่อยู่บริษัทคู่ค้า">
+                                        <input class="form-control" type="text" name="Partner_Address"placeholder="ที่อยู่บริษัทคู่ค้า"required>
                                         <br>
-                                        <input class="form-control" type="text" name="Partner_Tel"placeholder="เบอร์โทรบริษัทคู่ค้า">
+                                        <input class="form-control" type="text" name="Partner_Tel"placeholder="เบอร์โทรบริษัทคู่ค้า"required>
                                     </div>
                                     <div class="form-group">
-                                        <button onclick="addPart()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
+                                        <button onclick="addPart()" type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
                                     </div>
                                 </form>
                 </div>
@@ -33,7 +33,7 @@
 </div>
 </div>
 </div>
-<script>
+{{-- <script>
     function addPart() {
         swal({
   title: "คุณแน่ใจหรือไม่",
@@ -51,6 +51,6 @@
         }
     });
 }
-</script>
+</script> --}}
 @endsection
 

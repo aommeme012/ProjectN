@@ -43,7 +43,12 @@ class TypeProductController extends Controller
     }
     public function destroy($id)
     {
-        TypeProduct::find($id)->delete();
-        return redirect('/type');
-    }
+        $deletetype = TypeProduct::find($id);
+        if($deletetype->Type_Status == "Enable"){
+            $deletetype->delete();
+            return redirect()->back()->with('success','ลบสำเร็จ');
+           }else{
+               return redirect()->back()->with('fail','ไม่สามารถลบได้');
+           }
+        }
 }

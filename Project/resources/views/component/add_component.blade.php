@@ -18,13 +18,13 @@
                                     <hr>
                                     <div class="form-group">
                                         <label>ชื่อส่วนประกอบ</label>
-                                        <input class="form-control" type="text" name="component_Name"placeholder="ชื่อส่วนประกอบ">
+                                        <input class="form-control" type="text" name="component_Name"placeholder="ชื่อส่วนประกอบ" required>
 
                                     </div>
                                     <button  class="btn btn-warning" id="add-more" type="button">เลือกวัตถุดิบเพิ่ม</button>
                                     <h3>รายละเอียดของสูตร</h3>
                                     <hr>
-                                    <input class="form-control" type="text" name="component_Value"placeholder="ส่วนผสมของสูตร">
+                                    <input class="form-control" type="text" name="component_Value"placeholder="ส่วนผสมของสูตร" required>
                                     <div class="form-group" id="form-line">
                                         <br>
                                      <label>เลือกวัตถุดิบ</label>
@@ -36,11 +36,11 @@
                                                     @endforeach
                                             </select>
                                     <br>
-                                    <input class="form-control" type="Number" name="Comde_Amount[0]"placeholder="จำนวนของวัตถุดิบ">
+                                    <input class="form-control" type="Number" name="Comde_Amount[0]"placeholder="จำนวนของวัตถุดิบ" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <button onclick="addcomponent()" type="button" class="btn btn-primary btn-sm" >ยืนยัน</button>
+                                        <button onclick="addcomponent()" type="submit" class="btn btn-primary btn-sm" >ยืนยัน</button>
                             </div>
                     </form>
                 </div>
@@ -70,7 +70,7 @@ $(document).ready(function(){
 });
 </script>
 
-<script>
+{{-- <script>
     function addcomponent() {
         swal({
   title: "คุณแน่ใจหรือไม่",
@@ -88,5 +88,5 @@ $(document).ready(function(){
         }
     });
 }
-</script>
+</script> --}}
 @endsection

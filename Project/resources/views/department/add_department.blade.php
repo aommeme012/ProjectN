@@ -18,7 +18,7 @@
                                     <input class="form-control" type="text" name="Dep_Name" placeholder="ชื่อแผนกงาน" required>
                                 </div>
                                 <div class="form-group">
-                                    <button  type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
+                                    <button onclick="addDep()" type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
                                 </div>
                             </form>
                         </div>
