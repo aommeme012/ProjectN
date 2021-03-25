@@ -18,7 +18,7 @@
                                     <th>วันที่การสั่งซื้อ</th>
                                     <th>พนักงานที่สั่งซื้อ</th>
                                     <th>บริษัทคู่ค้า</th>
-                                    <th>สถานะการสั่งซื้อ</th>
+                                    <th>จำนวนสั่งซื้อ</th>
                                     <th>รายละเอียดวัตถุดิบที่อยู่ในคลัง</th>
                                     <th></th>
                                 </tr>
@@ -35,10 +35,23 @@
                                         <td>{{$Rec->Purchase_Date}}</td>
                                         <td>{{App\Employee::find($Rec->Emp_Id)->Fname}}</td>
                                         <td>{{App\Partner::find($Rec->Partner_Id)->Partner_Name}}</td>
-                                        <td>{{$Rec->Purchase_Status}}</td>
+                                        <td>
+                                            <?php
+                                            $orderpur = App\PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
+                                            ->where('purchase_orders.Purchase_Id',$Rec->Purchase_Id)->get();
+                                            ?>
+                                            @foreach ($orderpur as $orderdetail)
+                                            <?php
+                                                $materialss = App\Materials::find($orderdetail->Material_Id);
+                                            ?>
+                                            {{$materialss->idmat}}
+                                            {{$materialss->Material_Name}}
+                                            {{$orderdetail->Pdetail_Amount}}<br>
+                                            @endforeach
+                                        </td>
                                         <td>
                                             <?php $orders = App\PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
-                                            ->where('purchase_orders.Purchase_Status','Enable')->get(); ?>
+                                            ->where('purchase_orders.Purchase_Id',$Rec->Purchase_Id)->get(); ?>
                                             @foreach ($orders as $o)
                                             <?php $material = App\Materials::find($o->Material_Id); ?>
                                             {{$material->idmat}} {{$material->Material_Name}} {{$material->Material_Amount}}<br>

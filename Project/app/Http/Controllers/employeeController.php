@@ -41,6 +41,11 @@ class employeeController extends Controller
             'Emp_Status' => 'Enable',
             'type' => 0,
             'Dep_Id' => $request->Dep_Id,
+
+            $updatestatusdep = Departments::findorfail($request->Dep_Id),
+            $updatestatusdep->update([
+                'Dep_Status' => 'ถูกใช้ไปแล้ว'
+            ])
         ]);
 
         return back();
@@ -64,7 +69,12 @@ class employeeController extends Controller
     }
     public function destroy($id)
     {
-        Employee::find($id)->delete();
-        return redirect('/emp');
+       $deleteemp = Employee::find($id);
+       if($deleteemp->Dep_Status == "Enable"){
+        $deleteemp->delete();
+        return redirect()->back()->with('success');
+       }else{
+           return redirect()->back()->with('fail');
+       }
     }
 }

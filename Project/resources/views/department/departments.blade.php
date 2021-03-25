@@ -60,9 +60,10 @@ function delete_{{$dep->Dep_Id}}() {
   dangerMode: true,
 }).then((willDelete) => {
   if (willDelete) {
-    swal("{{$dep->Dep_Name}} ลบเสร็จสิ้น ", {
-      icon: "success"
-
+    swal("............", {
+      icon: false,
+      button: false,
+    timer:1000
     })
     .then(()=>{
         document.getElementById('form_{{$dep->Dep_Id}}').submit();
@@ -70,6 +71,22 @@ function delete_{{$dep->Dep_Id}}() {
   }
 });
     }
+
         @endforeach
+
+            @if(session('fail'))
+            swal({
+                title:"{{session('fail')}}",
+                icon: "error"
+                button: "OK",
+            });
+            @endif
+            @if(session('success'))
+            swal({
+                title:"{{session('success')}}",
+                icon: "success"
+                button:"OK",
+            });
+            @endif
 </script>
 @endsection

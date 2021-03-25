@@ -47,7 +47,7 @@ class purchaseorderController extends Controller
             'Emp_Id' => Auth::user()->Emp_Id,
             'Partner_Id' => $request->Partner_Id,
         ]);
-        $PPCC= new PurchaseOrderDetail();
+        // $PPCC= new PurchaseOrderDetail();
 //     foreach ($data as $i => $Purchasdetail) {
 //         $PPCC->create([
 //             'Material_Id' =>  $Purchasdetail['Material_Id'],
@@ -63,13 +63,13 @@ class purchaseorderController extends Controller
                 'Purchase_Id' =>  $Purc->Purchase_Id,
             ]);
 
-            $purchaspdf = PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
-            ->where('purchase_orders.Purchase_Id',$Purc->Purchase_Id)->get();
+            // $purchaspdf = PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
+            // ->where('purchase_orders.Purchase_Id',$Purc->Purchase_Id)->get();
 
 
-            return view('PurchaseOder.PurchasePDF',[
-                'purchaspdf' => $purchaspdf,'Purc'=> $Purc
-            ]);
+            // return view('PurchaseOder.PurchasePDF',[
+            //     'purchaspdf' => $purchaspdf,'Purc'=> $Purc
+            // ]);
         }
 
         return back();

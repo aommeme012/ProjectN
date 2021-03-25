@@ -20,7 +20,7 @@
                                 </span>
                                 <div class="text-box" >
                                     <p class="main-text">Report</p>
-                                    <p class="text-muted">ออกรายงานวัตถุดิบ</p>
+                                    <p class="text-muted">รายงานวัตถุดิบ</p>
                                 </a>
                                 </div>
                              </div>
@@ -31,8 +31,8 @@
                                     <i class="fa fa-bars"></i>
                                 </span>
                                 <div class="text-box" >
-                                    <p class="main-text">30 Tasks</p>
-                                    <p class="text-muted">Remaining</p>
+                                    <p class="main-text">Report</p>
+                                    <p class="text-muted">รายงานการผลิต</p>
                                 </div>
                              </div>
                              </div>
@@ -42,8 +42,8 @@
                                     <i class="fa fa-bell-o"></i>
                                 </span>
                                 <div class="text-box" >
-                                    <p class="main-text">240 New</p>
-                                    <p class="text-muted">Notifications</p>
+                                    <p class="main-text">Report</p>
+                                    <p class="text-muted">รายงานการเบิกสินค้า</p>
                                 </div>
                              </div>
                              </div>
@@ -53,8 +53,8 @@
                                     <i class="fa fa-rocket"></i>
                                 </span>
                                 <div class="text-box" >
-                                    <p class="main-text">3 Orders</p>
-                                    <p class="text-muted">Pending</p>
+                                    <p class="main-text">Report</p>
+                                    <p class="text-muted">ยอดสินค้าคงเหลือ</p>
                                 </div>
                              </div>
                              </div>

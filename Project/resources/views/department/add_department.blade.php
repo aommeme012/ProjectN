@@ -9,16 +9,16 @@
                         <div style="padding:15px 50px 5px 50px;float:right;font-size:16px;">
                             <a href="/dep" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <h3><i class="w3-xxxlarge glyphicon glyphicon-user">&nbsp;เพิ่มข้อมูลของแผนกงาน </i></h3>
                             <hr>
                             <form id="addDep" role="form" method="post" action="{{route('dep.store')}}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="Dep_Name" placeholder="ชื่อแผนกงาน" >
+                                    <input class="form-control" type="text" name="Dep_Name" placeholder="ชื่อแผนกงาน" required>
                                 </div>
                                 <div class="form-group">
-                                    <button onclick="addDep()" type="button" class="btn btn-primary btn-sm">ยืนยัน</button>
+                                    <button  type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
                                 </div>
                             </form>
                         </div>
@@ -28,7 +28,7 @@
         </div>
     </div>
 </div>
-    <script>
+    {{-- <script>
         function addDep() {
             swal({
     title: "คุณแน่ใจหรือไม่",
@@ -46,5 +46,5 @@
             }
         });
     }
-    </script>
+    </script> --}}
 @endsection

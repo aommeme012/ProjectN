@@ -54,7 +54,12 @@ class departmentsController extends Controller
 
     public function destroy($id)
     {
-        Departments::find($id)->delete();
-        return redirect('/dep');
+        $delete = Departments::find($id);
+        if($delete->Dep_Status == "Enable"){
+            $delete->delete();
+            return redirect()->back()->with('success','ลบสำเร็จ');
+           }else{
+               return redirect()->back()->with('fail','ไม่สามารถลบได้');
+           }
     }
 }
