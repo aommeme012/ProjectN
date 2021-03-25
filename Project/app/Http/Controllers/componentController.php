@@ -26,6 +26,8 @@ class componentController extends Controller
 
     public function store(Request $request)
     {
+
+
         $comp = new component();
         $comp->fill($request->only($comp->getFillable()));
         $comp->save();

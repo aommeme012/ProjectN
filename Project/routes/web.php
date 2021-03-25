@@ -54,6 +54,10 @@ Route::resource('comp', 'componentController');
 
 Route::resource('comde', 'componentdetailController');
 
+Route::get('pdf','PDFController@pdf');
+
+Route::resource('report', 'ReportController');
+
 Route::resource('Pur', 'purchaseorderController');
 Route::get('Purdetail', 'purchaseorderController@Show');
 Route::get('PurEmp', 'purchaseorderController@indexEmployee');

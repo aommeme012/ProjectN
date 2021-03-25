@@ -1,14 +1,14 @@
 <html>
-<head>
-      <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Synthetic Stone</title>
-    <link href="{{asset('/assets/css/bootstrap.css')}}" rel="stylesheet" />
-    <link href="{{asset('/assets/css/font-awesome.css')}}" rel="stylesheet" />
-    <link href="{{asset('/assets/js/morris/morris-0.4.3.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('/assets/css/custom.css')}}" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='/stylesheet' type='text/css' />
-</head>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Synthetic Stone</title>
+        <link href="{{asset('/assets/css/bootstrap.css')}}" rel="stylesheet" />
+        <link href="{{asset('/assets/css/font-awesome.css')}}" rel="stylesheet" />
+        <link href="{{asset('/assets/js/morris/morris-0.4.3.min.css')}}" rel="stylesheet" />
+        <link href="{{asset('/assets/css/custom.css')}}" rel="stylesheet" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='/stylesheet' type='text/css' />
+    </head>
 <body>
     <style>
         div.a {
@@ -18,22 +18,21 @@
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Synthetic Stone</a>
+                <a class="navbar-brand">Synthetic Stone</a>
             </div>
             <div style="padding: 15px 50px 5px 50px;float: right;">
-           <form action="/logout" method="POST">
-            {{ csrf_field() }}
-            <button class="btn btn-danger btn-xs" type="submit">{{ Auth::user()->Fname }}</button>
-           </form>
-        </div>
+                <form action="/logout" method="POST">
+                    {{ csrf_field() }}
+                    <button class="btn btn-danger btn-xs" type="submit">{{ Auth::user()->Fname }}</button>
+                </form>
+            </div>
         </nav>
-           <nav class="navbar-default navbar-side" role="navigation">
+        <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-                <div class="sidebar-collapse">
-                    <ul class="nav" id="main-menu">
                     <li>
-                        <a  href="#"><i class="fa fa-sitemap fa-3x"></i> จัดการข้อมูล<span class="fa arrow"></span></a>
+                        <a > <i class="fa fa-sitemap fa-3x"></i> จัดการข้อมูล<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{ route('dep.index')}}">แผนกงาน</a>
@@ -79,21 +78,23 @@
                         <a href="/P"><i class="fa fa-bar-chart-o fa-3x"></i> การผลิต</a>
                     </li>
                     <li>
-                        <a class="active-menu" href="/RequiPP"><i class="fa fa-flask fa-3x"></i>เบิกสินค้า</a>
+                        <a  href="/RequiPP"><i class="fa fa-flask fa-3x"></i>เบิกสินค้า</a>
                     </li>
                     <li>
-                        <a  href="{{ route('report.create')}}"><i class="fa fa-print fa-3x"></i>รายงาน</a>
+                        <a class="active-menu" href="{{ route('report.create')}}"><i class="fa fa-print fa-3x"></i>รายงาน</a>
                     </li>
                 </ul>
             </div>
         </nav>
-<script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.metisMenu.js')}}"></script>
-<script src="{{asset('assets/js/morris/raphael-2.1.0.min.js')}}"></script>
-<script src="{{asset('assets/js/morris/morris.js')}}"></script>
-<script src="{{asset('assets/js/custom.js')}}"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    @yield('RequisitionPro')
+        <script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
+        <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.metisMenu.js')}}"></script>
+        <script src="{{asset('assets/js/morris/raphael-2.1.0.min.js')}}"></script>
+        <script src="{{asset('assets/js/morris/morris.js')}}"></script>
+        <script src="{{asset('assets/js/custom.js')}}"></script>
+        <script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        @yield('report')
+    </div>
 </body>
 </html>

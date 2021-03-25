@@ -18,16 +18,20 @@
                                     <th>ชื่อพนักงานที่สั่งซื้อ</th>
                                     <th>บริษัทคู่ค้า</th>
                                     <th>สถานะการสั่งซื้อ</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($Purc as $Pur)
+                                <form id="Purchase" role="form"  method="post" action="{{route('Pur.store')}}">
+                                    {{ csrf_field() }}
                                 <tr>
                                     <td>{{$Pur->Purchase_Id}}</td>
                                     <td>{{$Pur->Purchase_Date}}</td>
                                     <td>{{App\Employee::find($Pur->Emp_Id)->Fname}}</td>
                                     <td>{{App\Partner::find($Pur->Partner_Id)->Partner_Name}}</td>
                                     <td>{{$Pur->Purchase_Status}}</td>
+
                                 </tr>
                                 @endforeach
                             </tbody>

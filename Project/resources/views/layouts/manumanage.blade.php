@@ -80,6 +80,10 @@
                     <li>
                         <a  href="/RequiPP"><i class="fa fa-flask fa-3x"></i>เบิกสินค้า</a>
                     </li>
+                    <li>
+                        <a  href="{{ route('report.create')}}"><i class="fa fa-print fa-3x"></i>รายงาน</a>
+                    </li>
+
                 </ul>
             </div>
         </nav>
