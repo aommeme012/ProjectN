@@ -38,6 +38,7 @@ class employeeController extends Controller
             'Sex' => $request->Sex,
             'Username' => $request->Username,
             'Password' => bcrypt($request->Password),
+            'Emp_Status' => 'Enable',
             'type' => 0,
             'Dep_Id' => $request->Dep_Id,
 
@@ -68,7 +69,13 @@ class employeeController extends Controller
     }
     public function destroy($id)
     {
-       Employee::find($id)->delete();
-        return redirect()->back();
+       $deleteemp=Employee::find($id);
+       if($deleteemp->Emp_Status == "Available"){
+        $deleteemp->delete();
+        return redirect()->back()->with('success','ลบสำเร็จ');
+       }else
+       {
+           return redirect()->back()->with('fail','ไม่สามารถลบได้');
+       }
     }
 }

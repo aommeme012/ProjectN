@@ -24,7 +24,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($Production as $P)
-                                <form id="SubmitProduction" role="form"  method="post" action="/updatesuccess/{{$P->Production_Id}}" >
+                                <form  role="form"  method="post" action="/updatesuccess/{{$P->Production_Id}}" >
                                     {{ csrf_field() }}
                                 <tr>
                                     <td>{{$P->Production_Id}}</td>
@@ -33,7 +33,7 @@
                                     <td>{{$P->Requismat_Id}}</td>
                                     <td>{{$P->Fname}}</td>
                                     <td>
-                                        <button onclick="Production()" type="button" class="btn btn-warning btn-sm" >ยืนยันการผลิตเสร็จสิ้น</button>
+                                        <button  type="submit" class="btn btn-warning btn-sm" >ยืนยันการผลิตเสร็จสิ้น</button>
                                     </td>
 
                                 </tr>
@@ -47,7 +47,7 @@
     </div>
 </div>
 </div>
-<script>
+{{-- <script>
     function Production() {
         swal({
   title: "คุณแน่ใจหรือไม่",
@@ -65,7 +65,7 @@
         }
     });
 }
-</script>
+</script> --}}
 @endsection
 
 

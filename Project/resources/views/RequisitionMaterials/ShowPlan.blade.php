@@ -38,9 +38,9 @@
                                 <td>
                                     <button type="submit" class="btn btn-warning btn-sm" onclick="Requisition();">เบิกวัตถุดิบ</button>
                                 </td>
+                            </tbody>
                             </form>
                                 @endforeach
-                        </tbody>
                     </table>
                         </div>
                     </div>
@@ -48,7 +48,6 @@
             </div>
         </div>
     </div>
-</div>
 <script>
     function Requisition(){
     }

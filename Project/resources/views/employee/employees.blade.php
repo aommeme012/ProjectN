@@ -74,8 +74,10 @@
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        swal("{{$emp->Fname}} ลบเสร็จสิ้น ", {
-          icon: "success"
+        swal("กำลังดำเนินการ..........", {
+            icon: false,
+      button: false,
+    timer:1000
 
         })
         .then(()=>{
@@ -88,14 +90,14 @@
             @if(session('fail'))
             swal({
                 title:"{{session('fail')}}",
-                icon: "error"
+                icon: "error",
                 button: "OK",
             });
             @endif
             @if(session('success'))
             swal({
                 title:"{{session('success')}}",
-                icon: "success"
+                icon: "success",
                 button:"OK",
             });
             @endif

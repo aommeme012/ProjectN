@@ -61,7 +61,18 @@ class purchaseorderController extends Controller
                 'Pdetail_Amount' => $request->Pdetail_Amount[$i],
                 'Material_Id' => $request->Material_Id[$i],
                 'Purchase_Id' =>  $Purc->Purchase_Id,
-            ]);
+                ]);
+
+                $updatestatuspart = Partner::findorfail($request->Partner_Id);
+                $updatestatuspart->update([
+                'Partner_Status' => 'Enable'
+                ]);
+
+                // $updatestat =Employee::findorfail($request->Emp_Id);
+                // $updatestat->update([
+                // 'Emp_Status' => 'Enable'
+                // ]);
+
 
             // $purchaspdf = PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
             // ->where('purchase_orders.Purchase_Id',$Purc->Purchase_Id)->get();
@@ -71,9 +82,7 @@ class purchaseorderController extends Controller
             //     'purchaspdf' => $purchaspdf,'Purc'=> $Purc
             // ]);
         }
-
         return back();
-
     }
     public function show(PurchaseOrder $PurchaseOrder )
     {

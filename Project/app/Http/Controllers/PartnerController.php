@@ -43,7 +43,12 @@ class PartnerController extends Controller
     }
     public function destroy($id)
     {
-        Partner::find($id)->delete();
-        return redirect('/part');
+        $deletepart=Partner::find($id);
+        if($deletepart->Partner_Status == "Available"){
+            $deletepart->delete();
+            return redirect()->back()->with('success','ลบสำเร็จ');
+           }else{
+               return redirect()->back()->with('fail','ไม่สามารถลบได้');
+           }
     }
 }

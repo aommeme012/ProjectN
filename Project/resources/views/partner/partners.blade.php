@@ -62,8 +62,10 @@ function delete_{{$part->Partner_Id}}() {
   dangerMode: true,
 }).then((willDelete) => {
   if (willDelete) {
-    swal("{{$part->Partner_Name}} ลบเสร็จสิ้น ", {
-      icon: "success"
+    swal("กำลังดำเนินการ..........", {
+        icon: false,
+      button: false,
+    timer:1000
 
     })
     .then(()=>{
@@ -73,6 +75,21 @@ function delete_{{$part->Partner_Id}}() {
 });
     }
         @endforeach
+
+        @if(session('fail'))
+            swal({
+                title:"{{session('fail')}}",
+                icon: "error",
+                button: "OK",
+            });
+            @endif
+            @if(session('success'))
+            swal({
+                title:"{{session('success')}}",
+                icon: "success",
+                button:"OK",
+            });
+            @endif
 </script>
 @endsection
 

@@ -24,12 +24,11 @@
                                 </tr>
                             </thead>
                             @foreach ($receive as $Rec)
-                            <form role="form" method="post" id="Receives"
+                            <form role="form" method="post"
                                 action="{{route('Rec.update',[$Rec->Purchase_Id])}}">
                                 {{ csrf_field() }}
                                 @method('put')
                                 <tbody>
-
                                     <tr>
                                         <td>{{$Rec->Purchase_Id}}</td>
                                         <td>{{$Rec->Purchase_Date}}</td>
@@ -58,12 +57,15 @@
                                             @endforeach
                                         </td>
                                         <td>
-                                            <button onclick="checkReceives()" type="button"
-                                             class="btn btn-warning btn-sm">รับวัตถุดิบเข้า</button>
+                                            <button  type="submit" class="btn btn-warning btn-sm">รับวัตถุดิบเข้า</button>
                                         </td>
-                                </tbody>
-                            </form>
-                            @endforeach
+                                    </tr>
+                                    </tbody>
+                                    </form>
+
+
+                                @endforeach
+
                         </table>
                     </div>
                 </div>
@@ -71,9 +73,7 @@
         </div>
     </div>
 </div>
-</div>
-</body>
-<script>
+{{-- <script>
     function checkReceives() {
         swal({
   title: "คุณแน่ใจหรือไม่",
@@ -91,6 +91,6 @@
         }
     });
 }
-</script>
+</script> --}}
 @endsection
 

@@ -23,7 +23,7 @@
                                 </tr>
                             </thead>
                             @foreach ($Requimat as $P)
-                            <form id="Production" role="form"  method="post" action="{{route('P.update',[$P->Requismat_Id])}}" >
+                            <form  role="form"  method="post" action="{{route('P.update',[$P->Requismat_Id])}}" >
                                 {{ csrf_field() }}
                                 @method('put')
                             <tbody>
@@ -36,12 +36,12 @@
                                     <td>{{$P->Plan_Date}}</td>
 
                                 <td>
-                                    <button onclick="CheckProduction()" type="button" class="btn btn-warning btn-sm">ยืนยันการผลิต</button>
+                                    <button  type="submit" class="btn btn-warning btn-sm">ยืนยันการผลิต</button>
                                 </td>
+                            </tbody>
                             </form>
                                 @endforeach
-                        </tbody>
-                    </table>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
         </div>
     </div>
 </div>
-<script>
+{{-- <script>
     function CheckProduction() {
         swal({
   title: "คุณแน่ใจหรือไม่",
@@ -67,6 +67,6 @@
         }
     });
 }
-</script>
+</script> --}}
 @endsection
 

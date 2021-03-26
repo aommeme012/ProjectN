@@ -22,7 +22,7 @@
                                 </tr>
                             </thead>
                             @foreach ($RequiP as $RequiPP)
-                            <form id="Requisitionpro" role="form"  method="post" action="{{route('RequiPP.update',[$RequiPP->Production_Id])}}" >
+                            <form role="form"  method="post" action="{{route('RequiPP.update',[$RequiPP->Production_Id])}}" >
                                 {{ csrf_field() }}
                                 @method('put')
                             <tbody>
@@ -33,7 +33,7 @@
                                     <td>{{$RequiPP->Requismat_Id}}</td>
                                     <td>{{App\Employee::find($RequiPP->Emp_Id)->Fname}}</td>
                                 <td>
-                                    <button onclick="Requisitionpro()" type="button" class="btn btn-warning btn-sm" onclick="Requisition();">เบิกสินค้า</button>
+                                    <button  type="submit" class="btn btn-warning btn-sm" onclick="Requisition();">เบิกสินค้า</button>
                                 </td>
                             </form>
                                 @endforeach
@@ -46,7 +46,7 @@
         </div>
     </div>
 </div>
-<script>
+{{-- <script>
     function Requisitionpro() {
         swal({
   title: "คุณแน่ใจหรือไม่",
@@ -64,6 +64,6 @@
         }
     });
 }
-</script>
+</script> --}}
 @endsection
 
