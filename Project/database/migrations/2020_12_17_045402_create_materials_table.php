@@ -19,7 +19,7 @@ class CreateMaterialsTable extends Migration
             $table->String('Material_Name' ,255);
             $table->Integer('Material_Amount');
             $table->String('unitmaterial',255);
-            $table->String('Material_Status')->default('Enable');
+            $table->String('Material_Status')->default('Available');
             $table->timestamps();
         });
     }

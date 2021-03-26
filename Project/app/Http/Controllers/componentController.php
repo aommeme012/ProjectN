@@ -38,12 +38,12 @@ class componentController extends Controller
                 'Material_Id' => $request->Material_Id[$i],
                 'component_Id' =>  $comp->component_Id,
             ]);
-        }
-            //     // $updatestatusmat= Materials::findorFail($request->Material_Id);
-            //     // $updatestatusmat->update([
-            //     // 'Material_Status' => 'ถูกใช้ไปแล้ว'
-            // ]);
+                $updatestatusmat= Materials::findorFail($request->Material_Id[$i]);
+                $updatestatusmat->update([
+                'Material_Status' => 'Enable'
 
+            ]);
+        }
             return back();
 }
 

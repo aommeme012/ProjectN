@@ -23,7 +23,7 @@ class CreateEmployeesTable extends Migration
             $table->string('Sex', 10);
             $table->string('Username', 255);
             $table->string('Password', 255);
-            $table->string('Emp_Status')->default('Enable');
+            $table->string('Emp_Status')->default('Available');
             $table->boolean('type')->default(0);
             $table->unsignedBigInteger('Dep_Id');
             $table->foreign('Dep_Id')->references('Dep_Id')->on('departments')->ondelete('cascade');

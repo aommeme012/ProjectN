@@ -16,7 +16,7 @@ class CreateDepartmentsTable extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->bigincrements('Dep_Id',3);
             $table->String('Dep_Name',255);
-            $table->String('Dep_Status')->default('Enable');
+            $table->String('Dep_Status')->default('Available');
             $table->timestamps();
         });
     }

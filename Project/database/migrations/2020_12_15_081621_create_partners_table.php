@@ -18,7 +18,7 @@ class CreatePartnersTable extends Migration
             $table->String('Partner_Name', 255);
             $table->String('Partner_Address', 255);
             $table->String('Partner_Tel', 10);
-            $table->String('Partner_Status', 10)->default('Enable');
+            $table->String('Partner_Status')->default('Available');
             $table->timestamps();
         });
     }

@@ -27,13 +27,12 @@ class ProductController extends Controller
             'Product_Id' => $request->Product_Id,
             'Product_Name' => $request->Product_Name,
             'Product_Amount' => $request->Product_Amount,
-            'Product_Status' => 'Enable',
             'Type_Id' => $request->Type_Id,
 
 
             $updatestatustype = TypeProduct::findorfail($request->Type_Id),
             $updatestatustype->update([
-            'Type_Status' => 'ใช้อยู่'
+            'Type_Status' => 'Enable'
         ])
 
         ]);

@@ -23,7 +23,7 @@
                                 </tr>
                             </thead>
                             @foreach ($RequiM as $RequiMM)
-                            <form role="form"  method="post" action="{{route('RequiMM.update',[$RequiMM->Plan_Id])}}" >
+                            <form  role="form"  method="post" action="{{route('RequiMM.update',[$RequiMM->Plan_Id])}}" >
                                 {{ csrf_field() }}
                                 @method('put')
                             <tbody>

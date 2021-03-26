@@ -43,7 +43,13 @@ class MaterialsController extends Controller
     }
     public function destroy($id)
     {
-        Materials::find($id)->delete();
-        return redirect('/mat');
+        //return "hi";
+        $deletemat = Materials::find($id);
+        if($deletemat->Material_Status == "Available"){
+            $deletemat->delete();
+            return redirect()->back()->with('success','ลบสำเร็จ');
+           }else{
+               return redirect()->back()->with('fail','ไม่สามารถลบได้');
+           }
     }
 }

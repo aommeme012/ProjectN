@@ -16,7 +16,7 @@ class CreateComponentsTable extends Migration
         Schema::create('components', function (Blueprint $table) {
             $table->Bigincrements('component_Id', 5);
             $table->string('component_Name', 255);
-            $table->string('component_Status')->default('Enable');
+            $table->string('component_Status')->default('Available');
             $table->timestamps();
         });
     }

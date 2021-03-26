@@ -36,7 +36,7 @@
                                                 <a href="{{ route('mat.edit',[$mat->Material_Id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>
                                             </td>
                                             <td>
-                                                <form id="form_{{$mat->Material_Id}}" class="form-inline" method="post" action="{{route('mat.destroy',[$mat->Material_Id])}}" >
+                                                <form id="form_{{$mat->Material_Id}}" class="form-inline" method="post" action="{{route('mat.destroy',[$mat->Material_Id])}}">
                                                     {{ csrf_field() }}
                                                     @method('delete')
                                                     <button type="button" class="btn btn-danger btn-sm"
@@ -64,9 +64,10 @@
               dangerMode: true,
             }).then((willDelete) => {
               if (willDelete) {
-                swal("{{$mat->Material_Name}} ลบเสร็จสิ้น ", {
-                  icon: "success"
-
+                swal("กำลังดำเนินการ..........", {
+                    icon: false,
+                    button: false,
+                    timer:1000
                 })
                 .then(()=>{
                     document.getElementById('form_{{$mat->Material_Id}}').submit();
@@ -74,7 +75,22 @@
               }
             });
                 }
-                    @endforeach
+            @endforeach
+
+            @if(session('fail'))
+            swal({
+                title:"{{session('fail')}}",
+                icon: "error",
+                button: "OK",
+            });
+            @endif
+            @if(session('success'))
+            swal({
+                title:"{{session('success')}}",
+                icon: "success",
+                button:"OK",
+            });
+            @endif
             </script>
 @endsection
 

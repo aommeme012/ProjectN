@@ -38,13 +38,12 @@ class employeeController extends Controller
             'Sex' => $request->Sex,
             'Username' => $request->Username,
             'Password' => bcrypt($request->Password),
-            'Emp_Status' => 'Enable',
             'type' => 0,
             'Dep_Id' => $request->Dep_Id,
 
             $updatestatusdep = Departments::findorfail($request->Dep_Id),
             $updatestatusdep->update([
-                'Dep_Status' => 'ถูกใช้ไปแล้ว'
+                'Dep_Status' => 'Enable'
             ])
         ]);
 

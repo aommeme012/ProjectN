@@ -55,7 +55,7 @@ class departmentsController extends Controller
     public function destroy($id)
     {
         $delete = Departments::find($id);
-        if($delete->Dep_Status == "Enable"){
+        if($delete->Dep_Status == "Available"){
             $delete->delete();
             return redirect()->back()->with('success','ลบสำเร็จ');
            }else{

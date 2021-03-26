@@ -9,7 +9,7 @@
                             <div style="color:white;padding:15px 50px 5px 50px;float:right;font-size:16px;">
                                 <a href="/type" class="btn btn-danger"><i class="w3-xxxlarge glyphicon glyphicon-arrow-left"></i></a>
                                 </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <h3>แก้ไขข้อมูลชนิดสินค้า</h3>
                                 <hr>
                                 <form id="editType" method="post" action="{{route('type.update',[$type->Type_Id])}}" >

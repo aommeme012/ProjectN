@@ -83,7 +83,7 @@
 		<div class="customer-address">
 			To:
 			<br />
-			
+
 			<br />
 			123 Long Street
 			<br />
@@ -123,3 +123,4 @@
 	</body>
 
 </html>
+

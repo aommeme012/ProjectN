@@ -77,14 +77,14 @@ function delete_{{$dep->Dep_Id}}() {
             @if(session('fail'))
             swal({
                 title:"{{session('fail')}}",
-                icon: "error"
+                icon: "error",
                 button: "OK",
             });
             @endif
             @if(session('success'))
             swal({
                 title:"{{session('success')}}",
-                icon: "success"
+                icon: "success",
                 button:"OK",
             });
             @endif

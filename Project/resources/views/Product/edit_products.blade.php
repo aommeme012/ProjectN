@@ -22,7 +22,8 @@
                                                 <label>เลือกชนิดสินค้า</label>
                                                 <select class="form-control" name="Type_Id">
                                                     @foreach ($types as $type)
-                                                        <option value="{{$type->Type_Id}}">
+                                                        <option value="{{$type->Type_Id}}"
+                                                        {{($Pro->Type_Id == $type->Type_Id?'selected':'')}}>
                                                         {{$type->Type_Name}}
                                                         </option>
                                                         @endforeach

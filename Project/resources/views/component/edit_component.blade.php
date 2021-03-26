@@ -10,7 +10,7 @@
                 <div class="panel-body">
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <h3>แก้ไขสูตรผสม</h3>
                             <form role="form" method="post" id="editcomponant"
                                 action="{{route('comp.update',[$component->component_Id])}}">
@@ -59,7 +59,7 @@
                                         @foreach ($mats as $mat)
                                         <option value="{{$mat->Material_Id}}"
                                             {{($comdetail->Material_Id == $mat->Material_Id?'selected':'')}}>
-                                            {{$mat->Material_Name}}
+                                            {{$mat->idmat}}
                                         </option>
                                         @endforeach
                                     </select>
@@ -86,7 +86,7 @@
                 "<select class=\"form-control\" name=\"Material_Id["+i+"]\">"+
                 "@foreach ($mats as $mat)"+
                 "<option value=\"{{$mat->Material_Id}}\">"+
-                "{{$mat->Material_Name}}"+
+                "{{$mat->idmat}}"+
                 "</option>"+
                 "@endforeach"+
                 "</select>"+
