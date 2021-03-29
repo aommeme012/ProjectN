@@ -67,6 +67,7 @@ Route::resource('Rec', 'ReceiveController');
 Route::resource('Pdet', 'purchaseorderdetailController');
 
 Route::resource('Plan', 'ProductionPlanningController');
+// Route::get('/editplan{id}', 'ProductionPlanningController@updateplan');
 
 Route::resource('RequiMM','RequisitionMaterialController');
 

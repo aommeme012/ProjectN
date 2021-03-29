@@ -12,10 +12,6 @@ class employeeController extends Controller
         $this->middleware('auth');
         $this->middleware('employeeOnly');
     }
-    // public function __construct()
-    // {
-    //     $this->middlewear('auth');
-    // }
     public function index()
     {
         $emps = Employee::all();

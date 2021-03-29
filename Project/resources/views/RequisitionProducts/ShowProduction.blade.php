@@ -46,24 +46,12 @@
         </div>
     </div>
 </div>
-{{-- <script>
-    function Requisitionpro() {
-        swal({
-  title: "คุณแน่ใจหรือไม่",
-  text: "ที่จะเบิกสินค้าชิ้นนี้",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-}).then((willDelete) => {
-  if (willDelete) {
-    swal("เบิกสินค้าเสร็จสิ้น", {
-      icon: "success",
-    }).then(()=>{
-        document.getElementById('Requisitionpro').submit();
-    });
-        }
-    });
-}
-</script> --}}
+<script>
+    function Requisition(){
+    }
+    @if(session('success'))
+        swal("{{session('success')}}");
+    @endif
+</script>
 @endsection
 

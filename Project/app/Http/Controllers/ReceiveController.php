@@ -55,7 +55,7 @@ class ReceiveController extends Controller
             'Purchase_Status' => 'Complete'
         ]);
 
-        return redirect('/Rec');
+        return redirect('/Rec')->with('success','รับเข้าเสร็จสิน');
     }
     public function destroy($id)
     {

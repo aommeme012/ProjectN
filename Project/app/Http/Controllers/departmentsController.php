@@ -13,7 +13,6 @@ class departmentsController extends Controller
         $this->middleware('auth');
         $this->middleware('employeeOnly');
     }
-
     public function index()
     {
         $deps = Departments::all();

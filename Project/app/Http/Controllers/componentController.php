@@ -26,10 +26,10 @@ class componentController extends Controller
 
     public function store(Request $request)
     {
-        $comp = new component();
-        $comp->fill($request->only($comp->getFillable()));
-        $comp->save();
-
+        $comp = component::create([
+            'component_Name'=>$request->component_Name,
+            'component_Status' => 'Enable',
+        ]);
         $component = $request->Material_Id;
         for($i = 0; $i < count($component); $i++){
             componentdetail::create([
@@ -37,6 +37,7 @@ class componentController extends Controller
                 'Comde_Amount' => $request->Comde_Amount[$i],
                 'Material_Id' => $request->Material_Id[$i],
                 'component_Id' =>  $comp->component_Id,
+
             ]);
                 $updatestatusmat= Materials::findorFail($request->Material_Id[$i]);
                 $updatestatusmat->update([
@@ -96,7 +97,12 @@ class componentController extends Controller
 
     public function destroy($id)
     {
-        component::find($id)->delete();
-        return redirect('/comp');
+        $delete =  component::find($id);
+        if($delete->component_Status == "Available"){
+            $delete->delete();
+            return redirect()->back()->with('success','ลบสำเร็จ');
+           }else{
+               return redirect()->back()->with('fail','ไม่สามารถลบได้');
+           }
     }
 }

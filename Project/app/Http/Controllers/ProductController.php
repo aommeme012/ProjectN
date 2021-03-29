@@ -58,7 +58,12 @@ class ProductController extends Controller
     }
     public function destroy($id)
     {
-        Product::find($id)->delete();
-        return redirect('/Pro');
+       $deletepro = Product::find($id);
+       if($deletepro->Product_Status == "Available"){
+        $deletepro->delete();
+        return redirect()->back()->with('success','ลบสำเร็จ');
+       }else{
+           return redirect()->back()->with('fail','ไม่สามารถลบได้');
+       }
     }
 }

@@ -76,9 +76,8 @@
       if (willDelete) {
         swal("กำลังดำเนินการ..........", {
             icon: false,
-      button: false,
-    timer:1000
-
+            button: false,
+            timer:1000
         })
         .then(()=>{
             document.getElementById('form_{{$emp->Emp_Id}}').submit();

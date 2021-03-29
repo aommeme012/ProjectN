@@ -38,10 +38,10 @@
                                                     @endforeach
                                             </select>
                                     <br>
-                                    <input class="form-control" type="Number" name="Pdetail_Amount[0]" placeholder="จำนวนวัตถุดิบ">
+                                    <input class="form-control" type="Number" name="Pdetail_Amount[0]" placeholder="จำนวนวัตถุดิบ" required>
                                     </div>
                                     <div class="form-group">
-                                        <button onclick="checkPurchase()" type="button" class="btn btn-primary btn-sm" >เพิ่มการสั่งซื้อ</button>
+                                        <button onclick="checkPurchase()" type="submit" class="btn btn-primary btn-sm" >เพิ่มการสั่งซื้อ</button>
                             </div>
                     </form>
                 </div>
@@ -49,7 +49,7 @@
         </div>
     </div>
 </div>
-<script>
+{{-- <script>
     function checkPurchase() {
         swal({
   title: "คุณแน่ใจหรือไม่",
@@ -67,7 +67,7 @@
         }
     });
 }
-</script>
+</script> --}}
 <script>
 $(document).ready(function(){
     var i = 1;
@@ -81,7 +81,7 @@ $(document).ready(function(){
         "@endforeach"+
         "</select>"+
         "<label>จำนวนวัตถุดิบ</label>"+
-        "<input class=\"form-control\" type=\"Number\" name=\"Pdetail_Amount["+i+"]\">");
+        "<input class=\"form-control\" type=\"Number\" name=\"Pdetail_Amount["+i+"]\"required>");
         i++;
     });
 });

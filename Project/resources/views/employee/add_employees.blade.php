@@ -25,7 +25,7 @@
                                                 <input class="form-control" type="text" name="Address"placeholder="ที่อยู่"required>
                                                 <div class="form-group">
                                                     <br>
-                                                <input class="form-control" type="text" name="Tel"placeholder="เบอร์โทร"  required>
+                                                <input class="form-control" type="tel" name="Tel"placeholder="เบอร์โทร" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="0812345678" required>
                                                 <div class="form-group">
                                                     <br>
                                                 <input class="form-control" type="text" name="Sex"placeholder="เพศ"required>

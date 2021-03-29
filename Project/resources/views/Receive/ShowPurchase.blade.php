@@ -57,7 +57,7 @@
                                             @endforeach
                                         </td>
                                         <td>
-                                            <button  type="submit" class="btn btn-warning btn-sm">รับวัตถุดิบเข้า</button>
+                                            <button onclick="receive();" type="submit" class="btn btn-warning btn-sm">รับวัตถุดิบเข้า</button>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -73,24 +73,12 @@
         </div>
     </div>
 </div>
-{{-- <script>
-    function checkReceives() {
-        swal({
-  title: "คุณแน่ใจหรือไม่",
-  text: "ที่จะรับวัตถุดิบชิ้นนี้เข้า",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-}).then((willDelete) => {
-  if (willDelete) {
-    swal("รับวัตถุดิบเข้าเสร็จเรียบร้อย", {
-      icon: "success",
-    }).then(()=>{
-        document.getElementById('Receives').submit();
-    });
-        }
-    });
-}
-</script> --}}
+<script>
+    function receive(){
+    }
+    @if(session('success'))
+        swal("{{session('success')}}");
+    @endif
+</script>
 @endsection
 

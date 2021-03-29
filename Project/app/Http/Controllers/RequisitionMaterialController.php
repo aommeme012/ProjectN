@@ -37,12 +37,11 @@ class RequisitionMaterialController extends Controller
     {
         $RequisitionMaterial =  ProductionPlanning::join('componentdetails', 'componentdetails.component_Id', '=', 'production_plannings.component_Id')
             ->join('materials', 'materials.Material_Id', '=', 'componentdetails.Material_Id')
-            
-            // ->select(DB::raw('*, FLOOR(materials.Material_Amount/componentdetails.Comde_Amount) as balance'))
+            ->select(DB::raw('*, FLOOR(materials.Material_Amount/componentdetails.Comde_Amount) as balance'))
             ->where('production_plannings.Plan_Id', $id)
             ->orderBy('balance', 'ASC')->get();
 
-        return $RequisitionMaterial;
+
 
         if ($RequisitionMaterial[0]->Amount <= $RequisitionMaterial[0]->balance) {
             foreach ($RequisitionMaterial as $R) {

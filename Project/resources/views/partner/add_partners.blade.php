@@ -20,7 +20,7 @@
                                         <br>
                                         <input class="form-control" type="text" name="Partner_Address"placeholder="ที่อยู่บริษัทคู่ค้า"required>
                                         <br>
-                                        <input class="form-control" type="text" name="Partner_Tel"placeholder="เบอร์โทรบริษัทคู่ค้า"required>
+                                        <input class="form-control" type="tel" name="Partner_Tel"placeholder="เบอร์โทรบริษัทคู่ค้า" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="0812345678" required>
                                     </div>
                                     <div class="form-group">
                                         <button onclick="addPart()" type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>

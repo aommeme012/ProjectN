@@ -64,7 +64,7 @@ $(document).ready(function(){
         "@endforeach"+
         "</select>"+
         "ใส่จำนวนวัตถุดิบ"+
-        "<input class=\"form-control\" type=\"Number\" name=\"Comde_Amount["+i+"]\">");
+        "<input class=\"form-control\" type=\"Number\" name=\"Comde_Amount["+i+"]\"required>");
         i++;
     });
 });

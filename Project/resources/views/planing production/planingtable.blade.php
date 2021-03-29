@@ -22,6 +22,7 @@
                                     <th>สถานะการวางแผน</th>
                                     <th>ส่วนประกอบ</th>
                                     <th>สินค้าที่จะผลิต</th>
+                                    <th></th>
 
                                 </tr>
                             </thead>
@@ -34,10 +35,10 @@
                                     <td>{{$Plan->Planning_Status}}</td>
                                     <td>{{App\component::find($Plan->component_Id)->component_Name}}</td>
                                     <td>{{App\Product::find($Plan->Product_Id)->Product_Name}}</td>
-                                    {{-- <td>
+                                    <td>
                                         <a href="{{ route('Plan.edit',[$Plan->Plan_Id])}}"
                                             class="btn btn-warning btn-sm">Edit</a>
-                                    </td> --}}
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

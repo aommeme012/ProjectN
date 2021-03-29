@@ -29,9 +29,15 @@ class ProductionPlanningController extends Controller
     {
         $post=$request->all();
         ProductionPlanning::create($post);
+
+        $updatestatuspro= Product::findorFail($request->Product_Id);
+        $updatestatuspro->update([
+        'Product_Status' => 'Enable'
+
+    ]);
+
         return redirect('/Plan');
-        // $pp = ProductionPlanning::create($post);
-        // return view('planing production.showdetail',compact('pp'));
+
     }
     public function show(ProductionPlanning $ProductionPlanning)
     {
@@ -45,15 +51,14 @@ class ProductionPlanningController extends Controller
         $Plan = ProductionPlanning::find($id);
         $comps = component::all();
         $pros = Product::all();
-        return view('planing production.edit_planing', compact('Plan','comps','pros'));
+        return view('planing production.Edit_plan', compact('Plan','comps','pros'));
     }
-    // public function updatesuccess(Request $request, $id)
+    // public function updateplan(Request $request, $id)
     // {
     //     $update=ProductionPlanning::findorFail($id);
     //     $update->update($request->all());
     //     return redirect('/Plan');
     // }
-
     public function update(Request $request, $id)
     {
         $planingproduction = ProductionPlanning::join('components','production_plannings.component_Id','=','components.component_Id')
@@ -64,19 +69,14 @@ class ProductionPlanningController extends Controller
         ProductionPlanning::create([
             'Plan_Date' => today(),
             'Amount' =>  $planingproductions->Amount,
-            'Planning_Status' => 'Enable',
+            'Planning_Status' => 'Available',
             'component_Id' => $planingproductions->component_Id,
             'Product_Id' => $planingproductions->Product_Id,
 
         ]);
     }
     return redirect('/Plan');
-        // ProductionPlanning::find($id)->update([
-        //     'Planning_Status' => 'Enable'
-        // ]);
-        // return redirect('/Plan');
     }
-
     public function destroy($id)
     {
         //

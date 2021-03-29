@@ -16,7 +16,7 @@
                                     <th>รหัสรับวัตถุดิบ</th>
                                     <th>วันที่รับวัตถุดิบ</th>
                                     <th>พนักงาน</th>
-                                    <th>รายการสั่งซื้อ</th>
+                                    <th>วันที่การสั่งซื้อ</th>
                                     <th>จำนวนที่รับวัตถุดิบเข้า</th>
 
                                 </tr>
@@ -27,7 +27,7 @@
                                     <td>{{$Recs->Receive_Id}}</td>
                                     <td>{{$Recs->Receive_Date}}</td>
                                     <td>{{App\Employee::find($Recs->Emp_Id)->Fname}}</td>
-                                    <td>{{$Recs->Purchase_Id}}</td>
+                                    <td>{{App\PurchaseOrder::find($Recs->Purchase_Id)->Purchase_Date}}</td>
                                     <td>{{$Recs->Receive_Amount}}</td>
                                 </tr>
                                 @endforeach

@@ -55,7 +55,7 @@ class RequisitionProductController extends Controller
                 Production::findorFail($RP['Production_Id'])->update([
                     'Production_Status' => 'เบิก'
                 ]);
-                return back();
+                return back()->with('success','เบิกสินค้าเสร็จสิน');
 }
     public function destroy($id)
     {
