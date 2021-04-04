@@ -26,7 +26,7 @@ class purchaseorderController extends Controller
         $emps = Employee::all();
         $parts = Partner::all();
         $mats = Materials::all();
-        return view('PurchaseOder.PurchaseDep', compact('Purc','emps','parts','mats'));
+        return view('displayemployee.PurchaseDep', compact('Purc','emps','parts','mats'));
     }
     public function create()
     {

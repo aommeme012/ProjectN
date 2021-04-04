@@ -18,6 +18,14 @@ class ProductionPlanningController extends Controller
         $pros = Product::all();
         return view('planing production.planingtable', compact('Plans','comps','pros'));
     }
+    public function indexPlan()
+    {
+        $Plans = DB::table('production_plannings')
+        ->where('Planning_Status', '=', 'Enable')->get();
+        $comps = component::all();
+        $pros = Product::all();
+        return view('displayemployee.Plandep', compact('Plans','comps','pros'));
+    }
     public function create()
     {
         $Plans = ProductionPlanning::all();

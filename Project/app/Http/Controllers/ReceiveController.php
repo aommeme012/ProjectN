@@ -17,6 +17,11 @@ class ReceiveController extends Controller
         $receive = PurchaseOrder::where('Purchase_Status', 'Enable')->get();
         return view('Receive.ShowPurchase', compact('receive'));
     }
+    public function indexlistreceuve()
+    {
+        $rec = Receive::all();
+        return view('displayemployee.matandprodep', compact('rec'));
+    }
     public function create()
     {
         $rec = Receive::all();

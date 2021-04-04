@@ -14,6 +14,11 @@ class ProductController extends Controller
         $pros = Product::all();
         return view('Product.products', compact('pros'));
     }
+    public function indexlist()
+    {
+        $pros = Product::all();
+        return view('displayemployee.productlist', compact('pros'));
+    }
     public function create()
     {
         $types = TypeProduct::all();

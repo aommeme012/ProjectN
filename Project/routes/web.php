@@ -59,8 +59,12 @@ Route::get('pdf','PDFController@pdf');
 Route::resource('report', 'ReportController');
 
 Route::resource('Pur', 'purchaseorderController');
+
 Route::get('Purdetail', 'purchaseorderController@Show');
 Route::get('PurEmp', 'purchaseorderController@indexEmployee');
+Route::get('PlanEmp', 'ProductionPlanningController@indexPlan');
+Route::get('Recdep', 'ReceiveController@indexlistreceuve');
+Route::get('productlist', 'ProductController@indexlist');
 
 Route::resource('Rec', 'ReceiveController');
 
