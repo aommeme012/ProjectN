@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Departments;
 use App\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class employeeController extends Controller
 {
@@ -24,24 +25,37 @@ class employeeController extends Controller
     }
     public function store(Request $request)
     {
+        // Employee::create([
+        //     'idemp' => $request->getEmpId(),
+        //     'Fname' => $request->Fname,
+        //     'Lname' => $request->Lname,
+        //     'Address' => $request->Address,
+        //     'Tel' => $request->Tel,
+        //     'Sex' => $request->Sex,
+        //     'Username' => $request->Username,
+        //     'Password' => bcrypt($request->Password),
+        //     'Emp_Status' => 'Enable',
+        //     'type' => 0,
+        //     'Dep_Id' => $request->Dep_Id,
 
-        Employee::create([
-            'idemp' => $request->idemp,
-            'Fname' => $request->Fname,
-            'Lname' => $request->Lname,
-            'Address' => $request->Address,
-            'Tel' => $request->Tel,
-            'Sex' => $request->Sex,
-            'Username' => $request->Username,
-            'Password' => bcrypt($request->Password),
-            'Emp_Status' => 'Enable',
-            'type' => 0,
-            'Dep_Id' => $request->Dep_Id,
+        $Employee = new Employee;
+        $Employee->fill($request->only($Employee->getFillable()));
+        $Employee->idemp = $Employee->getEmpId();
+        $Employee->Fname = $request->Fname;
+        $Employee->Lname = $request->Lname;
+        $Employee->Address = $request->Address;
+        $Employee->Tel = $request->Tel;
+        $Employee->Sex = $request->Sex;
+        $Employee->Username = $request->Username;
+        $Employee->Password = Hash::make($request->Password);
+        $Employee->Emp_Status = 'Enable';
+        $Employee->type = 0;
+        $Employee->Dep_Id = $request->Dep_Id;
+        $Employee->save();
 
-            $updatestatusdep = Departments::findorfail($request->Dep_Id),
+            $updatestatusdep = Departments::findorfail($request->Dep_Id);
             $updatestatusdep->update([
                 'Dep_Status' => 'Enable'
-            ])
         ]);
 
         return back();

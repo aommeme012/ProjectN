@@ -12,10 +12,12 @@
                                     <div class="col-md-4">
                                         <h3>แก้ไขข้อมูลพนักงาน</h3>
                                         <hr>
-                                        {{-- <form id="editEmp" method="post" action="{{route('emp.update',[$emp->Emp_Id])}}" >
+                                        <form id="editEmp" method="post" action="{{route('emp.update',[$emp->Emp_Id])}}" >
                                             {{ csrf_field() }}
-                                        @method('put') --}}
+                                        @method('put')
                                         <div class="form-group">
+                                            <label>รหัส</label>
+                                            <input class="form-control" type="text" name="idemp" value="{{$emp->idemp}}" disabled>
                                             <label>ชื่อ</label>
                                             <input class="form-control" type="text" name="Fname"value="{{$emp->Fname}}">
                                             <label>นามสกุล</label>
@@ -39,7 +41,7 @@
                                         <label>เลือกแผนกงาน</label>
                                         <select class="form-control" name="Dep_Id">
                                         @foreach ($deps as $dep)
-                                            <option value="{{$dep->Dep_Id}}">
+                                            <option value="{{$dep->Dep_Id}}"
                                             {{($emp->Dep_Id == $dep->Dep_Id?'selected':'')}}>
                                             {{$dep->Dep_Name}}
                                             </option>

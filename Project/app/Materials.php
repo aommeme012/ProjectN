@@ -16,4 +16,16 @@ class Materials extends Model
         'unitmaterial',
         'Material_Status',
     ];
+    public function getmatId()
+    {
+        $Mat_Id = Materials::orderby('idmat','DESC')->first();
+        if($Mat_Id){
+            $M_Id = explode('MATS',$Mat_Id->idmat);
+            $mat = "MATS" . str_pad(intval($M_Id[1])+1,4,0,STR_PAD_LEFT);
+        }
+        else{
+            $mat = "MATS" . str_pad(1,4,0,STR_PAD_LEFT);
+        }
+        return $mat;
+    }
 }

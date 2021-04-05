@@ -15,8 +15,8 @@
                                         <form id="addEmp" role="form"  method="post" action="{{route('emp.store')}}">
                                             {{ csrf_field() }}
                                             <div class="form-group">
-                                                <input class="form-control" type="text" name="idemp" placeholder="รหัสพนักงาน"required>
-                                                <br>
+                                                {{-- <input class="form-control" type="text" name="idemp" placeholder="รหัสพนักงาน"required>
+                                                <br> --}}
                                                 <input class="form-control" type="text" name="Fname" placeholder="ชื่อ"required>
                                                 <br>
                                                 <input class="form-control" type="text" name="Lname"placeholder="นามสกุล"required>

@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigincrements('Product_Id', 5);
             $table->String('Product_Name', 255);
             $table->Integer('Product_Amount');
+            $table->String('Product_image');
             $table->String('Product_Status')->default('Available');
             $table->unsignedBigInteger('Type_Id');
             $table->foreign('Type_Id')->references('Type_Id')->on('type_products')->ondelete('cascade');

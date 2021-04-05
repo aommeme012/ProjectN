@@ -31,7 +31,7 @@
                                     <td>{{$Pro->Product_Amount}}</td>
                                     <td>{{$Pro->Product_Status}}</td>
                                     <td>{{App\TypeProduct::find($Pro->Type_Id)->Type_Name}}</td>
-                                    <td></td>
+                                    <td><img src="/images/{{$Pro->Product_image}}" width="100" height="100" alt=""></td>
                                     <td>
                                         <a href="{{ route('Pro.edit',[$Pro->Product_Id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit fa-1x"></i></a>
                                     </td>

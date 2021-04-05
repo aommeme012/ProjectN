@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Departments;
 use App\Employee;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -47,7 +48,7 @@ class RegisterController extends Controller
     public function test()
     {
             return Employee::create([
-                'idemp' => "EMP0001",
+                'idemp' => "Test",
                 'Fname' => "อชิตพล",
                 'Lname' => "พลานุวัฒน์",
                 'Address' => "43/374 ลาดกระบัง14/1",

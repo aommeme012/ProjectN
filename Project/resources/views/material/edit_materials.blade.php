@@ -17,7 +17,7 @@
                                     @method('put')
                                     <div class="form-group">
                                     <label>รหัสวัตถุดิบ</label>
-                                    <input class="form-control" type="text" name="idmat" value="{{$mat->idmat}}">
+                                    <input class="form-control" type="text" name="idmat" value="{{$mat->idmat}}"disabled>
                                     <label>ชื่อวัตถุดิบ</label>
                                     <input class="form-control" type="text" name="Material_Name" value="{{$mat->Material_Name}}">
                                     <label>จำนวนวัตถุดิบ</label>

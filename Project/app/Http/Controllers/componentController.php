@@ -26,6 +26,7 @@ class componentController extends Controller
 
     public function store(Request $request)
     {
+
         $comp = component::create([
             'component_Name'=>$request->component_Name,
             'component_Status' => 'Enable',

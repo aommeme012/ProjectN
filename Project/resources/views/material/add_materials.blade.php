@@ -15,8 +15,8 @@
                                         <form id="addMat" role="form"  method="post" action="{{route('mat.store')}}" >
                                             {{ csrf_field() }}
                                             <div class="form-group">
-                                                <input class="form-control" type="text" name="idmat"placeholder="รหัสวัตถุดิบ" required>
-                                                <br>
+                                                {{-- <input class="form-control" type="text" name="idmat"placeholder="รหัสวัตถุดิบ" required>
+                                                <br> --}}
                                                 <input class="form-control" type="text" name="Material_Name"placeholder="ชื่อวัตถุดิบ" required>
                                                 <br>
                                                 <input class="form-control" type="text" name="Material_Amount"placeholder="จำนวนวัตถุดิบ" required>

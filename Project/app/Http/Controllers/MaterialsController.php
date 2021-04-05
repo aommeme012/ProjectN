@@ -20,8 +20,13 @@ class MaterialsController extends Controller
     }
     public function store(Request $request)
     {
-        $post=$request->all();
-        Materials::create($post);
+        $Materials = new Materials;
+        $Materials->fill($request->only($Materials->getFillable()));
+        $Materials->idmat = $Materials->getmatId();
+        $Materials->Material_Name = $request->Material_Name;
+        $Materials->Material_Amount = $request->Material_Amount;
+        $Materials->unitmaterial = $request->unitmaterial;
+        $Materials->save();
         return view('material.add_materials');
     }
     public function show(Materials $Materials)

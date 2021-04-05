@@ -41,4 +41,16 @@ class Employee extends Authentication
     public function isAdmin(){
         return $this->type === self::ADMIN_TYPE;
     }
+    public function getEmpId()
+    {
+        $EMP_Id = Employee::orderby('idemp','DESC')->first();
+        if($EMP_Id){
+            $E_Id = explode('EMP',$EMP_Id->idemp);
+            $emp = "EMP" . str_pad(intval($E_Id[1])+1,4,0,STR_PAD_LEFT);
+        }
+        else{
+            $emp = "EMP" . str_pad(1,4,0,STR_PAD_LEFT);
+        }
+        return $emp;
+    }
 }

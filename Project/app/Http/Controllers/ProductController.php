@@ -26,21 +26,21 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
-        // $post=$request->all();
-        // Product::create($post);
-        Product::create([
-            'Product_Id' => $request->Product_Id,
-            'Product_Name' => $request->Product_Name,
-            'Product_Amount' => $request->Product_Amount,
-            'Type_Id' => $request->Type_Id,
+        // return $request;
+        $post=$request->all();
 
+        if($file=$request->file('Product_image')){
+            $name=$file->getClientOriginalName();
+            $file->move('images',$name);
+            $post['Product_image']=$name;
+        }
+        Product::create($post);
 
-            $updatestatustype = TypeProduct::findorfail($request->Type_Id),
+            $updatestatustype = TypeProduct::findorfail($request->Type_Id);
             $updatestatustype->update([
             'Type_Status' => 'Enable'
-        ])
-
         ]);
+
         return back();
     }
     public function show(Product $Product)

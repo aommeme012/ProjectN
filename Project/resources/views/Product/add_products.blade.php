@@ -12,13 +12,15 @@
                             <div class="col-md-4">
                                 <h3>เพิ่มข้อมูลสินค้า</h3>
                                 <hr>
-                                <form id="addProduct" role="form"  method="post" action="{{route('Pro.store')}}">
+                                <form id="addProduct" role="form"  method="post" action="{{route('Pro.store')}}" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="form-group">
 
                                         <input class="form-control" type="text" name="Product_Name"placeholder="ชื่อสินค้า" required>
                                         <br>
                                         <input class="form-control" type="text" name="Product_Amount"placeholder="จำนวนสินค้า" required>
+                                        <br>
+                                        <input class="form-control" type="file" name="Product_image" required>
                                         <div class="form-group">
                                         <br>
                                     <label>เลือกชนิดสินค้า</label>
