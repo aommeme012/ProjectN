@@ -15,6 +15,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\RequisitionMaterial;
+use FontLib\Table\Type\name;
 use Illuminate\Support\Facades\Auth;
 
 //Route::get('/','departmentsController@index');
@@ -59,6 +60,7 @@ Route::get('pdf','PDFController@pdf');
 Route::resource('report', 'ReportController');
 
 Route::resource('Pur', 'purchaseorderController');
+Route::get('Purpdf', 'purchaseorderController@show2')->name('Purpdf');
 
 Route::get('Purdetail', 'purchaseorderController@Show');
 Route::get('PurEmp', 'purchaseorderController@indexEmployee');

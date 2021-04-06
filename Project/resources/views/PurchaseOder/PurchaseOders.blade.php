@@ -41,7 +41,7 @@
                                     <input class="form-control" type="Number" name="Pdetail_Amount[0]" placeholder="จำนวนวัตถุดิบ" required>
                                     </div>
                                     <div class="form-group">
-                                        <button onclick="checkPurchase()" type="submit" class="btn btn-primary btn-sm" >เพิ่มการสั่งซื้อ</button>
+                                        <button  type="submit" class="btn btn-primary btn-sm" >เพิ่มการสั่งซื้อ</button>
                             </div>
                     </form>
                 </div>
@@ -49,25 +49,7 @@
         </div>
     </div>
 </div>
-{{-- <script>
-    function checkPurchase() {
-        swal({
-  title: "คุณแน่ใจหรือไม่",
-  text: "ที่จะสั่งซื้อ}",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-}).then((willDelete) => {
-  if (willDelete) {
-    swal(" สั่งซื้อเสร็จเรียบร้อย", {
-      icon: "success",
-    }).then(()=>{
-        document.getElementById('Purchase').submit();
-    });
-        }
-    });
-}
-</script> --}}
+
 <script>
 $(document).ready(function(){
     var i = 1;

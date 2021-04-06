@@ -30,7 +30,7 @@
                                 @method('put')
                                 <tbody>
                                     <tr>
-                                        <td>{{$Rec->Purchase_Id}}</td>
+                                        <td>{{$Rec->idpur}}</td>
                                         <td>{{$Rec->Purchase_Date}}</td>
                                         <td>{{App\Employee::find($Rec->Emp_Id)->Fname}}</td>
                                         <td>{{App\Partner::find($Rec->Partner_Id)->Partner_Name}}</td>

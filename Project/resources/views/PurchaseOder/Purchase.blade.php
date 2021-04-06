@@ -13,6 +13,7 @@
                             <br><br>
                             <thead>
                                 <tr>
+                                    <th>ลำดับ</th>
                                     <th>รหัสการสั่งซื้อ</th>
                                     <th>วันที่การสั่งซื้อ</th>
                                     <th>ชื่อพนักงานที่สั่งซื้อ</th>
@@ -23,10 +24,10 @@
                             </thead>
                             <tbody>
                                 @foreach ($Purc as $Pur)
-                                <form id="Purchase" role="form"  method="post" action="{{route('Pur.store')}}">
-                                    {{ csrf_field() }}
+
                                 <tr>
                                     <td>{{$Pur->Purchase_Id}}</td>
+                                    <td>{{$Pur->idpur}}</td>
                                     <td>{{$Pur->Purchase_Date}}</td>
                                     <td>{{App\Employee::find($Pur->Emp_Id)->Fname}}</td>
                                     <td>{{App\Partner::find($Pur->Partner_Id)->Partner_Name}}</td>
@@ -42,6 +43,7 @@
     </div>
 </div>
 </div>
+
 @endsection
 
 

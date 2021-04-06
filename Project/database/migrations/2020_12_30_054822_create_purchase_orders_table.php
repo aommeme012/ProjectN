@@ -15,6 +15,7 @@ class CreatePurchaseOrdersTable extends Migration
     {
         Schema::create('purchase_orders', function (Blueprint $table) {
             $table->bigincrements('Purchase_Id', 5);
+            $table->String('idpur',255);
             $table->date('Purchase_Date');
             $table->String('Purchase_Status', 10)->default('Enable');
             $table->unsignedBigInteger('Emp_Id');

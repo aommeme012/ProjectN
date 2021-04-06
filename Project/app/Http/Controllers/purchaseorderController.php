@@ -38,23 +38,14 @@ class purchaseorderController extends Controller
     }
     public function store(Request $request)
     {
-        // for ($i = 0; $i < count($request->Material_Id); $i++) {
-        //     $data[$i]['Material_Id'] = $request->Material_Id[$i];
-        //     $data[$i]['Pdetail_Amount'] = $request->Pdetail_Amount[$i];
-        // }
-        $Purc  = PurchaseOrder::create([
-            'Purchase_Date' => today(),
-            'Emp_Id' => Auth::user()->Emp_Id,
-            'Partner_Id' => $request->Partner_Id,
-        ]);
-        // $PPCC= new PurchaseOrderDetail();
-//     foreach ($data as $i => $Purchasdetail) {
-//         $PPCC->create([
-//             'Material_Id' =>  $Purchasdetail['Material_Id'],
-//             'Pdetail_Amount' => $Purchasdetail['Pdetail_Amount'],
-//             'Purchase_Id' =>  $Purc->Purchase_Id,
-//         ]);
-// return $Purchasdetail;
+        $Purc = new PurchaseOrder;
+        $Purc->fill($request->only($Purc->getFillable()));
+            $Purc->idpur = $Purc->getpurId();
+            $Purc->Purchase_Date = today();
+            $Purc->Emp_Id = Auth::user()->Emp_Id;
+            $Purc->Partner_Id = $request->Partner_Id;
+            $Purc->save();
+    
         $Purchas = $request->Material_Id;
         for($i = 0; $i < count($Purchas); $i++){
             PurchaseOrderDetail::create([
@@ -67,27 +58,24 @@ class purchaseorderController extends Controller
                 $updatestatuspart->update([
                 'Partner_Status' => 'Enable'
                 ]);
+            }
+            $purchaspdf = PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
+                ->where('purchase_orders.Purchase_Id',$Purc->Purchase_Id)->get();
+            $purchas = PurchaseOrder::where('Purchase_Id',$Purc->Purchase_Id)->first();
 
-                // $updatestat =Employee::findorfail($request->Emp_Id);
-                // $updatestat->update([
-                // 'Emp_Status' => 'Enable'
-                // ]);
-
-
-            // $purchaspdf = PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
-            // ->where('purchase_orders.Purchase_Id',$Purc->Purchase_Id)->get();
-
-
-            // return view('PurchaseOder.PurchasePDF',[
-            //     'purchaspdf' => $purchaspdf,'Purc'=> $Purc
-            // ]);
-        }
-        return back();
-    }
+                return view('PurchaseOder.PurchasePDF',[
+                    'purchaspdf' => $purchaspdf,'Purc'=> $Purc ,'purchas'=> $purchas
+                ]);
+                return redirect('/Purback');
+}
     public function show(PurchaseOrder $PurchaseOrder )
     {
         $Purdetails = PurchaseOrderDetail::all();
         return view('PurchaseOderDetail.PdetailDep', compact('Purdetails'));
+    }
+    public function show2(PurchaseOrder $PurchaseOrder )
+    {
+
     }
     public function edit($id)
     {
@@ -96,7 +84,7 @@ class purchaseorderController extends Controller
     public function update(Request $request, $id)
     {
 
-    }
+        }
     public function destroy($id)
     {
         //
