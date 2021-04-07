@@ -13,8 +13,9 @@
                             <br><br>
                             <thead>
                                 <tr>
-                                    <th>รหัสรายละเอียดสั่งซื้อ</th>
+
                                     <th>จำนวนวัตถุดิบ</th>
+                                    <th>ราคาวัตถุดิบ</th>
                                     <th>วัตถุดิบ</th>
                                     <th>วันที่การสั่งซื้อ</th>
                                 </tr>
@@ -22,8 +23,9 @@
                             <tbody>
                                 @foreach ($Pdets as $Pdet)
                                 <tr>
-                                    <td>{{$Pdet->Pdetail_Id}}</td>
+                                    
                                     <td>{{$Pdet->Pdetail_Amount}}</td>
+                                    <td>{{$Pdet->Pdetail_Money}}</td>
                                     <td>{{App\Materials::find($Pdet->Material_Id)->Material_Name}}</td>
                                     <td>{{App\PurchaseOrder::find($Pdet->Purchase_Id)->Purchase_Date}}</td>
                                 </tr>

@@ -16,6 +16,7 @@ class CreatePurchaseOrderDetailsTable extends Migration
         Schema::create('purchase_order_details', function (Blueprint $table) {
             $table->bigincrements('Pdetail_Id', 5);
             $table->integer('Pdetail_Amount');
+            $table->integer('Pdetail_Money');
             $table->unsignedBigInteger('Material_Id');
             $table->foreign('Material_Id')->references('Material_Id')->on('materials')->ondelete('cascase');
             $table->unsignedBigInteger('Purchase_Id');

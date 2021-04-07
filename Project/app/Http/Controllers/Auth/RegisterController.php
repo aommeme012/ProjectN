@@ -48,7 +48,7 @@ class RegisterController extends Controller
     public function test()
     {
             return Employee::create([
-                'idemp' => "Test",
+                'idemp' => "EMP0000",
                 'Fname' => "อชิตพล",
                 'Lname' => "พลานุวัฒน์",
                 'Address' => "43/374 ลาดกระบัง14/1",

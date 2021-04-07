@@ -34,7 +34,7 @@ class HomeController extends Controller
         if(Auth::user()->Dep_Id == 3){
             return redirect('/Recdep');
         }
-        if(Auth::user()->Dep_Id == 4){
+        if(Auth::user()->Dep_Id == 6){
             return redirect('/PlanEmp');
         }
         if(Auth::user()->Dep_Id == 5){

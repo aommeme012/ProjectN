@@ -11,17 +11,19 @@
                             {{-- <a href="{{ route('Pur.index')}}" class="btn btn-primary btn-sm">PurchaseOder</a> --}}
                             <thead>
                                 <tr>
-                                    <th>Pdetail_Id</th>
-                                    <th>Pdetail_Amount</th>
-                                    <th>Material_Id</th>
-                                    <th>Purchase_Id</th>
+
+                                    <th>จำนวนวัตถุดิบ</th>
+                                    <th>ราคาวัตถุดิบ</th>
+                                    <th>วัตถุดิบ</th>
+                                    <th>วันที่การสั่งซื้อ</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($Purdetails as $Purdetail)
                                 <tr>
-                                    <td>{{$Purdetail->Pdetail_Id}}</td>
+                                    
                                     <td>{{$Purdetail->Pdetail_Amount}}</td>
+                                    <td>{{$Purdetail->Pdetail_Money}}</td>
                                     <td>{{App\Materials::find($Purdetail->Material_Id)->Material_Name}}</td>
                                     <td>{{App\PurchaseOrder::find($Purdetail->Purchase_Id)->Purchase_Date}}</td>
                                 </tr>

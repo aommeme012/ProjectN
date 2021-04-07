@@ -45,15 +45,17 @@ class purchaseorderController extends Controller
             $Purc->Emp_Id = Auth::user()->Emp_Id;
             $Purc->Partner_Id = $request->Partner_Id;
             $Purc->save();
-    
+
         $Purchas = $request->Material_Id;
         for($i = 0; $i < count($Purchas); $i++){
             PurchaseOrderDetail::create([
                 'Pdetail_Amount' => $request->Pdetail_Amount[$i],
+                'Pdetail_Money' => $request->Pdetail_Money[$i],
                 'Material_Id' => $request->Material_Id[$i],
                 'Purchase_Id' =>  $Purc->Purchase_Id,
-                ]);
 
+                ]);
+              
                 $updatestatuspart = Partner::findorfail($request->Partner_Id);
                 $updatestatuspart->update([
                 'Partner_Status' => 'Enable'

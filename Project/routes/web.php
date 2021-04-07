@@ -14,6 +14,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Http\Controllers\purchaseorderController;
 use App\RequisitionMaterial;
 use FontLib\Table\Type\name;
 use Illuminate\Support\Facades\Auth;
@@ -67,6 +68,7 @@ Route::get('PurEmp', 'purchaseorderController@indexEmployee');
 Route::get('PlanEmp', 'ProductionPlanningController@indexPlan');
 Route::get('Recdep', 'ReceiveController@indexlistreceuve');
 Route::get('productlist', 'ProductController@indexlist');
+// Route::get('/FillPur','purchaseorderController@index');
 
 Route::resource('Rec', 'ReceiveController');
 

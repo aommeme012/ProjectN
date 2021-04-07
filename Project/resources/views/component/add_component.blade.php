@@ -63,8 +63,8 @@ $(document).ready(function(){
         "</option>"+
         "@endforeach"+
         "</select>"+
-        "ใส่จำนวนวัตถุดิบ"+
-        "<input class=\"form-control\" type=\"Number\" name=\"Comde_Amount["+i+"]\"required>");
+        "<br>"+
+        "<input class=\"form-control\" type=\"Number\" name=\"Comde_Amount["+i+"]\"placeholder=\"จำนวนของวัตถุดิบ\"required>");
         i++;
     });
 });

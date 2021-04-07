@@ -39,6 +39,8 @@
                                             </select>
                                     <br>
                                     <input class="form-control" type="Number" name="Pdetail_Amount[0]" placeholder="จำนวนวัตถุดิบ" required>
+                                    <br>
+                                    <input class="form-control" type="Money" name="Pdetail_Money[0]" placeholder="ราคาวัตถุดิบ" required>
                                     </div>
                                     <div class="form-group">
                                         <button  type="submit" class="btn btn-primary btn-sm" >เพิ่มการสั่งซื้อ</button>
@@ -62,8 +64,10 @@ $(document).ready(function(){
         "</option>"+
         "@endforeach"+
         "</select>"+
-        "<label>จำนวนวัตถุดิบ</label>"+
-        "<input class=\"form-control\" type=\"Number\" name=\"Pdetail_Amount["+i+"]\"required>");
+        "<br>"+
+        "<input class=\"form-control\" type=\"Number\" name=\"Pdetail_Amount["+i+"]\"placeholder=\"จำนวนวัตถุดิบ\"required>"+
+        "<br>"+
+        "<input class=\"form-control\" type=\"Money\" name=\"Pdetail_Money["+i+"]\"placeholder=\"ราคาวัตถุดิบ\"required>");
         i++;
     });
 });

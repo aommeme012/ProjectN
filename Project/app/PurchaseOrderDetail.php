@@ -11,6 +11,7 @@ class PurchaseOrderDetail extends Model
 
     protected $fillable = [
         'Pdetail_Amount',
+        'Pdetail_Money',
         'Material_Id',
         'Purchase_Id',
     ];

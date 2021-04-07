@@ -244,7 +244,8 @@
                             {{$materialss->unitmaterial}}
                             <br></td>
                             <td class="qty">{{$purchaspdff->Pdetail_Amount}}</td>
-                            <td class="total">-</td>
+
+                            <td class="total">{{$purchaspdff->Pdetail_Money}}</td>
                         </tr>
                         @endforeach
                     </tbody>
