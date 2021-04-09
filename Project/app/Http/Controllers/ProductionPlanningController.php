@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class ProductionPlanningController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function index()
     {
         $Plans = DB::table('production_plannings')
@@ -35,8 +40,17 @@ class ProductionPlanningController extends Controller
     }
     public function store(Request $request)
     {
-        $post=$request->all();
-        ProductionPlanning::create($post);
+        // $post=$request->all();
+        // ProductionPlanning::create($post);
+        $Planing = new ProductionPlanning();
+        $Planing->fill($request->only($Planing->getFillable()));
+        $Planing->idplan = $Planing->getplanId();
+        $Planing->Plan_Date = $request->Plan_Date;
+        $Planing->Amount = $request->Amount;
+        $Planing->Planning_Status = 'Enable';
+        $Planing->component_Id = $request->component_Id;
+        $Planing->Product_Id = $request->Product_Id;
+        $Planing->save();
 
         $updatestatuspro= Product::findorFail($request->Product_Id);
         $updatestatuspro->update([

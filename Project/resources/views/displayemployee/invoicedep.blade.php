@@ -1,5 +1,5 @@
-@extends('layouts.manupurchase')
-@section('Purchase')
+@extends('layouts.manuinvouce')
+@section('invo')
 <div id="page-wrapper" >
     <div id="page-inner">
         <div class="row">
@@ -9,8 +9,6 @@
                         <table class="table table-striped table-bordered table-hover">
                             <div class="a"><h3>ข้อมูลการสั่งซื้อวัตถุดิบ</h3></div>
                             <hr>
-                            <a href="{{ route('Pur.index')}}" class="btn btn-primary btn-sm">เพิ่มการสั่งซื้อ</a>
-                            <br><br>
                             <thead>
                                 <tr>
                                     <th>ลำดับ</th>
@@ -24,9 +22,9 @@
                             </thead>
                             <tbody>
                                 @foreach ($Purc as $Pur)
-                                <form role="form"  method="post" action="{{route('Pur.update',[$Pur->Purchase_Id])}}" >
+                                <form role="form"  method="get" action="{{route('Purpdfdep',[$Pur->Purchase_Id])}}" >
                                     {{ csrf_field() }}
-                                    @method('put')
+                                    
                                 <tr>
                                     <td>{{$Pur->Purchase_Id}}</td>
                                     <td>{{$Pur->idpur}}</td>

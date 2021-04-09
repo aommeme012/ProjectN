@@ -180,6 +180,7 @@
 <div id="invoice">
 
     <div class="toolbar hidden-print">
+        
     </div>
     <div class="invoice overflow-auto">
         <div style="min-width: 600px">
@@ -196,97 +197,46 @@
                             บริษัท กู๊ดลีฟวิ่ง สไตล์ จำกัด
                             </a>
                         </h2>
-                        <div>เลขที่ 18/45 หมู่2 ถนนศีนครินท์ ต.บางแก้ว อ.บางพลี จ.สมุทรปราการ 10540</div>
+                        <div>เลขที่ 18/45 หมู่2 ถนนศรีนครินทร์ ต.บางแก้ว อ.บางพลี จ.สมุทรปราการ 10540</div>
                         <div>โทร. 061-463-9635 แฟกซ์ 02-383-3860 E-mail ai-gls@hotmail.com </div>
                         <div>เลขประจำตัวผู้เสียภาษีอากร 0115558010281</div>
                     </div>
                 </div>
             </header>
             <main>
-                <div class="row contacts">
-                    <div class="col invoice-to">
-                        <div class="text-gray-light">INVOICE TO:</div>
-                        <h2 class="to">{{App\Partner::find($purchas->Partner_Id)->Partner_Name}}</h2>
-                        <div class="address">{{App\Partner::find($purchas->Partner_Id)->Partner_Address}}</div>
-                        <div class="tel">{{App\Partner::find($purchas->Partner_Id)->Partner_Tel}}</div>
-                    </div>
-                    <div class="col invoice-details">
-                        <h1 class="invoice-id">INVOICE : {{$purchas->idpur}}</h1>
-                        <div class="date">Date of Invoice: {{$purchas->Purchase_Date}}</div>
-                    </div>
-                </div>
+            <h3 align = 'center'>รายงานสินค้าคงเหลือ</h3>
                 <table border="0" cellspacing="0" cellpadding="0">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th class="text-left">รายละเอียดการสั่งซื้อ</th>
-                            <th class="text-right">หน่วย</th>
-                            <th class="text-right">จำนวน</th>
-                            <th class="text-right">ราคาต่อหน่วย</th>
-                            <th class="text-right">ราคารวม</th>
+                            
+                            <th class="text-left">วันที่</th>
+                            <th class="text-right">ชื่อสินค้าที่เบิก</th>
+                            <th class="text-right">จำนวนสินค้าที่เบิก</th>
+                            <th class="text-right">พนักงาน</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($purchaspdf as $purchaspdff )
+                        @foreach ($reportreproductpdf as $reportreproductpdff)
                         <tr>
-                            <td class="no">{{$purchaspdff->Purchase_Id}}</td>
-                            <td class="text-left"><h3>
-                                <?php
-                                    $materialss = App\Materials::find($purchaspdff->Material_Id);
-                                ?>
-                                {{$materialss->idmat}}
-                                {{$materialss->Material_Name}}
-                                <br>
-                                </h3></td>
-                            <td class="unit"><?php
-                                $materialss = App\Materials::find($purchaspdff->Material_Id);
-                            ?>
-
-                            {{$materialss->unitmaterial}}
-                            <br></td>
-                            <td class="qty">{{$purchaspdff->Pdetail_Amount}}</td>
-                            <td class="qty">{{$purchaspdff->Pdetail_Money}}</td>
-                            @php
-                            $money = $purchaspdff->Pdetail_Amount * $purchaspdff->Pdetail_Money
-                        @endphp
-                            <td class="total">
-                                {{$money}}
-                            </td>
+                            <td class="no">{{$reportreproductpdff ->Requispro_Date}}</td>
+                            <td class="unit">{{App\Product::find($reportreproductpdff ->Product_Id)->Product_Name}}</td>
+                            <td class="unit">{{$reportreproductpdff ->Requispro_Amount}}</td>
+                            <td class="qty">{{App\Employee::find($reportreproductpdff ->Emp_Id)->Fname}}</td>
                         </tr>
                         @endforeach
                     </tbody>
-                    @php
-                        $Purtotal = 0;
-                    @endphp
-                    @foreach ( $purchaspdf as $purchaspdff  )
-                    <?php $Purtotal +=  $purchaspdff->Pdetail_Money * $purchaspdff->Pdetail_Amount ?>
-                    @endforeach
-                    <tfoot>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td colspan="2">SUBTOTAL</td>
-                            <td>{{$Purtotal}}</td>
-                        </tr>
-                        <tfoot>
+                  
                 </table>
             </main>
         </div>
-        <div class="text-right">
-            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> พิมพ์ใบสั่งซื้อ</button>
-            <a href="{{route('Pur.create')}}"class="btn btn-info"><i class="fa fa-file-pdf-o"></i> เสร็จสิ้น </a>
-        </div>
+        <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+        <div></div>
     </div>
 </div>
 
 </body>
 </html>
-<script>
-    $('#printInvoice').click(function(){
-        Popup($('.invoice')[0].outerHTML);
-        function Popup(data)
-        {
-            window.print();
-            return true;
-        }
-    });
-</script>
+
+
+
+

@@ -11,6 +11,11 @@ use Illuminate\Http\Request;
 
 class componentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function index()
     {
         $comps = component::all();

@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class TypeProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function index()
     {
         $types = TypeProduct::all();

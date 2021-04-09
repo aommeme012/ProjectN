@@ -206,13 +206,13 @@
                 <div class="row contacts">
                     <div class="col invoice-to">
                         <div class="text-gray-light">INVOICE TO:</div>
-                        <h2 class="to">{{App\Partner::find($purchas->Partner_Id)->Partner_Name}}</h2>
-                        <div class="address">{{App\Partner::find($purchas->Partner_Id)->Partner_Address}}</div>
-                        <div class="tel">{{App\Partner::find($purchas->Partner_Id)->Partner_Tel}}</div>
+                        <h2 class="to">{{App\Partner::find($purchasss->Partner_Id)->Partner_Name}}</h2>
+                        <div class="address">{{App\Partner::find($purchasss->Partner_Id)->Partner_Address}}</div>
+                        <div class="tel">{{App\Partner::find($purchasss->Partner_Id)->Partner_Tel}}</div>
                     </div>
                     <div class="col invoice-details">
-                        <h1 class="invoice-id">INVOICE : {{$purchas->idpur}}</h1>
-                        <div class="date">Date of Invoice: {{$purchas->Purchase_Date}}</div>
+                        <h1 class="invoice-id">INVOICE : {{$purchasss->idpur}}</h1>
+                        <div class="date">Date of Invoice: {{$purchasss->Purchase_Date}}</div>
                     </div>
                 </div>
                 <table border="0" cellspacing="0" cellpadding="0">
@@ -273,7 +273,7 @@
         </div>
         <div class="text-right">
             <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> พิมพ์ใบสั่งซื้อ</button>
-            <a href="{{route('Pur.create')}}"class="btn btn-info"><i class="fa fa-file-pdf-o"></i> เสร็จสิ้น </a>
+            <a href="{{route('Purshow')}}" class="btn btn-info"><i class="fa fa-file-pdf-o"></i> เสร็จสิ้น </a>
         </div>
     </div>
 </div>

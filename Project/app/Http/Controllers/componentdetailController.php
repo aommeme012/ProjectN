@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class componentdetailController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function index()
     {
         $comdes = componentdetail::all();

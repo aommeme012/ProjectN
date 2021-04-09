@@ -15,9 +15,10 @@ class CreateProductionPlanningsTable extends Migration
     {
         Schema::create('production_plannings', function (Blueprint $table) {
             $table->bigincrements('Plan_Id');
+            $table->String('idplan');
             $table->date('Plan_Date');
             $table->integer('Amount');
-            $table->String('Planning_Status', 10)->default('Enable');
+            $table->String('Planning_Status')->default('Enable');
             $table->unsignedBigInteger('component_Id');
             $table->foreign('component_Id')->references('component_Id')->on('components')->ondelete('cascase');
             $table->unsignedBigInteger('Product_Id');

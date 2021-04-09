@@ -8,7 +8,10 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
                             <div class="a"><h3>รายการสั่งซื้อวัตถุดิบ</h3></div>
+                            <a href="createPur" class="btn btn-primary btn-sm">เพิ่มการสั่งซื้อ</a>
+                            <br>
                             <hr>
+
                             <thead>
                                 <tr>
                                     <th>รหัสการสั่งซื้อ</th>
@@ -23,7 +26,7 @@
                             <tbody>
                                 @foreach ($Purc as $Pur)
                                 <tr>
-                                    <td>{{$Pur->Purchase_Id}}</td>
+                                    <td>{{$Pur->idpur}}</td>
                                     <td>{{$Pur->Purchase_Date}}</td>
                                     <td>
                                         <?php
