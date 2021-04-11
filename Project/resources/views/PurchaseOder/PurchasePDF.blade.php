@@ -253,7 +253,7 @@
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">SUBTOTAL</td>
-                            <td> ฿</td>
+                            <td>$5,200.00</td>
                         </tr>
                         <tr>
                             <td colspan="2"></td>
