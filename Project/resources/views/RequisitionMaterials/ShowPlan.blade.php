@@ -29,7 +29,7 @@
                             <tbody>
 
                                 <tr>
-                                    <td>{{$RequiMM->Plan_Id}}</td>
+                                    <td>{{$RequiMM->idplan}}</td>
                                     <td>{{$RequiMM->Plan_Date}}</td>
                                     <td>{{$RequiMM->Amount}}</td>
                                     <td>{{App\component::find($RequiMM->component_Id)->component_Name}}</td>

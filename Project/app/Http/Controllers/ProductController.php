@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function index()
     {
         $pros = Product::all();
@@ -18,6 +23,11 @@ class ProductController extends Controller
     {
         $pros = Product::all();
         return view('displayemployee.productlist', compact('pros'));
+    }
+    public function indexlist2()
+    {
+        $pros = Product::all();
+        return view('displayemployee.listproduct', compact('pros'));
     }
     public function create()
     {

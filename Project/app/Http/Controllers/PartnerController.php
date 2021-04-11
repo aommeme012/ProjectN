@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class PartnerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function index()
     {
         $parts = Partner::all();

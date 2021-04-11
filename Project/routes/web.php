@@ -61,10 +61,10 @@ Route::get('pdf','PDFController@pdf');
 Route::resource('report', 'ReportController');
 
 Route::resource('Pur', 'purchaseorderController');
-Route::get('Purpdf', 'purchaseorderController@show2')->name('Purpdf');
+Route::get('Purpdf', 'purchaseorderController@update')->name('Purpdf');
 
 Route::get('Purdetail', 'purchaseorderController@Show');
-Route::get('PurEmp', 'purchaseorderController@indexEmployee');
+
 Route::get('PlanEmp', 'ProductionPlanningController@indexPlan');
 Route::get('Recdep', 'ReceiveController@indexlistreceuve');
 Route::get('productlist', 'ProductController@indexlist');
@@ -93,3 +93,19 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/testregister', 'Auth\RegisterController@test');
 
 Route::get('/out', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
+//----------------------------------------------------------------------------------------//
+
+Route::get('/reportmat','ReportController@reportrequismat');
+Route::get('/reportproduction','ReportController@reportproduction');
+Route::get('/reportreproduct','ReportController@reportrequisproduct');
+Route::get('/reportproduct','ReportController@reportproduct');
+
+
+//-----------------------------------------------------------------------------------------//
+Route::get('PurchaseDep','purchaseorderController@storeEmployee')->name('PurchaseDep');
+Route::get('PurEmp', 'purchaseorderController@indexEmployee');
+Route::get('createPur','purchaseorderController@createEmployee')->name('createPur');
+Route::get('/Purshow', 'purchaseorderController@showEmployee')->name('Purshow');
+Route::get('/Purpdfdep/{id}', 'purchaseorderController@updateEmployee')->name('Purpdfdep');
+//-------------------------------------------------------------------------------------------//
+Route::get('/indexpro','ProductController@indexlist2')->name('indexpro');

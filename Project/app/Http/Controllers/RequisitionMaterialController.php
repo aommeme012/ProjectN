@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class RequisitionMaterialController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function index()
     {
         $RequiM  = DB::table('production_plannings')

@@ -25,19 +25,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->Dep_Id == 1 ){
+        //--------admin----------//
+        if(Auth::user()->type == 1 ){
             return redirect('/dep');
         }
-        if(Auth::user()->Dep_Id == 2){
+        //--------แผนกขาย----------//
+        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 5 ){
+            return redirect('/indexpro');
+        }
+        //--------แผนกจัดซื้อ----------//
+        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 2){
+            return redirect('/Purshow');
+        }
+        //--------แผนกผลิต----------//
+        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 3){
             return redirect('/PurEmp');
         }
-        if(Auth::user()->Dep_Id == 3){
-            return redirect('/Recdep');
-        }
-        if(Auth::user()->Dep_Id == 6){
-            return redirect('/PlanEmp');
-        }
-        if(Auth::user()->Dep_Id == 5){
+        //--------แผนกคลัง----------//
+        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 4){
             return redirect('/Recdep');
         }
     }

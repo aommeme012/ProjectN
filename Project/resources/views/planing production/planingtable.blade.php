@@ -29,7 +29,7 @@
                             <tbody>
                                 @foreach ($Plans as $Plan)
                                 <tr>
-                                    <td>{{$Plan->Plan_Id}}</td>
+                                    <td>{{$Plan->idplan}}</td>
                                     <td>{{$Plan->Plan_Date}}</td>
                                     <td>{{$Plan->Amount}}</td>
                                     <td>{{$Plan->Planning_Status}}</td>

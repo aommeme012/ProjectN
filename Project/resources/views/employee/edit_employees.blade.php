@@ -37,6 +37,11 @@
                                             <div class="form-group">
                                             {{-- <label>Password</label>
                                             <input class="form-control" type="text" name="Password"value="{{$emp->Password}}"> --}}
+                                            <label>เลือกสิทธิ์</label>
+                                            <select class="form-control" name="type">
+                                                <option  value="1" >แอดมิน </option>
+                                                <option  value="0">พนักงาน </option>
+                                            </select>
                                             <div class="form-group">
                                         <label>เลือกแผนกงาน</label>
                                         <select class="form-control" name="Dep_Id">

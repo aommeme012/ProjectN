@@ -32,6 +32,9 @@
                 <br>
                 <ul class="nav" id="main-menu">
                     <li>
+                        <a  href="/PurEmp"><i class="fa fa-table fa-3x"></i>สั่งซื้อวัตถุดิบ</a>
+                    </li>
+                    <li>
                         <a class="active-menu" href="/PlanEmp"><i class="fa fa-table fa-3x"></i>แผนการผลิต</a>
                     </li>
                 </ul>

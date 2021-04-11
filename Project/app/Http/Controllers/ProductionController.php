@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\DB;
 
 class ProductionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function index()
     {
         $Requimat = RequisitionMaterial::join('production_plannings', 'requisition_materials.Plan_Id', '=', 'production_plannings.Plan_Id')

@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class RequisitionProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function index()
     {
         $RequiP  = DB::table('productions')

@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\DB;
 
 class ReceiveController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function index()
     {
         $receive = PurchaseOrder::where('Purchase_Status', 'Enable')->get();

@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class PDFController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('employeeOnly');
+    }
     public function pdf()
     {
         $p = PurchaseOrder::all();

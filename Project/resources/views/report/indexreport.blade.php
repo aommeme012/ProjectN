@@ -5,16 +5,16 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel-body">
-                    <form>
+                    <form action="/reportmat">
                         <div class="form-group">
                             <i class="w3-xxxlarge glyphicon glyphicon-user">&nbsp;<label>ออกรายงานการเบิกวัตถุดิบ</label></i>
                             <hr>
                             <div class="col-md-4">
 
-                                <label>ตั้งแต่</label><input class="form-control" type="Date" name="Plan_Date" required>
+                                <label for="StartDate">ตั้งแต่</label><input class="form-control" type="Date" name="StartDate" required>
                             </div>
                             <div class="col-md-4">
-                                <label>จนถึง</label><input class="form-control" type="Date" name="Plan_Date" required>
+                                <label for="EndDate">จนถึง</label><input class="form-control" type="Date" name="EndDate" required>
                             </div>
                         </div>
                         <br>
@@ -25,36 +25,36 @@
                     <br>
                     <br>
                     <br>
-                    <form>
+                    <form action="/reportproduction">
                         <div class="form-group">
                             <i class="w3-xxxlarge glyphicon glyphicon-user">&nbsp;<label>ออกรายงานการผลิต</label></i>
                             <hr>
                             <div class="col-md-4">
-                                <label>ตั้งแต่</label><input class="form-control" type="Date" name="Plan_Date" required>
+
+                                <label for="StartDate">ตั้งแต่</label><input class="form-control" type="Date" name="StartDate" required>
                             </div>
                             <div class="col-md-4">
-                                <label>จนถึง</label><input class="form-control" type="Date" name="Plan_Date" required>
+                                <label for="EndDate">จนถึง</label><input class="form-control" type="Date" name="EndDate" required>
                             </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-sm">ออกรายงาน</button>
                         </div>
                     </form>
                     <br>
-                    <div class="form-group">
-
-                        <button type="submit" class="btn btn-primary btn-sm">ออกรายงาน</button>
-                    </div>
                     <br>
                     <br>
-                    <br>
-
-                    <form>
+                    <form action="/reportreproduct">
                         <div class="form-group">
                             <i class="w3-xxxlarge glyphicon glyphicon-user">&nbsp;<label>ออกรายงานการเบิกสินค้า</label></i>
                             <hr>
                             <div class="col-md-4">
-                                <label>ตั้งแต่</label><input class="form-control" type="Date" name="Plan_Date" required>
+
+                                <label for="StartDate">ตั้งแต่</label><input class="form-control" type="Date" name="StartDate" required>
                             </div>
                             <div class="col-md-4">
-                                <label>จนถึง</label> <input class="form-control" type="Date" name="Plan_Date" required>
+                                <label for="EndDate">จนถึง</label><input class="form-control" type="Date" name="EndDate" required>
                             </div>
                         </div>
                         <br>
@@ -64,7 +64,7 @@
                     </form>
                     <br>
                     <hr>
-                    <form>
+                    <form action="/reportproduct">
                         <div class="form-group">
                             <div class="a">
                                 <h1>สินค้าคงเหลือ</h1>

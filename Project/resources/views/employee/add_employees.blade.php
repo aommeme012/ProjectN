@@ -37,6 +37,12 @@
                                                 <input class="form-control" type="text" name="Password"placeholder="Password"required>
                                                 <div class="form-group">
                                                     <br>
+                                            <label>เลือกสิทธิ์</label>
+                                            <select class="form-control" name="type">
+                                                <option  value="1">แอดมิน </option>
+                                                <option  value="0">พนักงาน </option>
+                                            </select>
+                                            <br>
                                             <label>เลือกแผนกงาน</label>
                                             <select class="form-control" name="Dep_Id">
                                             @foreach ($deps as $dep)

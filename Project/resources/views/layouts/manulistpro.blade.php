@@ -32,10 +32,7 @@
                 <br>
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a class="active-menu" href="/PurEmp"><i class="fa fa-table fa-3x"></i>สั่งซื้อวัตถุดิบ</a>
-                    </li>
-                    <li>
-                        <a  href="/PlanEmp"><i class="fa fa-table fa-3x"></i>แผนการผลิต</a>
+                        <a class="active-menu" href="/indexpro"><i class="fa fa-table fa-3x"></i>สต็อกสินค้า</a>
                     </li>
                 </ul>
             </div>
@@ -48,7 +45,7 @@
         <script src="{{asset('assets/js/custom.js')}}"></script>
         <script src="{{asset('assets/js/jquery-1.10.2.js')}}"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        @yield('deppurchase')
+        @yield('productdep')
     </div>
 </body>
 </html>
