@@ -13,7 +13,7 @@
 <br><br>
                             <thead>
                                 <tr>
-                                    <th>รหัสรายละเอียด</th>
+
                                     <th>จำนวนวัตถุดิบ</th>
                                     <th>ส่วนผสม</th>
                                     <th>รหัสวัตถุดิบ</th>
@@ -23,10 +23,10 @@
                             <tbody>
                                 @foreach ($comdes as $comde)
                                 <tr>
-                                    <td>{{$comde->Comde_Id}}</td>
+
                                     <td>{{$comde->Comde_Amount}}</td>
                                     <td>{{$comde->component_Value}}</td>
-                                    <td>{{App\Materials::find($comde->Material_Id)->Material_Name}}</td>
+                                    <td>{{App\Materials::find($comde->Material_Id)->idmat}}</td>
                                     <td>{{App\component::find($comde->component_Id)->component_Name}}</td>
                                 </form>
                                 </tr>

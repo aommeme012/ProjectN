@@ -30,19 +30,19 @@ class HomeController extends Controller
             return redirect('/dep');
         }
         //--------แผนกขาย----------//
-        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 5 ){
+        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 2 ){
             return redirect('/indexpro');
         }
         //--------แผนกจัดซื้อ----------//
-        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 2){
+        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 3){
             return redirect('/Purshow');
         }
         //--------แผนกผลิต----------//
-        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 3){
+        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 4){
             return redirect('/PurEmp');
         }
         //--------แผนกคลัง----------//
-        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 4){
+        if(Auth::user()->type == 0 && Auth::user()->Dep_Id == 5){
             return redirect('/Recdep');
         }
     }

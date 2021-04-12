@@ -18,7 +18,7 @@
                                     <th>วันที่การเบิก</th>
                                     <th>จำนวนวัตถุดิบที่เบิก</th>
                                     <th>วัตถุดิบที่เบิก</th>
-                                    <th>วันที่การวางแผน</th>
+                                    <th>รหัสแผนงาน</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -32,8 +32,8 @@
                                     <td>{{$P->Requismat_Id}}</td>
                                     <td>{{$P->Requismat_Date}}</td>
                                     <td>{{$P->Requismat_Amount}}</td>
-                                    <td>{{$P->Material_Name}}</td>
-                                    <td>{{$P->Plan_Date}}</td>
+                                    <td>{{$P->idmat}}</td>
+                                    <td>{{$P->idplan}}</td>
 
                                 <td>
                                     <button  type="submit" class="btn btn-warning btn-sm">ยืนยันการผลิต</button>

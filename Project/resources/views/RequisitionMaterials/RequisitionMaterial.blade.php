@@ -28,7 +28,7 @@
                                     <td>{{$R->Requismat_Date}}</td>
                                     <td>{{$R->Requismat_Amount}}</td>
                                     <td>{{App\Materials::find($R->Material_Id)->idmat}}</td>
-                                    <td>{{$R->Plan_Id}}</td>
+                                    <td>{{App\ProductionPlanning::find($R->Plan_Id)->idplan}}</td>
                                 @endforeach
                         </tbody>
                     </table>
