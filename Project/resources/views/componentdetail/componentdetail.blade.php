@@ -23,7 +23,7 @@
                             <tbody>
                                 @foreach ($comdes as $comde)
                                 <tr>
-
+                                    
                                     <td>{{$comde->Comde_Amount}}</td>
                                     <td>{{$comde->component_Value}}</td>
                                     <td>{{App\Materials::find($comde->Material_Id)->idmat}}</td>

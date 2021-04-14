@@ -58,7 +58,7 @@ class employeeController extends Controller
                 'Dep_Status' => 'Enable'
         ]);
 
-        return back();
+        return redirect("/emp");
     }
     public function show(Employee $Employee)
     {
@@ -74,7 +74,6 @@ class employeeController extends Controller
     {
         $update=Employee::findorFail($id);
         $update->update($request->all());
-
         return redirect('/emp');
     }
     public function destroy($id)

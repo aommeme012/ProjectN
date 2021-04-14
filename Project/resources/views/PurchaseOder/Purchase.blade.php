@@ -19,6 +19,7 @@
                                     <th>ชื่อพนักงานที่สั่งซื้อ</th>
                                     <th>บริษัทคู่ค้า</th>
                                     <th>สถานะการสั่งซื้อ</th>
+                                    <th>รายละเอียดการสั่งซื้อ</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -34,6 +35,20 @@
                                     <td>{{App\Employee::find($Pur->Emp_Id)->Fname}}</td>
                                     <td>{{App\Partner::find($Pur->Partner_Id)->Partner_Name}}</td>
                                     <td>{{$Pur->Purchase_Status}}</td>
+                                    <td>
+                                        <?php
+                                        $orderpur = App\PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
+                                        ->where('purchase_orders.Purchase_Id',$Pur->Purchase_Id)->get();
+                                        ?>
+                                        @foreach ($orderpur as $orderdetail)
+                                        <?php
+                                            $materialss = App\Materials::find($orderdetail->Material_Id);
+                                        ?>
+                                        {{$materialss->idmat}}
+                                        {{$materialss->Material_Name}}
+                                        {{$orderdetail->Pdetail_Amount}}<br>
+                                        @endforeach
+                                    </td>
                                     <td> <button type="submit" class="btn btn-default"><i class="fa fa-print fa-1x"></i></a>
                                     </td>
                                 </tr>

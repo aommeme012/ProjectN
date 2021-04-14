@@ -180,7 +180,7 @@
 <div id="invoice">
 
     <div class="toolbar hidden-print">
-        
+
     </div>
     <div class="invoice overflow-auto">
         <div style="min-width: 600px">
@@ -208,8 +208,9 @@
                 <table border="0" cellspacing="0" cellpadding="0">
                     <thead>
                         <tr>
-                            
+
                             <th class="text-left">วันที่</th>
+                            <th class="text-left">วันที่เสร็จ</th>
                             <th class="text-right">ชื่อสินค้า</th>
                             <th class="text-right">สถานะ</th>
                             <th class="text-right">พนักงาน</th>
@@ -219,13 +220,14 @@
                         @foreach ($reportpropdf as $reportpropdff )
                         <tr>
                             <td class="no">{{$reportpropdff->Production_Date}}</td>
+                            <td class="qty">{{$reportpropdff->Production_DateEnd}}</td>
                             <td class="unit">{{App\Product::find($reportpropdff->Product_Id)->Product_Name}}</td>
-                            <td class="unit">{{$reportpropdff->Production_Status}}</td>
-                            <td class="qty">{{App\Employee::find($reportpropdff->Emp_Id)->Fname}}</td>
+                            <td class="qty">{{$reportpropdff->Production_Status}}</td>
+                            <td class="unit">{{App\Employee::find($reportpropdff->Emp_Id)->Fname}}</td>
                         </tr>
                         @endforeach
                     </tbody>
-                  
+
                 </table>
             </main>
         </div>

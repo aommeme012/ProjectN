@@ -16,9 +16,9 @@
                                         @method('put')
                                             <div class="form-group">
                                             <label>ชื่อนสินค้า</label>
-                                                <input class="form-control" type="text" name="Product_Name"value="{{$Pro->Product_Name}}">
+                                                <input class="form-control" type="text" name="Product_Name"value="{{$Pro->Product_Name}}" required>
                                             <label>จำนวนสินค้า</label>
-                                                <input class="form-control" type="text" name="Product_Amount"value="{{$Pro->Product_Amount}} " disabled>
+                                                <input class="form-control" type="text" name="Product_Amount"value="{{$Pro->Product_Amount}} " disabled required>
                                                 <label>เลือกชนิดสินค้า</label>
                                                 <select class="form-control" name="Type_Id">
                                                     @foreach ($types as $type)
@@ -30,29 +30,49 @@
                                                     </select>
                                             </div>
                                             <div class="form-group">
-                                                @if ($Pro->Product_Status == "Enable")
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="Product_Status" value="Enable" checked />Enable
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="Product_Status" value="Disable"  />Disable
-                                                        </label>
-                                                    </div>
-                                                @else
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="Product_Status" value="Enable"  />Enable
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="Product_Status" value="Disable" checked />Disable
-                                                        </label>
-                                                    </div>
-                                                @endif
+                                                @if ($Pro->Product_Status == "Available")
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Product_Status" value="Enable">
+                                            Enable
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Product_Status" value="Disable">
+                                            Disable
+                                        </label>
+                                    </div>
+                                    @endif
+                                    @if ($Pro->Product_Status == "Enable")
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Product_Status" value="Enable" checked>
+                                            Enable
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Product_Status" value="Disable">
+                                            Disable
+                                        </label>
+                                    </div>
+                                    @endif
+                                    @if($Pro->Product_Status == "Disable")
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Product_Status" value="Enable">
+                                            Enable
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Product_Status" value="Disable" checked>
+                                            Disable
+                                        </label>
+                                    </div>
+                                    @endif
+
                                         </label>
                                             <div class="form-group">
                                                 <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">แก้ไข</button>

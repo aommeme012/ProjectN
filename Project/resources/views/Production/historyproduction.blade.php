@@ -16,6 +16,7 @@
                                 <tr>
                                     <th>รหัสการผลิต</th>
                                     <th>วันที่การผลิต</th>
+                                    <th>วันที่ผลิตเสร็จ</th>
                                     <th>สถานะการผลิต</th>
                                     <th>รหัสการเบิก</th>
                                     <th>ชื่อคนที่สั่งผลิต</th>
@@ -27,6 +28,7 @@
                                 <tr>
                                     <td>{{$P->Production_Id}}</td>
                                     <td>{{$P->Production_Date}}</td>
+                                    <td>{{$P->Production_DateEnd}}</td>
                                     <td>{{$P->Production_Status}}</td>
                                     <td>{{$P->Requismat_Id}}</td>
                                     <td>{{$P->Fname}}</td>

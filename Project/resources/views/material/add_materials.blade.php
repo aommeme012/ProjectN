@@ -19,7 +19,7 @@
                                                 <br> --}}
                                                 <input class="form-control" type="text" name="Material_Name"placeholder="ชื่อวัตถุดิบ" required>
                                                 <br>
-                                                <input class="form-control" type="text" name="Material_Amount"placeholder="จำนวนวัตถุดิบ" required>
+                                                <input class="form-control" type="number" name="Material_Amount"placeholder="จำนวนวัตถุดิบ" required>
                                                 <br>
                                                 <input class="form-control" type="text" name="unitmaterial"placeholder="หน่วยวัตถุดิบ" required>
                                             </div>

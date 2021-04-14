@@ -17,35 +17,51 @@
                                     @method('put')
                                     <h4>ชื่อแผนกงาน</h4>
                                     <div class="a"><div class="form-group"></div>
-                                    <input class="form-control" type="text" name="Dep_Name" value="{{$dep->Dep_Name}}"placeholder="ชื่อแผนกงาน">
+                                    <input class="form-control" type="text" name="Dep_Name" value="{{$dep->Dep_Name}}"placeholder="ชื่อแผนกงาน" required >
                                     </div>
 
-
-                                        <div class="form-group">
-                                            @if ($dep->Dep_Status == "Enable")
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="Dep_Status" value="Enable" checked />Enable
-                                                    </label>
-                                                </div>
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="Dep_Status" value="Disable"  />Disable
-                                                    </label>
-                                                </div>
-                                            @else
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="Dep_Status" value="Enable"  />Enable
-                                                    </label>
-                                                </div>
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="Dep_Status" value="Disable" checked />Disable
-                                                    </label>
-                                                </div>
-                                            @endif
-
+                                    @if ($dep->Dep_Status == "Available")
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Dep_Status" value="Enable">
+                                            Enable
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Dep_Status" value="Disable">
+                                            Disable
+                                        </label>
+                                    </div>
+                                    @endif
+                                    @if ($dep->Dep_Status == "Enable")
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Dep_Status" value="Enable" checked>
+                                            Enable
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Dep_Status" value="Disable">
+                                            Disable
+                                        </label>
+                                    </div>
+                                    @endif
+                                    @if($dep->Dep_Status == "Disable")
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Dep_Status" value="Enable">
+                                            Enable
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Dep_Status" value="Disable" checked>
+                                            Disable
+                                        </label>
+                                    </div>
+                                    @endif
                                     <div class="form-group">
                                         <button  type="button" onclick="checkEdit()" class="btn btn-warning btn-sm"  >แก้ไขข้อมูล</button>
                                     </div>

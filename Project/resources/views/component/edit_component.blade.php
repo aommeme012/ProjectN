@@ -20,7 +20,7 @@
                                 <div class="form-group">
                                     <label>ชื่อสูตรผสม</label>
                                     <input class="form-control" type="text" name="component_Name"
-                                        value="{{$component->component_Name}}">
+                                        value="{{$component->component_Name}}" required>
                                 </div>
                                 @if ($component->component_Status == "Enable")
                                 <div class="radio">
@@ -53,7 +53,7 @@
                                     <label>ส่วนผสมของสูตร</label>
                                     <input class="form-control" type="text" name="component_Value"
                                         value="{{$comdetail->component_Value}}">
-                                    <input type="hidden" name='Comde_Id[]' value="{{$comdetail->Comde_Id}}">
+                                    <input type="hidden" name='Comde_Id[]' value="{{$comdetail->Comde_Id}}" >
                                     <label>เลือกวัตถุดิบ</label>
                                     <select class="form-control" name="Material_Id[]">
                                         @foreach ($mats as $mat)

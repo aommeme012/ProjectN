@@ -11,6 +11,7 @@ class Production extends Model
 
     protected $fillable = [
         'Production_Date',
+        'Production_DateEnd',
         'Production_Status',
         'Requismat_Id',
         'Emp_Id',

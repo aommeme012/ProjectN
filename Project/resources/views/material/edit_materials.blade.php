@@ -12,41 +12,61 @@
                             <div class="col-md-4">
                                 <h3>แก้ไขข้อมูลวัตถุดิบ</h3>
                                 <hr>
-                                <form id="editMat" role="form"  method="post" action="{{route('mat.update',[$mat->Material_Id])}}" enctype="multipart/form-data">
+                                <form id="editMat" role="form"  method="post" action="{{route('mat.update',[$mat->Material_Id])}}" >
                                     {{ csrf_field() }}
                                     @method('put')
                                     <div class="form-group">
                                     <label>รหัสวัตถุดิบ</label>
-                                    <input class="form-control" type="text" name="idmat" value="{{$mat->idmat}}"disabled>
+                                    <input class="form-control" type="text" name="idmat" value="{{$mat->idmat}}"disabled required>
                                     <label>ชื่อวัตถุดิบ</label>
-                                    <input class="form-control" type="text" name="Material_Name" value="{{$mat->Material_Name}}">
+                                    <input class="form-control" type="text" name="Material_Name" value="{{$mat->Material_Name}}" required>
                                     <label>จำนวนวัตถุดิบ</label>
-                                    <input class="form-control" type="text" name="Material_Amount" value="{{$mat->Material_Amount}}" disabled>
+                                    <input class="form-control" type="text" name="Material_Amount" value="{{$mat->Material_Amount}}" disabled required>
                                     <label>หน่วยวัตถุดิบ</label>
-                                    <input class="form-control" type="text" name="unitmaterial" value="{{$mat->unitmaterial}}">
-                                    @if ($mat->Material_Status == "Enable")
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="Material_Status" value="Enable" checked />Enable
-                                                    </label>
-                                                </div>
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="Material_Status" value="Disable"  />Disable
-                                                    </label>
-                                                </div>
-                                            @else
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="Material_Status" value="Enable"  />Enable
-                                                    </label>
-                                                </div>
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="Material_Status" value="Disable" checked />Disable
-                                                    </label>
-                                                </div>
-                                            @endif
+                                    <input class="form-control" type="text" name="unitmaterial" value="{{$mat->unitmaterial}}" required>
+                    @if ($mat->Material_Status == "Available")
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="Material_Status" value="Enable">
+                            Enable
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="Material_Status" value="Disable">
+                            Disable
+                        </label>
+                    </div>
+                    @endif
+                    @if ($mat->Material_Status == "Enable")
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="Material_Status" value="Enable" checked>
+                            Enable
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="Material_Status" value="Disable">
+                            Disable
+                        </label>
+                    </div>
+                    @endif
+                    @if($mat->Material_Status == "Disable")
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="Material_Status" value="Enable">
+                            Enable
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="Material_Status" value="Disable" checked>
+                            Disable
+                        </label>
+                    </div>
+                    @endif
+
                                     <div class="form-group">
                                         <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">แกไข</button>
                                     </div>

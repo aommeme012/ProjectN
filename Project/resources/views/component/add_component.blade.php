@@ -31,7 +31,7 @@
                                             <select class="form-control" name="Material_Id[0]">
                                                 @foreach ($mats as $mat)
                                                     <option value="{{$mat->Material_Id}}">
-                                                    {{$mat->idmat}}
+                                                    {{$mat->idmat}} {{$mat->Material_Name}}
                                                     </option>
                                                     @endforeach
                                             </select>
@@ -59,7 +59,7 @@ $(document).ready(function(){
         "<select class=\"form-control\" name=\"Material_Id["+i+"]\">"+
         "@foreach ($mats as $mat)"+
         "<option value=\"{{$mat->Material_Id}}\">"+
-        "{{$mat->idmat}}"+
+        "{{$mat->idmat}}"+"{{$mat->Material_Name}}"+
         "</option>"+
         "@endforeach"+
         "</select>"+

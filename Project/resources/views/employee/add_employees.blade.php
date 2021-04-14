@@ -12,7 +12,7 @@
                                     <div class="col-md-4">
                                         <h3><i class="w3-xxxlarge glyphicon glyphicon-user">&nbsp;เพิ่มข้อมูลพนักงาน</i></h3>
                                         <hr>
-                                        <form id="addEmp" role="form"  method="post" action="{{route('emp.store')}}">
+                                        <form  role="form"  method="post" action="{{route('emp.store')}}">
                                             {{ csrf_field() }}
                                             <div class="form-group">
                                                 {{-- <input class="form-control" type="text" name="idemp" placeholder="รหัสพนักงาน"required>
@@ -28,7 +28,10 @@
                                                 <input class="form-control" type="tel" name="Tel"placeholder="เบอร์โทร" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="0812345678" required>
                                                 <div class="form-group">
                                                     <br>
-                                                <input class="form-control" type="text" name="Sex"placeholder="เพศ"required>
+                                                    <select class="form-control" name="Sex">
+                                                        <option value="ชาย"> ชาย</option>
+                                                        <option value="หญิง"> หญิง</option>
+                                                    </select>
                                                 <div class="form-group">
                                                     <br>
                                                 <input class="form-control" type="text" name="Username"placeholder="Username"required>
@@ -54,7 +57,7 @@
                                         </div>
                                             </div>
                                             <div class="form-group">
-                                                <button onclick="addEmp()" type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
+                                                <button  type="submit" class="btn btn-primary btn-sm">ยืนยัน</button>
                                             </div>
                                         </form>
                         </div>
@@ -64,23 +67,4 @@
         </div>
     </div>
 </div>
-{{-- <script>
-    function addEmp() {
-        swal({
-  title: "คุณแน่ใจหรือไม่",
-  text: "ที่จะเพิ่มพนักงาน",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-}).then((willDelete) => {
-  if (willDelete) {
-    swal("เพิ่มพนักงานสำเร็จสำเร็จ", {
-      icon: "success",
-    }).then(()=>{
-        document.getElementById('addEmp').submit();
-    });
-        }
-    });
-}
-</script> --}}
 @endsection

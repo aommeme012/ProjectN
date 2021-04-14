@@ -21,10 +21,16 @@
                 <a class="navbar-brand">Synthetic Stone</a>
             </div>
             <div style="padding: 15px 50px 5px 50px;float: right;">
-                <form action="/logout" method="POST">
-                    {{ csrf_field() }}
-                    <button class="btn btn-danger btn-xs" type="submit">{{ Auth::user()->Fname }}</button>
-                </form>
+                <div class="btn-group">
+                    <button data-toggle="dropdown" class="btn btn-danger dropdown-toggle">{{ Auth::user()->Fname }}&nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li class="divider"></li>
+                      <li><a><form action="/logout" method="POST">
+                        {{ csrf_field() }}
+                        <button class="btn btn-danger btn-xs" type="submit">LOGOUT</button>
+                    </form></a></li>
+                    </ul>
+                  </div>
             </div>
         </nav>
         <nav class="navbar-default navbar-side" role="navigation">

@@ -75,12 +75,12 @@ class ProductionPlanningController extends Controller
         $pros = Product::all();
         return view('planing production.Edit_plan', compact('Plan','comps','pros'));
     }
-    // public function updateplan(Request $request, $id)
-    // {
-    //     $update=ProductionPlanning::findorFail($id);
-    //     $update->update($request->all());
-    //     return redirect('/Plan');
-    // }
+    public function updateplan(Request $request, $id)
+    {
+        $update=ProductionPlanning::findorFail($id);
+        $update->update($request->all());
+        return redirect('/Plan');
+    }
     public function update(Request $request, $id)
     {
         $planingproduction = ProductionPlanning::join('components','production_plannings.component_Id','=','components.component_Id')
@@ -88,14 +88,15 @@ class ProductionPlanningController extends Controller
         ->where('production_plannings.Plan_Id',$id)->get();
 
         foreach ($planingproduction as $planingproductions) {
-        ProductionPlanning::create([
-            'Plan_Date' => today(),
-            'Amount' =>  $planingproductions->Amount,
-            'Planning_Status' => 'Available',
-            'component_Id' => $planingproductions->component_Id,
-            'Product_Id' => $planingproductions->Product_Id,
-
-        ]);
+            $Planing = new ProductionPlanning();
+            $Planing->fill($request->only($Planing->getFillable()));
+            $Planing->idplan = $Planing->getplanId();
+            $Planing->Plan_Date = $planingproductions->Plan_Date;
+            $Planing->Amount = $planingproductions->Amount;
+            $Planing->Planning_Status = 'Enable';
+            $Planing->component_Id = $planingproductions->component_Id;
+            $Planing->Product_Id = $planingproductions->Product_Id;
+            $Planing->save();
     }
     return redirect('/Plan');
     }

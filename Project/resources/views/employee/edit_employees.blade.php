@@ -17,30 +17,33 @@
                                         @method('put')
                                         <div class="form-group">
                                             <label>รหัส</label>
-                                            <input class="form-control" type="text" name="idemp" value="{{$emp->idemp}}" disabled>
+                                            <input class="form-control" type="text" name="idemp" value="{{$emp->idemp}}" disabled >
                                             <label>ชื่อ</label>
-                                            <input class="form-control" type="text" name="Fname"value="{{$emp->Fname}}">
+                                            <input class="form-control" type="text" name="Fname"value="{{$emp->Fname}}"required>
                                             <label>นามสกุล</label>
-                                            <input class="form-control" type="text" name="Lname"value="{{$emp->Lname}}">
+                                            <input class="form-control" type="text" name="Lname"value="{{$emp->Lname}}"required>
                                             <div class="form-group">
                                             <label>ที่อยู่</label>
-                                            <input class="form-control" type="text" name="Address"value="{{$emp->Address}}">
+                                            <input class="form-control" type="text" name="Address"value="{{$emp->Address}}"required>
                                             <div class="form-group">
                                             <label>เบอร์โทร</label>
-                                            <input class="form-control" type="text" name="Tel"value="{{$emp->Tel}}">
+                                            <input class="form-control" type="text"  name="Tel"value="{{$emp->Tel}}"required>
                                             <div class="form-group">
                                             <label>เพศ</label>
-                                            <input class="form-control" type="text" name="Sex"value="{{$emp->Sex}}">
                                             <div class="form-group">
-                                            <label>Username</label>
-                                            <input class="form-control" type="text" name="Username"value="{{$emp->Username}}">
-                                            <div class="form-group">
+                                                <select class="form-control" name="Sex">
+                                                    <option value="ชาย" selected> ชาย </option>
+                                                    <option value="หญิง" selected> หญิง </option>
+                                                </select>
+                                            {{-- <label>Username</label>
+                                            <input class="form-control" type="text" name="Username"value="{{$emp->Username}}"required>
+                                            <div class="form-group"> --}}
                                             {{-- <label>Password</label>
                                             <input class="form-control" type="text" name="Password"value="{{$emp->Password}}"> --}}
                                             <label>เลือกสิทธิ์</label>
                                             <select class="form-control" name="type">
-                                                <option  value="1" >แอดมิน </option>
-                                                <option  value="0">พนักงาน </option>
+                                                <option  value="1" selected>แอดมิน </option>
+                                                <option  value="0" selected>พนักงาน </option>
                                             </select>
                                             <div class="form-group">
                                         <label>เลือกแผนกงาน</label>

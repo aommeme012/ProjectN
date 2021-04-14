@@ -12,40 +12,60 @@
                                     <div class="col-md-4">
                                         <h3>แก้ไขบริษัทคู่ค้า</h3>
                                         <hr>
-                                        <form id="editPart" role="form"  method="post" action="{{route('part.update',[$part->Partner_Id])}}" enctype="multipart/form-data">
+                                        <form id="editPart" role="form"  method="post" action="{{route('part.update',[$part->Partner_Id])}}" >
                                             {{ csrf_field() }}
                                             @method('put')
                                             <div class="form-group">
                                                 <label>ชื่อบริษัทคู่ค้า</label>
-                                                <input class="form-control" type="text" name="Partner_Name"value="{{$part->Partner_Name}}">
+                                                <input class="form-control" type="text" name="Partner_Name"value="{{$part->Partner_Name}}" required>
                                                 <label>ที่อยู่บริษัทคู่ค้า</label>
-                                                <input class="form-control" type="text" name="Partner_Address"value="{{$part->Partner_Address}}">
+                                                <input class="form-control" type="text" name="Partner_Address"value="{{$part->Partner_Address}}" required>
                                                 <label>เบอร์โทรบริษัทคู่ค้า</label>
-                                                <input class="form-control" type="text" name="Partner_Tel" value="{{$part->Partner_Tel}}">
+                                                <input class="form-control" type="text" name="Partner_Tel" value="{{$part->Partner_Tel}}" required>
                                             </div>
-                                            @if ($part->Partner_Status == "Enable")
-                                                        <div class="radio">
-                                                            <label>
-                                                                <input type="radio" name="Partner_Status" value="Enable" checked />Enable
-                                                            </label>
-                                                        </div>
-                                                        <div class="radio">
-                                                            <label>
-                                                                <input type="radio" name="Partner_Status" value="Disable"  />Disable
-                                                            </label>
-                                                        </div>
-                                                    @else
-                                                        <div class="radio">
-                                                            <label>
-                                                                <input type="radio" name="Partner_Status" value="Enable"  />Enable
-                                                            </label>
-                                                        </div>
-                                                        <div class="radio">
-                                                            <label>
-                                                                <input type="radio" name="Partner_Status" value="Disable" checked />Disable
-                                                            </label>
-                                                        </div>
-                                                    @endif
+                                            @if ($part->Partner_Status == "Available")
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Partner_Status" value="Enable">
+                                            Enable
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Partner_Status" value="Disable">
+                                            Disable
+                                        </label>
+                                    </div>
+                                    @endif
+                                    @if ($part->Partner_Status == "Enable")
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Partner_Status" value="Enable" checked>
+                                            Enable
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Partner_Status" value="Disable">
+                                            Disable
+                                        </label>
+                                    </div>
+                                    @endif
+                                    @if($part->Partner_Status == "Disable")
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Partner_Status" value="Enable">
+                                            Enable
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="Partner_Status" value="Disable" checked>
+                                            Disable
+                                        </label>
+                                    </div>
+                                    @endif
+
                                             <div class="form-group">
                                                 <button onclick="checkEdit()" type="button" class="btn btn-warning btn-sm">แก้ไข</button>
                                             </div>

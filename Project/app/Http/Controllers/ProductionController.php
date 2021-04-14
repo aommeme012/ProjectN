@@ -55,6 +55,7 @@ class ProductionController extends Controller
     {
         Production::create([
             'Production_Date' => today(),
+            'Production_DateEnd' => today(),
             'Emp_Id' => Auth::user()->Emp_Id,
             'Production_Status' => 'ผลิตอยู่',
             'Requismat_Id' => $id,
@@ -85,7 +86,7 @@ class ProductionController extends Controller
         }
         $update = Production::findorFail($id);
         $update->update([
-            'Production_Date' => today(),
+            'Production_DateEnd' => today(),
             'Production_Status' => 'เสร็จสิ้น',
         ]);
 
