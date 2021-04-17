@@ -32,8 +32,8 @@
                                             <label>เพศ</label>
                                             <div class="form-group">
                                                 <select class="form-control" name="Sex">
-                                                    <option value="ชาย" selected> ชาย </option>
-                                                    <option value="หญิง" selected> หญิง </option>
+                                                    <option value="ชาย" > ชาย </option>
+                                                    <option value="หญิง" > หญิง </option>
                                                 </select>
                                             {{-- <label>Username</label>
                                             <input class="form-control" type="text" name="Username"value="{{$emp->Username}}"required>
@@ -42,8 +42,8 @@
                                             <input class="form-control" type="text" name="Password"value="{{$emp->Password}}"> --}}
                                             <label>เลือกสิทธิ์</label>
                                             <select class="form-control" name="type">
-                                                <option  value="1" selected>แอดมิน </option>
-                                                <option  value="0" selected>พนักงาน </option>
+                                                <option  value="1" >แอดมิน </option >
+                                                <option  value="0" >พนักงาน </option >
                                             </select>
                                             <div class="form-group">
                                         <label>เลือกแผนกงาน</label>

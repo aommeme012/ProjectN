@@ -53,13 +53,15 @@ class ProductionController extends Controller
     }
     public function update(Request $request, $id)
     {
+
         Production::create([
-            'Production_Date' => today(),
-            'Production_DateEnd' => today(),
+            'Production_Date' => date('Y-m-d H:i:s'),
+            'Production_DateEnd' => date('Y-m-d H:i:s'),
             'Emp_Id' => Auth::user()->Emp_Id,
             'Production_Status' => 'ผลิตอยู่',
             'Requismat_Id' => $id,
         ]);
+       
         $production = RequisitionMaterial::join('production_plannings', 'requisition_materials.Plan_Id', '=', 'production_plannings.Plan_Id')
             ->join('productions', 'requisition_materials.Requismat_Id', '=', 'productions.Requismat_Id')
             ->join('products', 'production_plannings.Product_Id', '=', 'products.Product_Id')
@@ -86,7 +88,7 @@ class ProductionController extends Controller
         }
         $update = Production::findorFail($id);
         $update->update([
-            'Production_DateEnd' => today(),
+            'Production_DateEnd' => date('Y-m-d H:i:s'),
             'Production_Status' => 'เสร็จสิ้น',
         ]);
 

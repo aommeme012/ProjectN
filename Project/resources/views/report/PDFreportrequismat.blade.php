@@ -180,15 +180,15 @@
 <div id="invoice">
 
     <div class="toolbar hidden-print">
-        
+
     </div>
     <div class="invoice overflow-auto">
         <div style="min-width: 600px">
             <header>
                 <div class="row">
                     <div class="col">
-                        <a target="_blank" href="https://lobianijs.com">
-                            <img src="http://lobianijs.com/lobiadmin/version/1.0/ajax/img/logo/lobiadmin-logo-text-64.png" data-holder-rendered="true" />
+                        <a target="_blank" >
+                            <img src="\images\Untitled.png" data-holder-rendered="true" style="width: 229px; height: 113px"  />
                             </a>
                     </div>
                     <div class="col company-details">
@@ -208,7 +208,7 @@
                 <table border="0" cellspacing="0" cellpadding="0">
                     <thead>
                         <tr>
-                            
+
                             <th class="text-left">วันที่</th>
                             <th class="text-right">ชื่อวัตถุดิบ</th>
                             <th class="text-right">จำนวน</th>
@@ -225,7 +225,7 @@
                         </tr>
                         @endforeach
                     </tbody>
-                  
+
                 </table>
             </main>
         </div>

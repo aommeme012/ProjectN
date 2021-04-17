@@ -15,7 +15,7 @@ class CreateRequisitionProductsTable extends Migration
     {
         Schema::create('requisition_products', function (Blueprint $table) {
             $table->bigincrements('Requispro_Id');
-            $table->date('Requispro_Date');
+            $table->datetime('Requispro_Date');
             $table->integer('Requispro_Amount');
             $table->unsignedBigInteger('Product_Id');
             $table->foreign('Product_Id')->references('Product_Id')->on('products')->ondelete('cascase');
