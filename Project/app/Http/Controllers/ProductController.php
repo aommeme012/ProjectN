@@ -36,9 +36,7 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
-        // return $request;
         $post=$request->all();
-
         if($file=$request->file('Product_image')){
             $name=$file->getClientOriginalName();
             $file->move('images',$name);

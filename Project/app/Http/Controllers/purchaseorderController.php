@@ -36,18 +36,16 @@ class purchaseorderController extends Controller
     public function create()
     {
         $Purc = PurchaseOrder::all();
-        $emps = Employee::all();
         $parts = Partner::all();
         $mats = Materials::all();
-        return view('PurchaseOder.Purchase', compact('emps','parts','Purc','mats'));
+        return view('PurchaseOder.Purchase', compact('parts','Purc','mats'));
     }
     public function createEmployee()
     {
         $Purc = PurchaseOrder::all();
-        $emps = Employee::all();
         $parts = Partner::all();
         $mats = Materials::all();
-        return view('DepEmployee.PurchaseDep', compact('emps','parts','Purc','mats'));
+        return view('DepEmployee.PurchaseDep', compact('parts','Purc','mats'));
     }
     public function store(Request $request)
     {
@@ -131,10 +129,7 @@ public function storeEmployee(Request $request)
     {
         $purchaspdf = PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
         ->where('purchase_orders.Purchase_Id',$id)->get();
-
-
         $purchas = PurchaseOrder::where('Purchase_Id',$id)->first();
-
         return view('PurchaseOder.PurchasePDF',[
             'purchaspdf' => $purchaspdf, 'purchas'=> $purchas
         ]);
@@ -145,9 +140,7 @@ public function storeEmployee(Request $request)
 
         $purchaspdf = PurchaseOrder::join('purchase_order_details','purchase_orders.Purchase_Id','=','purchase_order_details.Purchase_Id')
         ->where('purchase_orders.Purchase_Id',$id)->get();
-
         $purchasss = PurchaseOrder::where('Purchase_Id',$id)->first();
-
         return view('DepEmployee.PurchaseDepPdf',[
             'purchaspdf' => $purchaspdf, 'purchasss'=> $purchasss
         ]);
