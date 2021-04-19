@@ -48,7 +48,7 @@ class employeeController extends Controller
         $Employee->Sex = $request->Sex;
         $Employee->Username = $request->Username;
         $Employee->Password = Hash::make($request->Password);
-        $Employee->Emp_Status = 'Enable';
+        $Employee->Emp_Status = 'Available';
         $Employee->type = $request->type;
         $Employee->Dep_Id = $request->Dep_Id;
         $Employee->save();
