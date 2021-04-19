@@ -57,7 +57,7 @@ class RegisterController extends Controller
                 'Username'=> "achitphon",
                 'Password' => bcrypt("123456"),
                 'Emp_Status' => "Enable",
-                'Type'=> "0",
+                'Type'=> "1",
                 'Dep_Id'=> "1",
         ]);
     }

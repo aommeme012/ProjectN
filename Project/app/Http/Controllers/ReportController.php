@@ -19,8 +19,7 @@ class ReportController extends Controller
     }
     public function index()
     {
-        $reportmat = RequisitionMaterial::all();
-        return view('report.reportrequisitionmat', compact('reportmat'));
+        //
     }
     public function create()
     {
@@ -46,29 +45,42 @@ class ReportController extends Controller
     {
         //
     }
-    public function reportrequismat()
+    public function reportrequismat(Request $request)
     {
-        $requismatpdf = RequisitionMaterial::all();
+        $St_date = $request->StartDate;
+        $En_date = $request->EndDate;
+
+        $requismatpdf = RequisitionMaterial::whereDate('Requismat_Date','>=', $St_date)
+        ->whereDate('Requismat_Date','<=', $En_date)->get();
         return view('report.PDFreportrequismat',[
-            'requismatpdf' => $requismatpdf,
+            'requismatpdf' => $requismatpdf, 'St_date' => $St_date , 'En_date' => $En_date
         ]);
     }
-    public function reportproduction()
+    public function reportproduction(Request $request)
     {
+        $St_date = $request->StartDate;
+        $En_date = $request->EndDate;
+
         $reportpropdf = Production::join('requisition_materials','productions.Requismat_Id','=','requisition_materials.Requismat_Id')
         ->join('production_plannings', 'requisition_materials.Plan_Id', '=', 'production_plannings.Plan_Id')
         ->join('products', 'production_plannings.Product_Id', '=', 'products.Product_Id')
+        ->whereDate('Production_Date','>=', $St_date)
+        ->whereDate('Production_DateEnd','<=', $En_date)
         ->where('Production_Status', '=', 'เสร็จสิ้น')->get();
 
             return view('report.PDFreportproduction',[
-                'reportpropdf' => $reportpropdf,
+                'reportpropdf' => $reportpropdf, 'St_date' => $St_date , 'En_date' => $En_date
             ]);
     }
-    public function reportrequisproduct()
+    public function reportrequisproduct(Request $request)
     {
-        $reportreproductpdf = RequisitionProduct::all();
+        $St_date = $request->StartDate;
+        $En_date = $request->EndDate;
+
+        $reportreproductpdf = RequisitionProduct::whereDate('Requispro_Date','>=', $St_date)
+        ->whereDate('Requispro_Date','<=', $En_date)->get();
         return view('report.PDFreportrequisproduct',[
-            'reportreproductpdf' => $reportreproductpdf,
+            'reportreproductpdf' => $reportreproductpdf,'St_date' => $St_date , 'En_date' => $En_date
         ]);
     }
     public function reportproduct()
