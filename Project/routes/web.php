@@ -40,58 +40,45 @@ Route::get('/RequiMat','RequisitionMaterialController@Show');
 
 Route::get('/RequiPro','RequisitionProductController@Show');
 
+//---------------------------------------------------------//
 Route::resource('/dep', 'departmentsController');
-
 Route::resource('/part', 'PartnerController');
-
 Route::resource('/mat', 'MaterialsController');
-
 Route::resource('type', 'TypeProductController');
-
 Route::resource('Pro', 'ProductController');
-
 Route::resource('emp', 'employeeController');
-
 Route::resource('comp', 'componentController');
-
 Route::resource('comde', 'componentdetailController');
 
+//---------------------------------------------------------//
 Route::get('pdf','PDFController@pdf');
-
 Route::resource('report', 'ReportController');
 
+//----------------------------------------------------------------------//
 Route::resource('Pur', 'purchaseorderController');
 Route::get('Purpdf', 'purchaseorderController@update')->name('Purpdf');
-
 Route::get('Purdetail', 'purchaseorderController@Show');
-
 Route::get('PlanEmp', 'ProductionPlanningController@indexPlan');
 Route::get('Recdep', 'ReceiveController@indexlistreceuve');
 Route::get('productlist', 'ProductController@indexlist');
-// Route::get('/FillPur','purchaseorderController@index');
 
+//----------------------------------------------------------------------//
 Route::resource('Rec', 'ReceiveController');
-
 Route::resource('Pdet', 'purchaseorderdetailController');
 
 Route::resource('Plan', 'ProductionPlanningController');
 Route::get('/editplan{id}', 'ProductionPlanningController@updateplan')->name('editplan');
 
+//------------------------------------------------------------//
 Route::resource('RequiMM','RequisitionMaterialController');
-
 Route::resource('RequiPP','RequisitionProductController');
-
+//--------------------------------------------------------//
 Route::resource('P','ProductionController');
-
-
 Route::post('/updatesuccess/{id}', 'ProductionController@updatesuccess');
-
 Auth::routes();
-
+//--------------------------------------------------------------------------------------//
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/testregister', 'Auth\RegisterController@test');
-
 Route::get('/out', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 //----------------------------------------------------------------------------------------//
 

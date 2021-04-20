@@ -48,7 +48,7 @@ class RequisitionProductController extends Controller
         foreach ($RequisitionProduct as $RP) {
             $requisproducts = $RP->Amount;
                     RequisitionProduct::create([
-                    'Requispro_Date' => today(),
+                    'Requispro_Date' => date('Y-m-d H:i:s'),
                     'Requispro_Amount' => $requisproducts,
                     'Product_Id' => $RP->Product_Id,
                     'Emp_Id' => $RP->Emp_Id,

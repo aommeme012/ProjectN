@@ -98,9 +98,7 @@ public function storeEmployee(Request $request)
                 'Pdetail_Money' => $request->Pdetail_Money[$i],
                 'Material_Id' => $request->Material_Id[$i],
                 'Purchase_Id' =>  $Purc->Purchase_Id,
-
                 ]);
-
                 $updatestatuspart = Partner::findorfail($request->Partner_Id);
                 $updatestatuspart->update([
                 'Partner_Status' => 'Enable'

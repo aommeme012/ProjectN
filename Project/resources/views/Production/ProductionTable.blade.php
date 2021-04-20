@@ -17,7 +17,9 @@
                                     <th>รหัสการผลิต</th>
                                     <th>วันที่การผลิต</th>
                                     <th>สถานะการผลิต</th>
-                                    <th>รหัสการเบิก</th>
+                                    <th>วัตถุดิบที่เบิก</th>
+                                    <th>จำนวนวัตถุดิบที่เบิก</th>
+                                    <th>แผนงานที่ผลิต</th>
                                     <th>ชื่อคนที่สั่งผลิต</th>
                                     <th></th>
                                 </tr>
@@ -30,7 +32,27 @@
                                     <td>{{$P->Production_Id}}</td>
                                     <td>{{$P->Production_Date}}</td>
                                     <td>{{$P->Production_Status}}</td>
-                                    <td>{{$P->Requismat_Id}}</td>
+
+                                    <td><?php $matAmount = App\Production::join('requisition_materials','productions.Requismat_Id','=','requisition_materials.Requismat_Id')
+                                    ->join('production_plannings','requisition_materials.Plan_Id','=','production_plannings.Plan_Id')
+                                    ->join('components','production_plannings.component_Id','=','components.component_Id')
+                                    ->join('componentdetails','components.component_Id','=','componentdetails.component_Id')
+                                    ->where('requisition_materials.Requismat_Id',$P->Requismat_Id)->get();?>
+                                    @foreach ($matAmount as $matAmounts)
+                                    <?php $matss = App\Materials::find($matAmounts->Material_Id); ?>
+
+                                    {{$matss ->idmat}}-{{$matss ->Material_Name}}<br>
+                                    @endforeach
+                                </td>
+                                <td>{{App\RequisitionMaterial::find($P->Requismat_Id)->Requismat_Amount}}</td>
+                                    <td><?php $plan = App\RequisitionMaterial::join('production_plannings','requisition_materials.Plan_Id','=','production_plannings.Plan_Id')
+                                        ->join('products','production_plannings.Product_Id','=','products.Product_Id')
+                                        ->where('requisition_materials.Requismat_Id',$P->Requismat_Id)->get(); ?>
+                                        @foreach ($plan  as $plans)
+                                        <?php $planings = App\Product::find($plans->Plan_Id); ?>
+                                        {{$plans ->idplan}}-{{$plans ->Product_Name}}
+                                        @endforeach
+                                    </td>
                                     <td>{{$P->Fname}}</td>
                                     <td>
                                         <button  type="submit" class="btn btn-warning btn-sm" >ยืนยันการผลิตเสร็จสิ้น</button>

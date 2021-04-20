@@ -98,6 +98,7 @@ class ProductionPlanningController extends Controller
             $Planing->Product_Id = $planingproductions->Product_Id;
             $Planing->save();
     }
+
     return redirect('/Plan');
     }
     public function destroy($id)

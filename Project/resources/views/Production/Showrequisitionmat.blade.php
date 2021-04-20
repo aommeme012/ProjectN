@@ -32,9 +32,25 @@
                                     <td>{{$P->Requismat_Id}}</td>
                                     <td>{{$P->Requismat_Date}}</td>
                                     <td>{{$P->Requismat_Amount}}</td>
-                                    <td>{{$P->idmat}}</td>
-                                    <td>{{$P->idplan}}</td>
+                                    <td><?php $requsitionmat = App\RequisitionMaterial::join('production_plannings','requisition_materials.Plan_Id','=','production_plannings.Plan_Id')
+                                        ->join('components','production_plannings.component_Id','=','components.component_Id')
+                                        ->join('componentdetails','components.component_Id','=','componentdetails.component_Id')
+                                        ->where('requisition_materials.Requismat_Id',$P->Requismat_Id)->get();?>
+                                        @foreach ($requsitionmat as $requsitionmats)
+                                        <?php $mats1 = App\Materials::find($requsitionmats->Material_Id); ?>
 
+                                        {{$mats1 ->idmat}}-{{$mats1 ->Material_Name}}<br>
+                                        @endforeach
+                                    </td>
+
+                                    <td><?php $plan = App\RequisitionMaterial::join('production_plannings','requisition_materials.Plan_Id','=','production_plannings.Plan_Id')
+                                    ->join('products','production_plannings.Product_Id','=','products.Product_Id')
+                                    ->where('requisition_materials.Requismat_Id',$P->Requismat_Id)->get(); ?>
+                                    @foreach ($plan  as $plans)
+                                    <?php $planings = App\Product::find($plans->Plan_Id); ?>
+                                    {{$plans ->idplan}}-{{$plans ->Product_Name}}
+                                    @endforeach
+                                </td>
                                 <td>
                                     <button  type="submit" class="btn btn-warning btn-sm">ยืนยันการผลิต</button>
                                 </td>
